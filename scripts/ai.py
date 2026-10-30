@@ -67,10 +67,38 @@ SCHEMA = {
 DEV = str.maketrans("०१२३४५६७८९", "0123456789")
 
 
-def numbers(text):
+WORDS = {"दश": 10, "दस": 10, "एघार": 11, "बाह्र": 12, "तेह्र": 13, "चौध": 14, "पन्ध्र": 15, "सोह्र": 16,
+         "सत्र": 17, "अठार": 18, "उन्नाइस": 19, "बीस": 20, "बिस": 20, "पच्चीस": 25, "तीस": 30, "चालीस": 40,
+         "पचास": 50, "साठी": 60, "सत्तरी": 70, "असी": 80, "नब्बे": 90, "सय": 100}
+MULT = {"हजार": 1_000, "लाख": 100_000, "करोड": 10_000_000, "अर्ब": 1_000_000_000,
+        "thousand": 1_000, "lakh": 100_000, "crore": 10_000_000, "million": 1_000_000, "billion": 1_000_000_000}
+
+
+def _fmt(x):
+    return str(int(x)) if float(x).is_integer() else str(round(x, 2))
+
+
+def numbers(text, source=False):
     t = (text or "").translate(DEV)
     t = re.sub(r"(?<=\d),(?=\d)", "", t)
-    return set(re.findall(r"\d{2,}(?:\.\d+)?", t))
+    found = set(re.findall(r"\d{2,}(?:\.\d+)?", t))
+    if source:  # numbers an English writer may correctly write differently ("50 हजार" -> 50,000)
+        for w, v in WORDS.items():
+            if w in t:
+                found.add(str(v))
+        for m in re.finditer(r"(\d+(?:\.\d+)?)\s*(हजार|लाख|करोड|अर्ब|thousand|lakh|crore|million|billion)", t):
+            n = float(m.group(1))
+            v = n * MULT[m.group(2)]
+            found.add(_fmt(v))
+            if m.group(2) == "लाख" or m.group(2) == "lakh":
+                found.add(_fmt(v / 1_000_000))          # 15 lakh = 1.5 million
+            if m.group(2) in ("करोड", "crore"):
+                found.add(_fmt(v / 1_000_000))          # 5 crore = 50 million
+            if m.group(2) in ("अर्ब",):
+                found.add(_fmt(v / 1_000_000_000))
+        for a in re.findall(r"\d+", t):                    # parts of decimals ("2,690.15" -> 2690, 15)
+            found.add(a)
+    return found
 
 
 def check(src, res):
@@ -84,7 +112,7 @@ def check(src, res):
         return "too short"
     if len(body) < 120:
         return "too short"
-    have = numbers(src["text"] + " " + src["title"])
+    have = numbers(src["text"] + " " + src["title"], source=True)
     out = numbers(body + " " + res["headline"] + " " + res.get("summary", "") + " " + " ".join(res.get("points", [])))
     invented = sorted(n for n in out - have if n not in {"00"})
     if invented:
@@ -180,7 +208,7 @@ class Writer:
             try:
                 j = r.json()
             except Exception:
-                return 502, "unexpected reply: " + r.text[:200], None
+                return 502, f"unexpected reply ({r.headers.get('content-type')}): " + r.text[:200], None
             cand = (j.get("candidates") or [{}])[0]
             out = "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", []) if not p.get("thought"))
             return 200, cand.get("finishReason"), out
@@ -197,7 +225,7 @@ class Writer:
         try:
             return 200, "", r.json()["choices"][0]["message"]["content"]
         except Exception:
-            return 502, "unexpected reply: " + r.text[:200], None
+            return 502, f"unexpected reply ({r.headers.get('content-type')}): " + r.text[:200], None
 
     def write(self, batch):
         """Returns {id: result} for the stories that were written and passed the checks."""

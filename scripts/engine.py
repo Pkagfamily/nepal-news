@@ -169,7 +169,7 @@ def read_source(src):
 
 def full_text(item):
     """The feed often has only the first lines; read the article page for the whole story."""
-    if len(item["text"]) >= 1500:
+    if len(item["text"]) >= 1500 and not item.get("cut"):
         return item["text"]
     try:
         r = requests.get(item["url"], headers={"User-Agent": UA}, timeout=20)
@@ -232,6 +232,7 @@ def main():
     queue.sort(key=lambda q: (len(q.get("also", [])), q["ts"]), reverse=True)
     writer = ai.Writer(state.get("ai", {}))
     done_ids = set()
+    audit = state.get("audit", [])
     deadline = time.time() + RUN_SECONDS
     i = 0
     while i < len(queue) and time.time() < deadline and not writer.exhausted():
@@ -251,6 +252,7 @@ def main():
             done_ids.add(b["id"])
             if not res.get("nepal_related", True) or not res.get("body"):
                 continue
+            audit.append({"id": b["id"], "source": b["source"], "title": b["title"], "text": b["text"][:8000]})
             stories.append({
                 "id": b["id"], "url": b["url"], "source": b["source"], "also": b.get("also", []),
                 "ts": b["ts"], "cat": res["category"] if res["category"] in CATEGORIES else "Society",
@@ -260,7 +262,8 @@ def main():
             })
     queue = [q for q in queue if q["id"] not in done_ids]
     for q in queue:              # keep the queue small: the article text is read again when needed
-        q["text"] = q["text"][:1500]
+        if len(q["text"]) > 1500:
+            q["text"], q["cut"] = q["text"][:1500], True
 
     # 4. publish
     stories.sort(key=lambda s: s["ts"], reverse=True)
@@ -270,7 +273,7 @@ def main():
     major = [{"id": s["id"], "headline": s["headline"], "cat": s["cat"], "ts": s["ts"]}
              for s in stories if s.get("major") and s["ts"] >= NOW - 24 * 3600][:10]
     save("pulse", {"v": 1, "ts": NOW, "major": major, "count": len(stories)})
-    save("state", {"seen": seen, "queue": queue[:600], "ai": writer.state})
+    save("state", {"seen": seen, "queue": queue[:600], "ai": writer.state, "audit": audit[-60:]})
 
     status = {
         "run": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime(NOW)),
