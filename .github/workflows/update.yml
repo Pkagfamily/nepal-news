@@ -23,7 +23,10 @@ jobs:
           python-version: "3.12"
           cache: pip
           cache-dependency-path: scripts/requirements.txt
-      - run: pip install -q setuptools wheel && pip install -q -r scripts/requirements.txt
+      - name: Install
+        run: |
+          mkdir -p /tmp/logs
+          (pip install -q setuptools wheel && pip install -q -r scripts/requirements.txt) > /tmp/logs/install.txt 2>&1 || (cat /tmp/logs/install.txt; exit 1)
       - name: Get the last published news
         run: |
           git fetch -q origin feed --depth=1 && git worktree add -q out FETCH_HEAD || mkdir -p out
@@ -32,7 +35,7 @@ jobs:
           NEWS_SECRET: ${{ secrets.NEWS_SECRET }}
           GITHUB_TOKEN: ${{ github.token }}
           OUT_DIR: out
-        run: python3 scripts/engine.py
+        run: set -o pipefail; python3 scripts/engine.py 2>&1 | tee /tmp/logs/engine.txt
       - name: Publish (one small commit, old ones are not kept)
         run: |
           T=$(mktemp -d)
@@ -51,3 +54,12 @@ jobs:
             git -c user.name=news-robot -c user.email=robot@local commit -qm "heartbeat $W"
             git push -q origin HEAD:main || true
           fi
+      - name: Save log for checking
+        if: always()
+        run: |
+          cp out/status.json /tmp/logs/ 2>/dev/null || true
+          cd /tmp/logs
+          git init -q -b logs
+          git add -A
+          git -c user.name=news-robot -c user.email=robot@local commit -qm "log ${{ github.run_id }} ${{ job.status }}"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" logs
