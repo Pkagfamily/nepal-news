@@ -1,0 +1,53 @@
+name: Update news
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["scripts/**", ".github/workflows/update.yml"]
+permissions:
+  contents: write
+  models: read          # GitHub's AI models (backup writer)
+concurrency:
+  group: news
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+      - run: pip install -q setuptools wheel && pip install -q -r scripts/requirements.txt
+      - name: Get the last published news
+        run: |
+          git fetch -q origin feed --depth=1 && git worktree add -q out FETCH_HEAD || mkdir -p out
+      - name: Read the sites and write new stories in English
+        env:
+          NEWS_SECRET: ${{ secrets.NEWS_SECRET }}
+          GITHUB_TOKEN: ${{ github.token }}
+          OUT_DIR: out
+        run: python3 scripts/engine.py
+      - name: Publish (one small commit, old ones are not kept)
+        run: |
+          T=$(mktemp -d)
+          cp out/feed.bin out/pulse.bin out/state.bin out/status.json "$T"/
+          cd "$T"
+          git init -q -b feed
+          git add -A
+          git -c user.name=news-robot -c user.email=robot@local commit -qm "news $(date -u +%H:%M)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" feed
+      - name: Weekly heartbeat (keeps GitHub's schedule switched on)
+        run: |
+          W=$(date -u +%G-W%V)
+          if [ "$(cat heartbeat.txt 2>/dev/null)" != "$W" ]; then
+            echo "$W" > heartbeat.txt
+            git add heartbeat.txt
+            git -c user.name=news-robot -c user.email=robot@local commit -qm "heartbeat $W"
+            git push -q origin HEAD:main || true
+          fi

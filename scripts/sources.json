@@ -1,0 +1,21 @@
+{
+  "_note": "News sites the engine reads. 'feeds' are tried in order; dead ones are skipped and reported in status.json.",
+  "sources": [
+    {"name": "Onlinekhabar",   "feeds": ["https://www.onlinekhabar.com/feed"]},
+    {"name": "Kantipur",       "feeds": ["https://ekantipur.com/rss", "https://ekantipur.com/feed"]},
+    {"name": "Setopati",       "feeds": ["https://www.setopati.com/feed", "https://www.setopati.com/rss"]},
+    {"name": "Ratopati",       "feeds": ["https://www.ratopati.com/feed", "https://ratopati.com/feed"]},
+    {"name": "Nagarik",        "feeds": ["https://nagariknews.nagariknetwork.com/feed", "https://nagariknews.nagariknetwork.com/rss"]},
+    {"name": "Himal Khabar",   "feeds": ["https://www.himalkhabar.com/feed"]},
+    {"name": "Baahrakhari",    "feeds": ["https://baahrakhari.com/feed"]},
+    {"name": "Ujyaalo",        "feeds": ["https://ujyaaloonline.com/feed"]},
+    {"name": "Lokantar",       "feeds": ["https://lokaantar.com/feed"]},
+    {"name": "Nepal Press",    "feeds": ["https://www.nepalpress.com/feed"]},
+    {"name": "Annapurna Post", "feeds": ["https://annapurnapost.com/rss", "https://annapurnapost.com/feed"]},
+    {"name": "Gorkhapatra",    "feeds": ["https://gorkhapatraonline.com/rss", "https://gorkhapatraonline.com/feed"]},
+    {"name": "Kathmandu Post", "feeds": ["https://kathmandupost.com/rss"]},
+    {"name": "myRepublica",    "feeds": ["https://myrepublica.nagariknetwork.com/rss", "https://myrepublica.nagariknetwork.com/feed"]},
+    {"name": "Himalayan Times","feeds": ["https://thehimalayantimes.com/rssFeed/15", "https://thehimalayantimes.com/feed"]},
+    {"name": "Online Khabar English", "feeds": ["https://english.onlinekhabar.com/feed"]}
+  ]
+}
