@@ -13,7 +13,7 @@ import time
 
 import requests
 
-BATCH = 3                      # stories per AI request (saves the daily request allowance)
+BATCH = 2                      # stories per AI request (saves the daily request allowance)
 GEMINI = "https://generativelanguage.googleapis.com/v1beta"
 GH_MODELS = "https://models.github.ai/inference/chat/completions"
 GH_LIST = ["openai/gpt-4.1-mini", "openai/gpt-4o-mini"]
@@ -108,6 +108,7 @@ class Writer:
         self.state = state
         self.key = os.environ.get("GEMINI_KEY", "")
         self.gh = os.environ.get("GITHUB_TOKEN", "")
+        self.slow = {}
         self.log = {"requests": 0, "stories": 0, "rejected": [], "errors": []}
         if not state.get("models") or state.get("models_checked", 0) < time.time() - 86400:
             state["models"] = self.pick_gemini_models()
@@ -157,12 +158,23 @@ class Writer:
             time.sleep(wait)
         self._last = time.time()
         if kind == "gemini":
+            gc = {"temperature": 0.3, "maxOutputTokens": 24000,
+                  "responseMimeType": "application/json", "responseSchema": SCHEMA}
+            think = self.state.setdefault("think", {}).get(model, "level")
+            if think == "level":
+                gc["thinkingConfig"] = {"thinkingLevel": "low"}      # Gemini 3: think briefly, answer faster
+            elif think == "budget":
+                gc["thinkingConfig"] = {"thinkingBudget": 512}       # Gemini 2.5 style
             body = {"systemInstruction": {"parts": [{"text": SYSTEM}]},
-                    "contents": [{"role": "user", "parts": [{"text": text}]}],
-                    "generationConfig": {"temperature": 0.3, "maxOutputTokens": 24000,
-                                         "responseMimeType": "application/json", "responseSchema": SCHEMA}}
-            r = requests.post(f"{GEMINI}/models/{model}:generateContent", json=body,
-                              headers={"x-goog-api-key": self.key}, timeout=180)
+                    "contents": [{"role": "user", "parts": [{"text": text}]}], "generationConfig": gc}
+            try:
+                r = requests.post(f"{GEMINI}/models/{model}:generateContent", json=body,
+                                  headers={"x-goog-api-key": self.key}, timeout=150)
+            except requests.RequestException as ex:
+                return 599, f"no answer in time ({type(ex).__name__})", None
+            if r.status_code == 400 and "thinking" in r.text.lower() and think != "none":
+                self.state["think"][model] = {"level": "budget", "budget": "none"}[think]
+                return self._call(kind, model, text)
             if r.status_code != 200:
                 return r.status_code, r.text[:400], None
             try:
@@ -175,8 +187,11 @@ class Writer:
         body = {"model": model, "temperature": 0.3, "response_format": {"type": "json_object"},
                 "messages": [{"role": "system", "content": SYSTEM + "\nJSON shape: " + json.dumps(SCHEMA)},
                              {"role": "user", "content": text}]}
-        r = requests.post(GH_MODELS, json=body, timeout=180,
-                          headers={"Authorization": f"Bearer {self.gh}", "Accept": "application/json"})
+        try:
+            r = requests.post(GH_MODELS, json=body, timeout=150,
+                              headers={"Authorization": f"Bearer {self.gh}", "Accept": "application/json"})
+        except requests.RequestException as ex:
+            return 599, f"no answer in time ({type(ex).__name__})", None
         if r.status_code != 200:
             return r.status_code, r.text[:400], None
         try:
@@ -208,6 +223,12 @@ class Writer:
                     continue
             if code in (400, 403, 404):
                 self._block(model, 24 * 3600, f"not usable: HTTP {code} {info[:150]}")
+                continue
+            if code == 599:
+                self.log["errors"].append(f"{model}: {info}")
+                self.slow[model] = self.slow.get(model, 0) + 1
+                if self.slow[model] >= 2:
+                    self._block(model, 30 * 60, "too slow right now")
                 continue
             if code != 200:
                 self._block(model, 10 * 60, f"HTTP {code} {info[:150]}")
