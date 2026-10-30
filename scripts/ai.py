@@ -137,6 +137,7 @@ class Writer:
         self.key = os.environ.get("GEMINI_KEY", "")
         self.gh = os.environ.get("GITHUB_TOKEN", "")
         self.slow = {}
+        self.rejects = []
         self.log = {"requests": 0, "stories": 0, "rejected": [], "errors": []}
         if not state.get("models") or state.get("models_checked", 0) < time.time() - 86400:
             state["models"] = self.pick_gemini_models()
@@ -274,6 +275,9 @@ class Writer:
                 why = "missing" if s is None else check(b, s)
                 if why:
                     self.log["rejected"].append(f"{b['source']} {b['id']} ({model}): {why}")
+                    if s is not None and len(self.rejects) < 6:
+                        self.rejects.append({"id": b["id"], "model": model, "why": why, "title": b["title"],
+                                             "text": b["text"][:8000], "out": s})
                     missing.append(b)
                     continue
                 s["_model"] = model

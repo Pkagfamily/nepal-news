@@ -273,7 +273,8 @@ def main():
     major = [{"id": s["id"], "headline": s["headline"], "cat": s["cat"], "ts": s["ts"]}
              for s in stories if s.get("major") and s["ts"] >= NOW - 24 * 3600][:10]
     save("pulse", {"v": 1, "ts": NOW, "major": major, "count": len(stories)})
-    save("state", {"seen": seen, "queue": queue[:600], "ai": writer.state, "audit": audit[-60:]})
+    save("state", {"seen": seen, "queue": queue[:600], "ai": writer.state, "audit": audit[-60:],
+                   "rejects": (state.get("rejects", []) + writer.rejects)[-20:]})
 
     status = {
         "run": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime(NOW)),
