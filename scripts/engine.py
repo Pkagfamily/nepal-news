@@ -208,6 +208,10 @@ def main():
                 continue
             fresh.append(it)
 
+    for name, rep in status_sources.items():
+        print(f"{'OK ' if rep['ok'] else 'NO '} {name:22} {rep['items']:3} stories  {rep['error'] or rep['feed']}")
+    print(f"new stories found: {len(fresh)}")
+
     # 2. the same story from several sites is written once; the others are listed as "also in"
     known = [(words(s.get("orig_title", "")), s) for s in stories] + [(words(q["title"]), q) for q in queue]
     added = 0

@@ -165,7 +165,10 @@ class Writer:
                               headers={"x-goog-api-key": self.key}, timeout=180)
             if r.status_code != 200:
                 return r.status_code, r.text[:400], None
-            j = r.json()
+            try:
+                j = r.json()
+            except Exception:
+                return 502, "unexpected reply: " + r.text[:200], None
             cand = (j.get("candidates") or [{}])[0]
             out = "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", []) if not p.get("thought"))
             return 200, cand.get("finishReason"), out
@@ -176,7 +179,10 @@ class Writer:
                           headers={"Authorization": f"Bearer {self.gh}", "Accept": "application/json"})
         if r.status_code != 200:
             return r.status_code, r.text[:400], None
-        return 200, "", r.json()["choices"][0]["message"]["content"]
+        try:
+            return 200, "", r.json()["choices"][0]["message"]["content"]
+        except Exception:
+            return 502, "unexpected reply: " + r.text[:200], None
 
     def write(self, batch):
         """Returns {id: result} for the stories that were written and passed the checks."""
