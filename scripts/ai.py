@@ -30,8 +30,10 @@ Strict rules:
 - Keep EVERY fact from the article. Never add facts, guesses, opinions or background that is not in the article.
 - Copy every number exactly as in the article (amounts, counts, ages, percentages, dates). Never add a
   number, year or date that is not in the article (no AD year for a BS date, no calculated totals). Write numbers
-  with Western digits (convert Devanagari digits). Keep Nepali units as they are: "Rs 5 crore", "Rs 20 lakh",
-  "3 ropani". Do not convert crore/lakh to million, and do not convert Bikram Sambat (BS) dates to AD.
+  with Western digits (convert Devanagari digits). Keep Nepali money units exactly as written, never
+  convert them: "Rs 5 lakh", "Rs 5 crore", "Rs 8.89 arba", "Rs 30 kharba", "3 ropani". (For reference only:
+  1 arba = 1 billion, 1 kharba = 100 billion. Do NOT write million/billion/trillion for a Nepali amount.)
+  Do not convert Bikram Sambat (BS) dates to AD.
 - Spell Nepali names and places the standard English way (e.g. Pushpa Kamal Dahal, Lalitpur, Koshi Province).
 - When a Nepali term would confuse an English reader, explain it in a few words the first time
   (e.g. "ward chair (head of the local ward)").
@@ -88,6 +90,40 @@ WORDS = {"दश": 10, "दस": 10, "एघार": 11, "बाह्र": 12, 
          "पचास": 50, "साठी": 60, "सत्तरी": 70, "असी": 80, "नब्बे": 90, "सय": 100}
 MULT = {"हजार": 1_000, "लाख": 100_000, "करोड": 10_000_000, "अर्ब": 1_000_000_000,
         "thousand": 1_000, "lakh": 100_000, "crore": 10_000_000, "million": 1_000_000, "billion": 1_000_000_000}
+
+
+UNITS = {"हजार": 1e3, "लाख": 1e5, "करोड": 1e7, "अर्ब": 1e9, "खर्ब": 1e11,
+         "thousand": 1e3, "lakh": 1e5, "lakhs": 1e5, "crore": 1e7, "crores": 1e7, "arba": 1e9, "arab": 1e9,
+         "kharba": 1e11, "kharab": 1e11, "million": 1e6, "billion": 1e9, "trillion": 1e12}
+AMT = re.compile(r"(\d+(?:\.\d+)?)\s*(हजार|लाख|करोड|अर्ब|खर्ब|thousand|lakhs?|crores?|arba|arab|kharba|kharab|"
+                 r"million|billion|trillion)(?![a-z])", re.I)
+
+
+def amounts_with_text(text):
+    t = re.sub(r"(?<=\d),(?=\d)", "", (text or "").translate(DEV))
+    return [(float(m.group(1)) * UNITS[m.group(2).lower()], m.group(0)) for m in AMT.finditer(t)]
+
+
+def amounts(text):
+    """All money/size amounts in the article as plain values, including combinations such as
+    '८ अर्ब ८९ करोड' (8.89 arba)."""
+    t = re.sub(r"(?<=\d),(?=\d)", "", (text or "").translate(DEV))
+    # Nepali fractions: साढे 5 = 5.5, सवा 5 = 5.25, पौने 5 = 4.75, डेढ = 1.5, अढाई = 2.5
+    t = re.sub(r"साढे\s*(\d+)", lambda m: str(int(m.group(1)) + 0.5), t)
+    t = re.sub(r"सवा\s*(\d+)", lambda m: str(int(m.group(1)) + 0.25), t)
+    t = re.sub(r"पौने\s*(\d+)", lambda m: str(int(m.group(1)) - 0.25), t)
+    t = re.sub(r"डेढ\s*(?=हजार|लाख|करोड|अर्ब|खर्ब)", "1.5 ", t)
+    t = re.sub(r"अढाई\s*(?=हजार|लाख|करोड|अर्ब|खर्ब)", "2.5 ", t)
+    vals = [v for v, _ in amounts_with_text(t)]
+    # chains such as '२ करोड ७९ लाख ९९ हजार' or '८ अर्ब ८९ करोड' (every running total counts)
+    for m in re.finditer(r"(?:\d+(?:\.\d+)?\s*(?:खर्ब|अर्ब|करोड|लाख|हजार)\s*){2,}", t):
+        total = 0.0
+        for n, u in re.findall(r"(\d+(?:\.\d+)?)\s*(खर्ब|अर्ब|करोड|लाख|हजार)", m.group(0)):
+            total += float(n) * UNITS[u]
+            vals.append(total)
+    for m in re.finditer(r"(?<![\d.])(\d{4,}(?:\.\d+)?)(?![\d.])", t):   # plain big numbers, e.g. Rs 3000000000
+        vals.append(float(m.group(1)))
+    return vals
 
 
 def _fmt(x):
@@ -149,10 +185,17 @@ def check(src, res):
     if src_len > 600 and len(body) < need * src_len:
         return f"shortened ({len(body)} of {src_len} characters)"
     have = numbers(src["text"] + " " + src["title"], source=True)
-    out = numbers(body + " " + res["headline"] + " " + res.get("summary", "") + " " + " ".join(res.get("points", [])))
+    eng = body + " " + res["headline"] + " " + res.get("summary", "") + " " + " ".join(res.get("points", []))
+    # money amounts ("Rs 28 million", "8.89 arba") are checked by value further down, not digit by digit
+    out = numbers(AMT.sub(" ", re.sub(r"(?<=\d),(?=\d)", "", eng.translate(DEV))))
     invented = sorted(n for n in out - have if n not in {"00"})
     if invented:
         return "numbers not in the article: " + ", ".join(invented[:5])
+    src_vals = amounts(src["text"] + " " + src["title"])
+    for v, txt in amounts_with_text(body + " " + res["headline"] + " " + res.get("summary", "") + " " +
+                                    " ".join(res.get("points", []))):
+        if not any(abs(v - x) <= 0.006 * x for x in src_vals):
+            return f"amount not in the article: {txt}"
     return None
 
 

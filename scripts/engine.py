@@ -194,10 +194,9 @@ def read_page(src):
                 if link in got:
                     continue
                 got.add(link)
-                m2 = re.search(r"(20\d\d)-(\d\d)-(\d\d)", link)          # date in the address, if any
-                ts = calendar.timegm((int(m2.group(1)), int(m2.group(2)), int(m2.group(3)), 6, 0, 0)) if m2 else NOW
-                items.append({"id": sid(link), "url": link, "title": title, "ts": min(ts, NOW), "text": "",
-                              "source": src["name"], "money": True})
+                # no feed = no reliable time: the real date is read from the article page before writing
+                items.append({"id": sid(link), "url": link, "title": title, "ts": NOW, "text": "",
+                              "source": src["name"], "money": True, "nodate": True})
                 if len(items) >= 30:
                     break
             if items:
@@ -240,12 +239,39 @@ def _label(src):
     return src["name"] + (f" ({src['section']})" if src.get("section") else "")
 
 
+def page_date(html_text, url):
+    """Publish date of an article (from the page itself, or the date in its address)."""
+    try:
+        md = trafilatura.extract_metadata(html_text)
+        if md is not None and md.date:
+            return md.date[:10]
+    except Exception:
+        pass
+    m = re.search(r"(20\d\d)[-/](\d\d)[-/](\d\d)", url)
+    return f"{m.group(1)}-{m.group(2)}-{m.group(3)}" if m else None
+
+
+def set_date(item, day):
+    """Story time from a date only: today (Nepal time) -> when first seen; earlier day -> noon that day."""
+    nepal_today = time.strftime("%Y-%m-%d", time.gmtime(NOW + 20700))
+    if day == nepal_today:
+        item["ts"] = min(item["ts"], NOW)
+    else:
+        y, mo, d = (int(x) for x in day.split("-"))
+        item["ts"] = calendar.timegm((y, mo, d, 6, 15, 0))          # 12:00 Nepal time
+    item.pop("nodate", None)
+
+
 def full_text(item):
     """The feed often has only the first lines; read the article page for the whole story."""
-    if len(item["text"]) >= 1500 and not item.get("cut") and len(item["text"]) != 1500:
+    if len(item["text"]) >= 1500 and not item.get("cut") and len(item["text"]) != 1500 and not item.get("nodate"):
         return item["text"]
     try:
         r = requests.get(item["url"], headers={"User-Agent": UA}, timeout=20)
+        if r.status_code == 200 and item.get("nodate"):
+            day = page_date(r.text, item["url"])
+            if day:
+                set_date(item, day)
         if r.status_code == 200:
             t = trafilatura.extract(r.text, include_comments=False, include_tables=False,
                                     favor_recall=True) or ""
@@ -265,6 +291,28 @@ def main():
     seen = {k: v for k, v in state.get("seen", {}).items() if v >= NOW - 4 * 86400}
     queue = [q for q in state.get("queue", []) if q["ts"] >= NOW - QUEUE_HOURS * 3600]
     first_run = not stories and not seen
+
+    # one-time clean-up (v1): stories from feed-less sites had no real date; re-check amounts against originals
+    if not state.get("cleanup_v1"):
+        page_sites = {"ShareSansar", "Mero Lagani", "NEPSE Trading", "Bizshala"}
+        originals = {a["id"]: a for a in state.get("audit", [])}
+        keep = []
+        for st in stories:
+            bad = st["source"] in page_sites or "Binance" in st["headline"]
+            o = originals.get(st["id"])
+            if not bad and o:
+                bad = ai.check({"text": o["text"], "title": o["title"], "id": st["id"], "source": st["source"]},
+                               {"headline": st["headline"], "body": st["body"], "summary": st["summary"],
+                                "points": st["points"], "nepal_related": True}) is not None
+            if not bad and re.search(r"\b\d+(\.\d+)?\s*trillion", " ".join(st["body"])) and not o:
+                bad = True                             # cannot re-check: leave it out rather than risk it
+            if bad:
+                seen.pop(st["id"], None)               # read again and written fresh with the new checks
+            else:
+                keep.append(st)
+        print(f"clean-up: removed {len(stories) - len(keep)} stories for re-writing")
+        stories = keep
+        state["cleanup_v1"] = True
 
     # 1. read every site at the same time
     with ThreadPoolExecutor(12) as ex:
@@ -319,6 +367,7 @@ def main():
     audit = state.get("audit", [])
     deadline = time.time() + RUN_SECONDS
     lock = threading.Lock()
+    skipped = []
     batches = [queue[i:i + ai.BATCH] for i in range(0, len(queue), ai.BATCH)]
     nxt = iter(batches)
 
@@ -351,6 +400,15 @@ def main():
                 return
             for b in batch:
                 b["text"] = full_text(b)
+            ok = [b for b in batch if not b.get("nodate") and b["ts"] >= NOW - KEEP_HOURS * 3600 and b["text"]]
+            with lock:
+                for b in batch:
+                    if b not in ok:
+                        done_ids.add(b["id"])            # no confirmed date, too old, or unreadable: left out
+                        skipped.append(f"{b['source']}: {b['title'][:60]}")
+            batch = ok
+            if not batch:
+                continue
             try:
                 out = w.write(batch)
             except Exception:
@@ -383,13 +441,13 @@ def main():
     major = [{"id": s["id"], "headline": s["headline"], "cat": s["cat"], "ts": s["ts"]}
              for s in stories if s.get("major") and s["ts"] >= NOW - 24 * 3600][:10]
     save("pulse", {"v": 1, "ts": NOW, "major": major, "count": len(stories)})
-    save("state", {"seen": seen, "queue": queue[:900], "ai": writer.state, "last_search": state.get("last_search", 0), "audit": audit[-60:],
+    save("state", {"seen": seen, "queue": queue[:900], "ai": writer.state, "last_search": state.get("last_search", 0), "cleanup_v1": True, "audit": audit[-60:],
                    "rejects": (state.get("rejects", []) + writer.rejects)[-20:]})
 
     status = {
         "run": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime(NOW)),
         "stories_in_app": len(stories), "new_found": added, "written_now": len(done_ids),
-        "waiting": len(queue), "ai": writer.report(), "sources": status_sources,
+        "waiting": len(queue), "left_out_old_or_undated": skipped[-20:], "ai": writer.report(), "sources": status_sources,
         "newest_story_minutes_old": round((NOW - stories[0]["ts"]) / 60) if stories else None,
     }
     json.dump(status, open(os.path.join(OUT, "status.json"), "w"), indent=1, ensure_ascii=False)
