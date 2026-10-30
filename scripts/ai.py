@@ -52,7 +52,9 @@ Strict rules:
   "Weather & Disasters" = weather, floods, landslides, earthquakes, fires;
   "Energy" = electricity, hydropower, NEA; "Infrastructure" = roads, bridges, airports, big projects;
   "Diaspora" = Nepalis abroad; "World & Nepal" = foreign news that directly involves Nepal.
-- "nepal_related": false only if the story has nothing to do with Nepal or Nepalis.
+- "nepal_related": true only if the story is about Nepal, happens in Nepal, or directly involves Nepal or
+  Nepalis (including the Nepal market, Nepali companies, Nepalis abroad). Foreign news with no Nepal link
+  (e.g. a crypto exchange hack abroad, another country's elections) is false.
 - "major": true ONLY for rare, nationally important breaking news that most people in Nepal would want
   to know immediately: a disaster or accident with several deaths, a new prime minister or government
   falling, a nationwide shutdown or curfew, a big earthquake. Routine arrests, statements, protests,

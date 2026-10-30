@@ -260,6 +260,14 @@ def main():
             done_ids.add(b["id"])
             if not res.get("nepal_related", True) or not res.get("body"):
                 continue
+            # same story already written from another site (headlines in English compared)?
+            hw = words(res["headline"])
+            twin = next((x for x in stories if abs(x["ts"] - b["ts"]) < 18 * 3600
+                         and similar(hw, words(x["headline"]), 0.45)), None)
+            if twin is not None:
+                if b["source"] != twin["source"] and b["source"] not in twin.setdefault("also", []):
+                    twin["also"].append(b["source"])
+                continue
             if ai.is_english(b["text"]):
                 res["body"] = ai.english_body(b["text"]) or res["body"]
             audit.append({"id": b["id"], "source": b["source"], "title": b["title"], "text": b["text"][:8000]})
