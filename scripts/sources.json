@@ -1,21 +1,271 @@
 {
-  "_note": "News sites the engine reads. 'feeds' are tried in order; dead ones are skipped and reported in status.json.",
-  "sources": [
-    {"name": "Onlinekhabar",   "feeds": ["https://www.onlinekhabar.com/feed"]},
-    {"name": "Kantipur",       "feeds": ["https://ekantipur.com/rss", "https://ekantipur.com/feed"]},
-    {"name": "Setopati",       "feeds": ["https://www.setopati.com/feed", "https://www.setopati.com/rss"]},
-    {"name": "Ratopati",       "feeds": ["https://www.ratopati.com/feed", "https://ratopati.com/feed"]},
-    {"name": "Nagarik",        "feeds": ["https://nagariknews.nagariknetwork.com/feed", "https://nagariknews.nagariknetwork.com/rss"]},
-    {"name": "Himal Khabar",   "feeds": ["https://www.himalkhabar.com/feed"]},
-    {"name": "Baahrakhari",    "feeds": ["https://baahrakhari.com/feed"]},
-    {"name": "Ujyaalo",        "feeds": ["https://ujyaaloonline.com/feed"]},
-    {"name": "Lokantar",       "feeds": ["https://lokaantar.com/feed"]},
-    {"name": "Nepal Press",    "feeds": ["https://www.nepalpress.com/feed"]},
-    {"name": "Annapurna Post", "feeds": ["https://annapurnapost.com/rss", "https://annapurnapost.com/feed"]},
-    {"name": "Gorkhapatra",    "feeds": ["https://gorkhapatraonline.com/rss", "https://gorkhapatraonline.com/feed"]},
-    {"name": "Kathmandu Post", "feeds": ["https://kathmandupost.com/rss"]},
-    {"name": "myRepublica",    "feeds": ["https://myrepublica.nagariknetwork.com/rss", "https://myrepublica.nagariknetwork.com/feed"]},
-    {"name": "Himalayan Times","feeds": ["https://thehimalayantimes.com/rssFeed/15", "https://thehimalayantimes.com/feed"]},
-    {"name": "Online Khabar English", "feeds": ["https://english.onlinekhabar.com/feed"]}
-  ]
+ "_note": "News sites the engine reads. 'feeds' are tried in order; dead ones are skipped and reported in status.json.",
+ "sources": [
+  {
+   "name": "Onlinekhabar",
+   "feeds": [
+    "https://www.onlinekhabar.com/feed"
+   ]
+  },
+  {
+   "name": "Kantipur",
+   "feeds": [
+    "https://ekantipur.com/rss",
+    "https://ekantipur.com/feed"
+   ]
+  },
+  {
+   "name": "Setopati",
+   "feeds": [
+    "https://www.setopati.com/feed",
+    "https://www.setopati.com/rss"
+   ]
+  },
+  {
+   "name": "Ratopati",
+   "feeds": [
+    "https://www.ratopati.com/feed",
+    "https://ratopati.com/feed"
+   ]
+  },
+  {
+   "name": "Nagarik",
+   "feeds": [
+    "https://nagariknews.nagariknetwork.com/feed",
+    "https://nagariknews.nagariknetwork.com/rss"
+   ]
+  },
+  {
+   "name": "Himal Khabar",
+   "feeds": [
+    "https://www.himalkhabar.com/feed"
+   ]
+  },
+  {
+   "name": "Baahrakhari",
+   "feeds": [
+    "https://baahrakhari.com/feed"
+   ]
+  },
+  {
+   "name": "Ujyaalo",
+   "feeds": [
+    "https://ujyaaloonline.com/feed"
+   ]
+  },
+  {
+   "name": "Lokantar",
+   "feeds": [
+    "https://lokaantar.com/feed"
+   ]
+  },
+  {
+   "name": "Nepal Press",
+   "feeds": [
+    "https://www.nepalpress.com/feed"
+   ]
+  },
+  {
+   "name": "Annapurna Post",
+   "feeds": [
+    "https://annapurnapost.com/rss",
+    "https://annapurnapost.com/feed"
+   ]
+  },
+  {
+   "name": "Gorkhapatra",
+   "feeds": [
+    "https://gorkhapatraonline.com/rss",
+    "https://gorkhapatraonline.com/feed"
+   ]
+  },
+  {
+   "name": "Kathmandu Post",
+   "feeds": [
+    "https://kathmandupost.com/rss"
+   ]
+  },
+  {
+   "name": "myRepublica",
+   "feeds": [
+    "https://myrepublica.nagariknetwork.com/rss",
+    "https://myrepublica.nagariknetwork.com/feed"
+   ]
+  },
+  {
+   "name": "Himalayan Times",
+   "feeds": [
+    "https://thehimalayantimes.com/rssFeed/15",
+    "https://thehimalayantimes.com/feed"
+   ]
+  },
+  {
+   "name": "Online Khabar English",
+   "feeds": [
+    "https://english.onlinekhabar.com/feed"
+   ]
+  },
+  {
+   "name": "Onlinekhabar",
+   "section": "business",
+   "feeds": [
+    "https://www.onlinekhabar.com/content/business/feed"
+   ]
+  },
+  {
+   "name": "Ratopati",
+   "section": "business",
+   "feeds": [
+    "https://www.ratopati.com/category/economy/feed",
+    "https://www.ratopati.com/category/business/feed"
+   ]
+  },
+  {
+   "name": "Setopati",
+   "section": "business",
+   "feeds": [
+    "https://www.setopati.com/kinmel/feed",
+    "https://www.setopati.com/category/kinmel/feed"
+   ]
+  },
+  {
+   "name": "Nagarik",
+   "section": "business",
+   "feeds": [
+    "https://nagariknews.nagariknetwork.com/economy/feed",
+    "https://nagariknews.nagariknetwork.com/category/economy/feed"
+   ]
+  },
+  {
+   "name": "Annapurna Post",
+   "section": "business",
+   "feeds": [
+    "https://annapurnapost.com/rss/economy"
+   ]
+  },
+  {
+   "name": "Kathmandu Post",
+   "section": "business",
+   "feeds": [
+    "https://kathmandupost.com/money/rss",
+    "https://kathmandupost.com/rss/money"
+   ]
+  },
+  {
+   "name": "Online Khabar English",
+   "section": "business",
+   "feeds": [
+    "https://english.onlinekhabar.com/category/economy/feed",
+    "https://english.onlinekhabar.com/category/business/feed"
+   ]
+  },
+  {
+   "name": "ShareSansar",
+   "feeds": [
+    "https://www.sharesansar.com/rss",
+    "https://www.sharesansar.com/feed"
+   ]
+  },
+  {
+   "name": "Mero Lagani",
+   "feeds": [
+    "https://merolagani.com/rss.aspx",
+    "https://merolagani.com/NewsList.aspx?rss=1"
+   ]
+  },
+  {
+   "name": "Bizmandu",
+   "feeds": [
+    "https://bizmandu.com/feed",
+    "https://www.bizmandu.com/feed"
+   ]
+  },
+  {
+   "name": "Arthasarokar",
+   "feeds": [
+    "https://arthasarokar.com/feed"
+   ]
+  },
+  {
+   "name": "Aarthik News",
+   "feeds": [
+    "https://www.aarthiknews.com/feed",
+    "https://aarthiknews.com/feed"
+   ]
+  },
+  {
+   "name": "Clickmandu",
+   "feeds": [
+    "https://clickmandu.com/feed"
+   ]
+  },
+  {
+   "name": "Karobar Daily",
+   "feeds": [
+    "https://www.karobardaily.com/feed",
+    "https://karobardaily.com/rss"
+   ]
+  },
+  {
+   "name": "Abhiyan Daily",
+   "feeds": [
+    "https://abhiyandaily.com/feed",
+    "https://www.abhiyandaily.com/feed"
+   ]
+  },
+  {
+   "name": "Arthik Abhiyan",
+   "feeds": [
+    "https://arthikabhiyan.com/feed",
+    "https://www.arthikabhiyan.com/feed"
+   ]
+  },
+  {
+   "name": "New Business Age",
+   "feeds": [
+    "https://www.newbusinessage.com/feed",
+    "https://newbusinessage.com/feed"
+   ]
+  },
+  {
+   "name": "Share Hub Nepal",
+   "feeds": [
+    "https://sharehubnepal.com/feed"
+   ]
+  },
+  {
+   "name": "Nepal Live Today",
+   "feeds": [
+    "https://www.nepallivetoday.com/feed"
+   ]
+  },
+  {
+   "name": "Rising Nepal",
+   "feeds": [
+    "https://risingnepaldaily.com/rss",
+    "https://risingnepaldaily.com/feed"
+   ]
+  },
+  {
+   "name": "Desh Sanchar",
+   "feeds": [
+    "https://deshsanchar.com/feed"
+   ]
+  },
+  {
+   "name": "Khabarhub",
+   "feeds": [
+    "https://khabarhub.com/feed",
+    "https://english.khabarhub.com/feed"
+   ]
+  },
+  {
+   "name": "Kantipur",
+   "section": "alt",
+   "feeds": [
+    "https://ekantipur.com/rss/business",
+    "https://kantipurdaily.com/feed"
+   ]
+  }
+ ]
 }

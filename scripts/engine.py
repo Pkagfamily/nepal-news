@@ -44,6 +44,8 @@ QUEUE_HOURS = 10                                  # a story not written within t
 RUN_SECONDS = int(os.environ.get("RUN_SECONDS", "400"))
 UA = ("Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/128.0 Mobile Safari/537.36")
+MONEY_SITES = {"ShareSansar", "Mero Lagani", "Bizmandu", "Arthasarokar", "Aarthik News", "Clickmandu",
+               "Karobar Daily", "Abhiyan Daily", "Arthik Abhiyan", "New Business Age", "Share Hub Nepal"}
 CATEGORIES = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Banking & Finance", "Business", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
 SKIP_TITLE = re.compile(r"राशिफल|horoscope|आजको राशि|भिडियो|video|फोटो फिचर|photo feature|"
                         r"तस्बिरहरू|in pictures|quiz|crossword|आजको मौसम", re.I)
@@ -158,12 +160,17 @@ def read_source(src):
                 if len(body) < 400:
                     body = max(body, clean(e.get("summary", "")), key=len)
                 items.append({"id": sid(link), "url": link, "title": title, "ts": ts,
-                              "text": body, "source": src["name"]})
+                              "text": body, "source": src["name"],
+                              "money": bool(src.get("section") == "business" or src["name"] in MONEY_SITES)})
             report.update(ok=True, items=len(items), feed=url, error=None)
-            return src["name"], items, report
+            return _label(src), items, report
         except Exception as ex:
             report["error"] = f"{url}: {type(ex).__name__}: {ex}"[:300]
-    return src["name"], [], report
+    return _label(src), [], report
+
+
+def _label(src):
+    return src["name"] + (f" ({src['section']})" if src.get("section") else "")
 
 
 def full_text(item):
@@ -228,7 +235,9 @@ def main():
         added += 1
 
     # 3. write stories in English, newest and most-reported first, within this run's time
-    queue.sort(key=lambda q: (len(q.get("also", [])), q["ts"]), reverse=True)
+    # newest first; widely reported stories and money news (shares, gold, fuel, banking) get priority
+    queue.sort(key=lambda q: (q["ts"] > NOW - 3 * 3600, len(q.get("also", [])) > 0 or q.get("money", False), q["ts"]),
+               reverse=True)
     writer = ai.Writer(state.get("ai", {}))
     done_ids = set()
     audit = state.get("audit", [])

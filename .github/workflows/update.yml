@@ -1,7 +1,7 @@
 name: Update news
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "5,25,45 * * * *"      # each job loops ~50 min; the next one waits in line, so news never stops
   workflow_dispatch:
   push:
     branches: [main]
@@ -15,7 +15,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-24.04
-    timeout-minutes: 14
+    timeout-minutes: 65
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,21 +30,15 @@ jobs:
       - name: Get the last published news
         run: |
           git fetch -q origin feed --depth=1 && git worktree add -q out FETCH_HEAD || mkdir -p out
-      - name: Read the sites and write new stories in English
+      - name: Read the sites, write new stories in English, publish (every ~5 minutes)
         env:
           NEWS_SECRET: ${{ secrets.NEWS_SECRET }}
           GITHUB_TOKEN: ${{ github.token }}
+          GH_PUSH: ${{ github.token }}
+          REPO: ${{ github.repository }}
           OUT_DIR: out
-        run: set -o pipefail; python3 scripts/engine.py 2>&1 | tee /tmp/logs/engine.txt
-      - name: Publish (one small commit, old ones are not kept)
-        run: |
-          T=$(mktemp -d)
-          cp out/feed.bin out/pulse.bin out/state.bin out/status.json "$T"/
-          cd "$T"
-          git init -q -b feed
-          git add -A
-          git -c user.name=news-robot -c user.email=robot@local commit -qm "news $(date -u +%H:%M)"
-          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" feed
+          RUN_SECONDS: "210"
+        run: scripts/cycle.sh
       - name: Weekly heartbeat (keeps GitHub's schedule switched on)
         run: |
           W=$(date -u +%G-W%V)
@@ -58,7 +52,7 @@ jobs:
         if: always()
         run: |
           cp out/status.json /tmp/logs/ 2>/dev/null || true
-          cd /tmp/logs
+          cd /tmp/logs && rm -rf .git
           git init -q -b logs
           git add -A
           git -c user.name=news-robot -c user.email=robot@local commit -qm "log ${{ github.run_id }} ${{ job.status }}"
