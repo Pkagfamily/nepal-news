@@ -35,7 +35,9 @@ Strict rules:
 - Spell Nepali names and places the standard English way (e.g. Pushpa Kamal Dahal, Lalitpur, Koshi Province).
 - When a Nepali term would confuse an English reader, explain it in a few words the first time
   (e.g. "ward chair (head of the local ward)").
-- "body" is the complete story as paragraphs: as complete as the original, nothing left out.
+- "body" is the complete story as paragraphs: as long and complete as the original, nothing left out,
+  never a shortened version. If the article is already in English, keep all of its content and
+  wording, only tidying obvious errors.
 - "points" are 3 to 5 short key points. "summary" is 2 to 4 sentences.
 - "headline" is a clear English news headline (no clickbait, no quotes unless the article is about a quote).
 - "category": one of %s. Use "Kathmandu" for Kathmandu Valley local news; "Provinces" for local news outside
@@ -112,6 +114,10 @@ def check(src, res):
         return "too short"
     if len(body) < 120:
         return "too short"
+    src_len = len(src["text"])
+    english = sum(c.isascii() for c in src["text"][:2000]) > 0.8 * min(2000, max(1, src_len))
+    if src_len > 600 and len(body) < (0.6 if english else 0.45) * src_len:
+        return f"shortened ({len(body)} of {src_len} characters)"
     have = numbers(src["text"] + " " + src["title"], source=True)
     out = numbers(body + " " + res["headline"] + " " + res.get("summary", "") + " " + " ".join(res.get("points", [])))
     invented = sorted(n for n in out - have if n not in {"00"})
