@@ -17,8 +17,7 @@ BATCH = 2                      # stories per AI request (saves the daily request
 GEMINI = "https://generativelanguage.googleapis.com/v1beta"
 GH_MODELS = "https://models.github.ai/inference/chat/completions"
 GH_LIST = ["openai/gpt-4.1-mini", "openai/gpt-4o-mini"]
-CATS = ["Politics", "Business", "Kathmandu", "Provinces", "Society", "Sports",
-        "Entertainment", "Technology", "Health", "Education", "Diaspora"]
+CATS = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Banking & Finance", "Business", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
 
 SYSTEM = """You are a senior editor at an English-language newspaper in Kathmandu.
 You receive news articles from Nepali news sites, usually written in Nepali.
@@ -29,7 +28,8 @@ and what happens next.
 
 Strict rules:
 - Keep EVERY fact from the article. Never add facts, guesses, opinions or background that is not in the article.
-- Copy every number exactly as in the article (amounts, counts, ages, percentages, dates). Write numbers
+- Copy every number exactly as in the article (amounts, counts, ages, percentages, dates). Never add a
+  number, year or date that is not in the article (no AD year for a BS date, no calculated totals). Write numbers
   with Western digits (convert Devanagari digits). Keep Nepali units as they are: "Rs 5 crore", "Rs 20 lakh",
   "3 ropani". Do not convert crore/lakh to million, and do not convert Bikram Sambat (BS) dates to AD.
 - Spell Nepali names and places the standard English way (e.g. Pushpa Kamal Dahal, Lalitpur, Koshi Province).
@@ -40,12 +40,24 @@ Strict rules:
   wording, only tidying obvious errors.
 - "points" are 3 to 5 short key points. "summary" is 2 to 4 sentences.
 - "headline" is a clear English news headline (no clickbait, no quotes unless the article is about a quote).
-- "category": one of %s. Use "Kathmandu" for Kathmandu Valley local news; "Provinces" for local news outside
-  the valley; "Diaspora" for Nepalis abroad.
+- "category": one of {cats}. Choose the most specific:
+  "Share Market" = NEPSE, shares, IPOs, brokers, SEBON, mutual funds;
+  "Gold & Silver" = gold/silver prices, FENEGOSIDA, bullion, jewellery trade;
+  "Fuel & Oil" = petrol, diesel, LPG, kerosene, Nepal Oil Corporation, fuel prices and supply;
+  "Banking & Finance" = banks, Nepal Rastra Bank, interest rates, loans, cooperatives, insurance;
+  "Economy" = budget, inflation, trade deficit, remittance totals, GDP, revenue, foreign exchange;
+  "Business" = companies, industry, markets and prices not covered above;
+  "Kathmandu" = Kathmandu Valley local news; "Provinces" = local news outside the valley;
+  "Crime" = arrests, police cases, court cases about crimes, corruption arrests;
+  "Weather & Disasters" = weather, floods, landslides, earthquakes, fires;
+  "Energy" = electricity, hydropower, NEA; "Infrastructure" = roads, bridges, airports, big projects;
+  "Diaspora" = Nepalis abroad; "World & Nepal" = foreign news that directly involves Nepal.
 - "nepal_related": false only if the story has nothing to do with Nepal or Nepalis.
-- "major": true only for big national breaking news (major disasters or accidents with deaths,
-  change of government, nationwide decisions, big security events). Most stories are false.
-Return JSON only.""" % ", ".join(CATS)
+- "major": true ONLY for rare, nationally important breaking news that most people in Nepal would want
+  to know immediately: a disaster or accident with several deaths, a new prime minister or government
+  falling, a nationwide shutdown or curfew, a big earthquake. Routine arrests, statements, protests,
+  meetings and price changes are false. On a normal day at most 2-3 stories are major.
+Return JSON only.""".replace("{cats}", ", ".join(CATS))
 
 SCHEMA = {
     "type": "OBJECT",
@@ -143,9 +155,11 @@ class Writer:
         self.key = os.environ.get("GEMINI_KEY", "")
         self.gh = os.environ.get("GITHUB_TOKEN", "")
         self.slow = {}
+        self.deadline = time.time() + int(os.environ.get("RUN_SECONDS", "420")) + 60
         self.rejects = []
         self.log = {"requests": 0, "stories": 0, "rejected": [], "errors": []}
-        if not state.get("models") or state.get("models_checked", 0) < time.time() - 86400:
+        if not state.get("models") or state.get("models_checked", 0) < time.time() - 86400 or state.get("order_v") != 2:
+            state["order_v"] = 2
             state["models"] = self.pick_gemini_models()
             state["models_checked"] = int(time.time())
         self.chain = [("gemini", m) for m in state["models"]] + [("github", m) for m in GH_LIST]
@@ -170,10 +184,12 @@ class Writer:
         bad = re.compile(r"image|tts|live|audio|embed|thinking|exp|8b|robotics|computer|native")
         flash = sorted([n for n in names if re.fullmatch(r"gemini-\d+(\.\d+)?-flash", n)], key=ver, reverse=True)
         lite = sorted([n for n in names if re.fullmatch(r"gemini-\d+(\.\d+)?-flash-lite", n)], key=ver, reverse=True)
-        prev = sorted([n for n in names if "flash" in n and "preview" in n and not bad.search(n)], key=ver, reverse=True)
+        # Flash-Lite answers quickly and writes these stories well; full Flash is the fallback.
+        lite_prev = sorted([n for n in names if "flash-lite" in n and "preview" in n and not bad.search(n)],
+                           key=ver, reverse=True)
         order = []
-        for n in (["gemini-flash-latest"] if "gemini-flash-latest" in names else []) + flash[:2] + prev[:1] + \
-                 (["gemini-flash-lite-latest"] if "gemini-flash-lite-latest" in names else []) + lite[:1]:
+        for n in lite_prev[:1] + (["gemini-flash-lite-latest"] if "gemini-flash-lite-latest" in names else []) + \
+                 lite[:1] + (["gemini-flash-latest"] if "gemini-flash-latest" in names else []) + flash[:1]:
             if n not in order:
                 order.append(n)
         return order or ["gemini-2.5-flash", "gemini-2.5-flash-lite"]
@@ -238,7 +254,10 @@ class Writer:
         """Returns {id: result} for the stories that were written and passed the checks."""
         text = prompt(batch)
         results = {}
+        answered = 0
         for kind, model in self.chain:
+            if answered >= 2 or time.time() > self.deadline:   # a story that fails twice waits for a later run
+                break
             if self.state["blocked"].get(model, 0) > time.time():
                 continue
             if kind == "gemini" and not self.key or kind == "github" and not self.gh:
@@ -274,6 +293,7 @@ class Writer:
                 self.log["errors"].append(f"{model}: reply was not JSON ({info})")
                 continue
             self.state["used"][model] = self.state["used"].get(model, 0) + 1
+            answered += 1
             got = {s.get("id"): s for s in data.get("stories", []) if isinstance(s, dict)}
             missing = []
             for b in batch:

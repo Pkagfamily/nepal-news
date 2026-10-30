@@ -41,11 +41,10 @@ NOW = int(time.time())
 KEEP_HOURS = 48                                   # stories older than this leave the app
 MAX_STORIES = 350
 QUEUE_HOURS = 10                                  # a story not written within this time is dropped
-RUN_SECONDS = int(os.environ.get("RUN_SECONDS", "420"))
+RUN_SECONDS = int(os.environ.get("RUN_SECONDS", "400"))
 UA = ("Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/128.0 Mobile Safari/537.36")
-CATEGORIES = ["Politics", "Business", "Kathmandu", "Provinces", "Society", "Sports",
-              "Entertainment", "Technology", "Health", "Education", "Diaspora"]
+CATEGORIES = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Banking & Finance", "Business", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
 SKIP_TITLE = re.compile(r"राशिफल|horoscope|आजको राशि|भिडियो|video|फोटो फिचर|photo feature|"
                         r"तस्बिरहरू|in pictures|quiz|crossword|आजको मौसम", re.I)
 SKIP_TAGS = re.compile(r"^(विश्व|अन्तर्राष्ट्रिय|international|world|global|विदेश|horoscope|राशिफल|video|भिडियो)$", re.I)
@@ -169,7 +168,7 @@ def read_source(src):
 
 def full_text(item):
     """The feed often has only the first lines; read the article page for the whole story."""
-    if len(item["text"]) >= 1500 and not item.get("cut"):
+    if len(item["text"]) >= 1500 and not item.get("cut") and len(item["text"]) != 1500:
         return item["text"]
     try:
         r = requests.get(item["url"], headers={"User-Agent": UA}, timeout=20)
