@@ -18,6 +18,7 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 import traceback
 from concurrent.futures import ThreadPoolExecutor
@@ -40,12 +41,16 @@ OUT = os.environ.get("OUT_DIR", "out")            # the published branch is chec
 NOW = int(time.time())
 KEEP_HOURS = 48                                   # stories older than this leave the app
 MAX_STORIES = 350
-QUEUE_HOURS = 10                                  # a story not written within this time is dropped
+QUEUE_HOURS = 40                                  # every story found in the last ~2 days gets written
 RUN_SECONDS = int(os.environ.get("RUN_SECONDS", "400"))
 UA = ("Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/128.0 Mobile Safari/537.36")
 MONEY_SITES = {"ShareSansar", "Mero Lagani", "Bizmandu", "Arthasarokar", "Aarthik News", "Clickmandu",
                "Karobar Daily", "Abhiyan Daily", "Arthik Abhiyan", "New Business Age", "Share Hub Nepal"}
+MONEY_WORDS = re.compile(r"सुन|चाँदी|चादी|पेट्रोल|डिजेल|ग्यास|इन्धन|आयल निगम|मट्टितेल|बैंक|ब्याज|कर्जा|नेप्से|शेयर|"
+                         r"आईपीओ|आइपीओ|लाभांश|बोनस|धितोपत्र|सेबोन|सहकारी|बीमा|विप्रेषण|मुद्रास्फीति|बजेट|"
+                         r"gold|silver|petrol|diesel|\bLPG\b|fuel|\bNOC\b|bank|interest rate|loan|NEPSE|share|IPO|"
+                         r"dividend|SEBON|cooperative|insurance|remittance|inflation|budget", re.I)
 CATEGORIES = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Banking & Finance", "Business", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
 SKIP_TITLE = re.compile(r"राशिफल|horoscope|आजको राशि|भिडियो|video|फोटो फिचर|photo feature|"
                         r"तस्बिरहरू|in pictures|quiz|crossword|आजको मौसम", re.I)
@@ -161,12 +166,74 @@ def read_source(src):
                     body = max(body, clean(e.get("summary", "")), key=len)
                 items.append({"id": sid(link), "url": link, "title": title, "ts": ts,
                               "text": body, "source": src["name"],
-                              "money": bool(src.get("section") == "business" or src["name"] in MONEY_SITES)})
+                              "money": bool(src.get("section") == "business" or src["name"] in MONEY_SITES
+                                            or MONEY_WORDS.search(title))})
             report.update(ok=True, items=len(items), feed=url, error=None)
             return _label(src), items, report
         except Exception as ex:
             report["error"] = f"{url}: {type(ex).__name__}: {ex}"[:300]
     return _label(src), [], report
+
+
+def read_page(src):
+    """For sites without a feed: read the news list page and take the article links."""
+    report = {"ok": False, "items": 0, "feed": None, "error": None}
+    for pg in src["pages"]:
+        try:
+            r = requests.get(pg["url"], headers={"User-Agent": UA}, timeout=20)
+            if r.status_code != 200:
+                report["error"] = f"{pg['url']}: HTTP {r.status_code}"
+                continue
+            items, got = [], set()
+            for m in re.finditer(r'<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', r.text, re.S):
+                link, title = html.unescape(m.group(1)), clean(m.group(2))
+                if not re.search(pg["link"], link) or len(title) < 15 or SKIP_TITLE.search(title):
+                    continue
+                if link.startswith("/"):
+                    link = re.match(r"https?://[^/]+", pg["url"]).group(0) + link
+                if link in got:
+                    continue
+                got.add(link)
+                m2 = re.search(r"(20\d\d)-(\d\d)-(\d\d)", link)          # date in the address, if any
+                ts = calendar.timegm((int(m2.group(1)), int(m2.group(2)), int(m2.group(3)), 6, 0, 0)) if m2 else NOW
+                items.append({"id": sid(link), "url": link, "title": title, "ts": min(ts, NOW), "text": "",
+                              "source": src["name"], "money": True})
+                if len(items) >= 30:
+                    break
+            if items:
+                report.update(ok=True, items=len(items), feed=pg["url"], error=None)
+                return _label(src), items, report
+            report["error"] = f"{pg['url']}: no article links found"
+        except Exception as ex:
+            report["error"] = f"{pg['url']}: {type(ex).__name__}: {ex}"[:300]
+    return _label(src), [], report
+
+
+SEARCH_WORDS = ["सुनको मूल्य", "चाँदी", "नेप्से", "शेयर बजार", "पेट्रोल", "डिजेल", "ग्यास", "आयल निगम",
+                "राष्ट्र बैंक", "ब्याजदर", "बैंक", "आईपीओ", "gold price", "NEPSE", "petrol", "Nepal Rastra Bank"]
+
+
+def search_sweep(sources):
+    """Every 30 minutes: search each WordPress news site for money news of the last 2 days, so stories
+    that already left a site's main feed are not missed."""
+    out = []
+    bases = sorted({re.match(r"https?://[^/]+", f).group(0) for s in sources for f in s.get("feeds", [])
+                    if s.get("search")})
+    jobs = [(b, w) for b in bases for w in SEARCH_WORDS]
+
+    def one(job):
+        base, word = job
+        name = next(s["name"] for s in sources if s.get("search") and any(f.startswith(base) for f in s["feeds"]))
+        src = {"name": name, "feeds": [f"{base}/?s={requests.utils.quote(word)}&feed=rss2"], "section": None}
+        _, items, _ = read_source(src)
+        for it in items:
+            it["money"] = True
+        return items
+
+    with ThreadPoolExecutor(10) as ex:
+        for items in ex.map(one, jobs):
+            out.extend(i for i in items if i["ts"] >= NOW - 48 * 3600)
+    return out
 
 
 def _label(src):
@@ -200,8 +267,16 @@ def main():
     first_run = not stories and not seen
 
     # 1. read every site at the same time
-    with ThreadPoolExecutor(8) as ex:
-        results = list(ex.map(read_source, sources))
+    with ThreadPoolExecutor(12) as ex:
+        results = list(ex.map(lambda x: read_page(x) if x.get("pages") else read_source(x), sources))
+    if state.get("last_search", 0) < NOW - 30 * 60:
+        try:
+            found = search_sweep(sources)
+            results.append(("Search sweep (money news, last 2 days)", found,
+                            {"ok": True, "items": len(found), "feed": "site searches", "error": None}))
+        except Exception as ex:
+            print("search sweep failed:", ex)
+        state["last_search"] = NOW
     status_sources = {}
     fresh = []
     for name, items, rep in results:
@@ -210,7 +285,7 @@ def main():
             if it["id"] in seen:
                 continue
             seen[it["id"]] = NOW
-            if it["ts"] < NOW - (6 if first_run else QUEUE_HOURS) * 3600:
+            if it["ts"] < NOW - QUEUE_HOURS * 3600:
                 continue
             fresh.append(it)
 
@@ -236,48 +311,65 @@ def main():
 
     # 3. write stories in English, newest and most-reported first, within this run's time
     # newest first; widely reported stories and money news (shares, gold, fuel, banking) get priority
-    queue.sort(key=lambda q: (q["ts"] > NOW - 3 * 3600, len(q.get("also", [])) > 0 or q.get("money", False), q["ts"]),
-               reverse=True)
+    # money news (shares, gold, fuel, banking) first, then stories reported by several sites, then newest
+    queue.sort(key=lambda q: (bool(q.get("money")), len(q.get("also", [])) > 0, q["ts"]), reverse=True)
     writer = ai.Writer(state.get("ai", {}))
+    writers = [writer] + [ai.Writer(writer.state, start=k) for k in (1, 2)]   # 3 writers in parallel
     done_ids = set()
     audit = state.get("audit", [])
     deadline = time.time() + RUN_SECONDS
-    i = 0
-    while i < len(queue) and time.time() < deadline and not writer.exhausted():
-        batch = queue[i:i + ai.BATCH]
-        i += len(batch)
-        for b in batch:
-            b["text"] = full_text(b)
-        try:
-            out = writer.write(batch)
-        except Exception:
-            traceback.print_exc()
-            break
-        for b in batch:
-            res = out.get(b["id"])
-            if res is None:
+    lock = threading.Lock()
+    batches = [queue[i:i + ai.BATCH] for i in range(0, len(queue), ai.BATCH)]
+    nxt = iter(batches)
+
+    def add(b, res):
+        if not res.get("nepal_related", True) or not res.get("body"):
+            return
+        hw = words(res["headline"])
+        twin = next((x for x in stories if abs(x["ts"] - b["ts"]) < 18 * 3600
+                     and similar(hw, words(x["headline"]), 0.45)), None)
+        if twin is not None:                       # same story already written from another site
+            if b["source"] != twin["source"] and b["source"] not in twin.setdefault("also", []):
+                twin["also"].append(b["source"])
+            return
+        if ai.is_english(b["text"]):
+            res["body"] = ai.english_body(b["text"]) or res["body"]
+        audit.append({"id": b["id"], "source": b["source"], "title": b["title"], "text": b["text"][:8000]})
+        stories.append({
+            "id": b["id"], "url": b["url"], "source": b["source"], "also": b.get("also", []),
+            "ts": b["ts"], "cat": res["category"] if res["category"] in CATEGORIES else "Society",
+            "headline": res["headline"], "points": res["points"], "summary": res["summary"],
+            "body": res["body"], "major": bool(res.get("major")), "orig_title": b["title"],
+            "by": res["_model"],
+        })
+
+    def work(w):
+        while time.time() < deadline and not w.exhausted():
+            with lock:
+                batch = next(nxt, None)
+            if batch is None:
+                return
+            for b in batch:
+                b["text"] = full_text(b)
+            try:
+                out = w.write(batch)
+            except Exception:
+                traceback.print_exc()
                 continue
-            done_ids.add(b["id"])
-            if not res.get("nepal_related", True) or not res.get("body"):
-                continue
-            # same story already written from another site (headlines in English compared)?
-            hw = words(res["headline"])
-            twin = next((x for x in stories if abs(x["ts"] - b["ts"]) < 18 * 3600
-                         and similar(hw, words(x["headline"]), 0.45)), None)
-            if twin is not None:
-                if b["source"] != twin["source"] and b["source"] not in twin.setdefault("also", []):
-                    twin["also"].append(b["source"])
-                continue
-            if ai.is_english(b["text"]):
-                res["body"] = ai.english_body(b["text"]) or res["body"]
-            audit.append({"id": b["id"], "source": b["source"], "title": b["title"], "text": b["text"][:8000]})
-            stories.append({
-                "id": b["id"], "url": b["url"], "source": b["source"], "also": b.get("also", []),
-                "ts": b["ts"], "cat": res["category"] if res["category"] in CATEGORIES else "Society",
-                "headline": res["headline"], "points": res["points"], "summary": res["summary"],
-                "body": res["body"], "major": bool(res.get("major")), "orig_title": b["title"],
-                "by": res["_model"],
-            })
+            with lock:
+                for b in batch:
+                    if b["id"] in out:
+                        done_ids.add(b["id"])
+                        add(b, out[b["id"]])
+
+    with ThreadPoolExecutor(3) as ex:
+        list(ex.map(work, writers))
+    for w in writers[1:]:                          # one combined report
+        for k in ("requests", "stories"):
+            writer.log[k] += w.log[k]
+        writer.log["rejected"] += w.log["rejected"]
+        writer.log["errors"] += w.log["errors"]
+        writer.rejects += w.rejects
     queue = [q for q in queue if q["id"] not in done_ids]
     for q in queue:              # keep the queue small: the article text is read again when needed
         if len(q["text"]) > 1500:
@@ -291,7 +383,7 @@ def main():
     major = [{"id": s["id"], "headline": s["headline"], "cat": s["cat"], "ts": s["ts"]}
              for s in stories if s.get("major") and s["ts"] >= NOW - 24 * 3600][:10]
     save("pulse", {"v": 1, "ts": NOW, "major": major, "count": len(stories)})
-    save("state", {"seen": seen, "queue": queue[:600], "ai": writer.state, "audit": audit[-60:],
+    save("state", {"seen": seen, "queue": queue[:900], "ai": writer.state, "last_search": state.get("last_search", 0), "audit": audit[-60:],
                    "rejects": (state.get("rejects", []) + writer.rejects)[-20:]})
 
     status = {

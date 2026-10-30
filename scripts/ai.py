@@ -165,7 +165,7 @@ def prompt(batch):
 
 
 class Writer:
-    def __init__(self, state):
+    def __init__(self, state, start=0):
         today = time.strftime("%Y-%m-%d", time.gmtime(time.time() - 8 * 3600))   # Google resets at Pacific midnight
         if state.get("day") != today:
             state = {"day": today, "used": {}, "blocked": {}, "models": state.get("models")}
@@ -180,7 +180,10 @@ class Writer:
             state["order_v"] = 2
             state["models"] = self.pick_gemini_models()
             state["models_checked"] = int(time.time())
-        self.chain = [("gemini", m) for m in state["models"]] + [("github", m) for m in GH_LIST]
+        g = state["models"]
+        k = start % max(1, min(3, len(g)))          # each parallel writer starts on a different model
+        g = g[k:k + 1] + g[:k] + g[k + 1:]
+        self.chain = [("gemini", m) for m in g] + [("github", m) for m in GH_LIST]
 
     # ---- which Gemini models this key can use (newest Flash first)
     def pick_gemini_models(self):
