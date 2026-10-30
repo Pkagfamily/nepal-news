@@ -251,6 +251,8 @@ def main():
             done_ids.add(b["id"])
             if not res.get("nepal_related", True) or not res.get("body"):
                 continue
+            if ai.is_english(b["text"]):
+                res["body"] = ai.english_body(b["text"]) or res["body"]
             audit.append({"id": b["id"], "source": b["source"], "title": b["title"], "text": b["text"][:8000]})
             stories.append({
                 "id": b["id"], "url": b["url"], "source": b["source"], "also": b.get("also", []),

@@ -115,6 +115,20 @@ def numbers(text, source=False):
     return found
 
 
+JUNK = re.compile(r"newsletter|sign up|subscribe|follow us|read more|also read|advertisement|©|all rights reserved", re.I)
+
+
+def is_english(text):
+    t = (text or "")[:2000]
+    return len(t) > 200 and sum(c.isascii() for c in t) > 0.9 * len(t)
+
+
+def english_body(text):
+    """The original English article as clean paragraphs."""
+    paras = [p.strip() for p in re.split(r"\n+", text or "") if p.strip()]
+    return [p for p in paras if len(p) > 40 and not JUNK.search(p)]
+
+
 def check(src, res):
     """Returns None if the English story is acceptable, otherwise the reason."""
     if not res.get("headline") or not isinstance(res.get("body"), list) or not res["body"]:
@@ -122,13 +136,15 @@ def check(src, res):
     if not res.get("nepal_related", True):
         return None
     body = "\n".join(res["body"])
+    if is_english(src["text"]):          # the original English article is used as the full story
+        body = src["text"]
     if len(src["text"]) >= 1500 and len(body) < 600:
         return "too short"
     if len(body) < 120:
         return "too short"
-    src_len = len(src["text"])
-    english = sum(c.isascii() for c in src["text"][:2000]) > 0.8 * min(2000, max(1, src_len))
-    if src_len > 600 and len(body) < (0.6 if english else 0.45) * src_len:
+    src_len = min(len(src["text"]), 12000)
+    need = 0.45 if src_len <= 6000 else 0.33      # very long pages often include unrelated extra text
+    if src_len > 600 and len(body) < need * src_len:
         return f"shortened ({len(body)} of {src_len} characters)"
     have = numbers(src["text"] + " " + src["title"], source=True)
     out = numbers(body + " " + res["headline"] + " " + res.get("summary", "") + " " + " ".join(res.get("points", [])))
