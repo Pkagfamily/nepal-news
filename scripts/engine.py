@@ -140,7 +140,7 @@ def read_source(src):
     for url in src["feeds"]:
         try:
             r = requests.get(url, headers={"User-Agent": UA, "Accept": "application/rss+xml,application/xml,*/*"},
-                             timeout=20)
+                             timeout=12)
             if r.status_code != 200:
                 report["error"] = f"{url}: HTTP {r.status_code}"
                 continue
@@ -216,24 +216,28 @@ SEARCH_WORDS = ["गाडी", "कार", "बाइक", "स्कुटर
                 "राष्ट्र बैंक", "ब्याजदर", "बैंक", "आईपीओ", "gold price", "NEPSE", "petrol", "Nepal Rastra Bank"]
 
 
-def search_sweep(sources):
+def search_sweep(sources, state, ok_sites):
     """Every 30 minutes: search each WordPress news site for money news of the last 2 days, so stories
     that already left a site's main feed are not missed."""
     out = []
-    bases = sorted({re.match(r"https?://[^/]+", f).group(0) for s in sources for f in s.get("feeds", [])
-                    if s.get("search")})
-    jobs = [(b, w) for b in bases for w in SEARCH_WORDS]
+    # only sites that answered this round; 8 search words per sweep, taking turns through the list
+    bases = sorted({re.match(r"https?://[^/]+", ok_sites[s["name"]]).group(0) for s in sources
+                    if s.get("search") and ok_sites.get(s["name"])})
+    k = state.get("sweep_at", 0) % len(SEARCH_WORDS)
+    words = (SEARCH_WORDS + SEARCH_WORDS)[k:k + 8]
+    state["sweep_at"] = k + 8
+    jobs = [(b, w) for b in bases for w in words]
 
     def one(job):
         base, word = job
-        name = next(s["name"] for s in sources if s.get("search") and any(f.startswith(base) for f in s["feeds"]))
+        name = next(n for n, f in ok_sites.items() if f and f.startswith(base))
         src = {"name": name, "feeds": [f"{base}/?s={requests.utils.quote(word)}&feed=rss2"], "section": None}
         _, items, _ = read_source(src)
         for it in items:
             it["money"] = True
         return items
 
-    with ThreadPoolExecutor(10) as ex:
+    with ThreadPoolExecutor(16) as ex:
         for items in ex.map(one, jobs):
             out.extend(i for i in items if i["ts"] >= NOW - 48 * 3600)
     return out
@@ -363,7 +367,8 @@ def main():
         results = list(ex.map(lambda x: read_page(x) if x.get("pages") else read_source(x), sources))
     if state.get("last_search", 0) < NOW - 30 * 60:
         try:
-            found = search_sweep(sources)
+            ok_sites = {n: r["feed"] for n, r in ((name, rep) for name, _, rep in results) if r["ok"]}
+            found = search_sweep(sources, state, ok_sites)
             results.append(("Search sweep (money news, last 2 days)", found,
                             {"ok": True, "items": len(found), "feed": "site searches", "error": None}))
         except Exception as ex:
@@ -498,7 +503,7 @@ def main():
     business = [{"id": s["id"], "headline": s["headline"], "cat": s["cat"], "ts": s["ts"]}
                 for s in stories if s.get("rule") and s.get("at", 0) >= NOW - 24 * 3600][:20]
     save("pulse", {"v": 1, "ts": NOW, "major": major, "business": business, "count": len(stories)})
-    save("state", {"seen": seen, "queue": queue[:900], "ai": writer.state, "last_search": state.get("last_search", 0), "cleanup_v1": True,
+    save("state", {"sweep_at": state.get("sweep_at", 0), "seen": seen, "queue": queue[:900], "ai": writer.state, "last_search": state.get("last_search", 0), "cleanup_v1": True,
                    "archived": state.get("archived", [])[-800:], "audit": audit[-60:],
                    "rejects": (state.get("rejects", []) + writer.rejects)[-20:]})
 
