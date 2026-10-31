@@ -47,11 +47,12 @@ UA = ("Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/128.0 Mobile Safari/537.36")
 MONEY_SITES = {"ShareSansar", "Mero Lagani", "Bizmandu", "Arthasarokar", "Aarthik News", "Clickmandu",
                "Karobar Daily", "Abhiyan Daily", "Arthik Abhiyan", "New Business Age", "Share Hub Nepal"}
-MONEY_WORDS = re.compile(r"सुन|चाँदी|चादी|पेट्रोल|डिजेल|ग्यास|इन्धन|आयल निगम|मट्टितेल|बैंक|ब्याज|कर्जा|नेप्से|शेयर|"
+MONEY_WORDS = re.compile(r"भन्सार|महसुल|भ्याट|मूल्य अभिवृद्धि कर|अन्तःशुल्क|आयकर|आयात|निर्यात|कपडा|"
+                         r"customs|duty|\bVAT\b|excise|import|export|textile|सुन|चाँदी|चादी|पेट्रोल|डिजेल|ग्यास|इन्धन|आयल निगम|मट्टितेल|बैंक|ब्याज|कर्जा|नेप्से|शेयर|"
                          r"आईपीओ|आइपीओ|लाभांश|बोनस|धितोपत्र|सेबोन|सहकारी|बीमा|विप्रेषण|मुद्रास्फीति|बजेट|"
                          r"gold|silver|petrol|diesel|\bLPG\b|fuel|\bNOC\b|bank|interest rate|loan|NEPSE|share|IPO|"
                          r"dividend|SEBON|cooperative|insurance|remittance|inflation|budget", re.I)
-CATEGORIES = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Banking & Finance", "Business", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
+CATEGORIES = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Tax & Customs", "Banking & Finance", "Business", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
 SKIP_TITLE = re.compile(r"राशिफल|horoscope|आजको राशि|भिडियो|video|फोटो फिचर|photo feature|"
                         r"तस्बिरहरू|in pictures|quiz|crossword|आजको मौसम", re.I)
 SKIP_TAGS = re.compile(r"^(विश्व|अन्तर्राष्ट्रिय|international|world|global|विदेश|horoscope|राशिफल|video|भिडियो)$", re.I)
@@ -208,7 +209,7 @@ def read_page(src):
     return _label(src), [], report
 
 
-SEARCH_WORDS = ["सुनको मूल्य", "चाँदी", "नेप्से", "शेयर बजार", "पेट्रोल", "डिजेल", "ग्यास", "आयल निगम",
+SEARCH_WORDS = ["भन्सार", "भन्सार महसुल", "भ्याट", "अन्तःशुल्क", "आयात", "कपडा", "customs duty", "सुनको मूल्य", "चाँदी", "नेप्से", "शेयर बजार", "पेट्रोल", "डिजेल", "ग्यास", "आयल निगम",
                 "राष्ट्र बैंक", "ब्याजदर", "बैंक", "आईपीओ", "gold price", "NEPSE", "petrol", "Nepal Rastra Bank"]
 
 
@@ -428,7 +429,8 @@ def main():
             "id": b["id"], "url": b["url"], "source": b["source"], "also": b.get("also", []),
             "ts": b["ts"], "cat": res["category"] if res["category"] in CATEGORIES else "Society",
             "headline": res["headline"], "points": res["points"], "summary": res["summary"],
-            "body": res["body"], "major": bool(res.get("major")), "orig_title": b["title"],
+            "body": res["body"], "major": bool(res.get("major")), "rule": bool(res.get("rule_change")),
+            "orig_title": b["title"],
             "by": res["_model"], "at": NOW,
         })
 
@@ -486,7 +488,9 @@ def main():
     archive_days(public, state)
     major = [{"id": s["id"], "headline": s["headline"], "cat": s["cat"], "ts": s["ts"]}
              for s in stories if s.get("major") and s["ts"] >= NOW - 24 * 3600][:10]
-    save("pulse", {"v": 1, "ts": NOW, "major": major, "count": len(stories)})
+    business = [{"id": s["id"], "headline": s["headline"], "cat": s["cat"], "ts": s["ts"]}
+                for s in stories if s.get("rule") and s.get("at", 0) >= NOW - 24 * 3600][:20]
+    save("pulse", {"v": 1, "ts": NOW, "major": major, "business": business, "count": len(stories)})
     save("state", {"seen": seen, "queue": queue[:900], "ai": writer.state, "last_search": state.get("last_search", 0), "cleanup_v1": True,
                    "archived": state.get("archived", [])[-800:], "audit": audit[-60:],
                    "rejects": (state.get("rejects", []) + writer.rejects)[-20:]})

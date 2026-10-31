@@ -17,7 +17,7 @@ BATCH = 2                      # stories per AI request (saves the daily request
 GEMINI = "https://generativelanguage.googleapis.com/v1beta"
 GH_MODELS = "https://models.github.ai/inference/chat/completions"
 GH_LIST = ["openai/gpt-4.1-mini", "openai/gpt-4o-mini"]
-CATS = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Banking & Finance", "Business", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
+CATS = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Tax & Customs", "Banking & Finance", "Business", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
 
 SYSTEM = """You are a senior editor at an English-language newspaper in Kathmandu.
 You receive news articles from Nepali news sites, usually written in Nepali.
@@ -46,6 +46,7 @@ Strict rules:
   "Share Market" = NEPSE, shares, IPOs, brokers, SEBON, mutual funds;
   "Gold & Silver" = gold/silver prices, FENEGOSIDA, bullion, jewellery trade;
   "Fuel & Oil" = petrol, diesel, LPG, kerosene, Nepal Oil Corporation, fuel prices and supply;
+  "Tax & Customs" = customs duty, tariffs, VAT, excise, income tax, import/export rules, quotas, customs valuation;
   "Banking & Finance" = banks, Nepal Rastra Bank, interest rates, loans, cooperatives, insurance;
   "Economy" = budget, inflation, trade deficit, remittance totals, GDP, revenue, foreign exchange;
   "Business" = companies, industry, markets and prices not covered above;
@@ -57,6 +58,10 @@ Strict rules:
 - "nepal_related": true only if the story is about Nepal, happens in Nepal, or directly involves Nepal or
   Nepalis (including the Nepal market, Nepali companies, Nepalis abroad). Foreign news with no Nepal link
   (e.g. a crypto exchange hack abroad, another country's elections) is false.
+- "rule_change": true ONLY if the story reports an actual new or changed rule, rate or price that affects
+  businesses or traders: customs duty, tariffs, VAT, excise, income tax, import/export rules or bans, quotas,
+  customs valuation, Nepal Rastra Bank directives, policy or interest rates, fuel price changes, and any rule
+  about textiles or garments. Plain market reports, opinions, speeches and proposals not yet decided are false.
 - "major": true ONLY for rare, nationally important breaking news that most people in Nepal would want
   to know immediately: a disaster or accident with several deaths, a new prime minister or government
   falling, a nationwide shutdown or curfew, a big earthquake. Routine arrests, statements, protests,
@@ -76,8 +81,9 @@ SCHEMA = {
             "summary": {"type": "STRING"},
             "body": {"type": "ARRAY", "items": {"type": "STRING"}},
             "major": {"type": "BOOLEAN"},
+            "rule_change": {"type": "BOOLEAN"},
         },
-        "required": ["id", "nepal_related", "category", "headline", "points", "summary", "body", "major"],
+        "required": ["id", "nepal_related", "category", "headline", "points", "summary", "body", "major", "rule_change"],
     }}},
     "required": ["stories"],
 }
