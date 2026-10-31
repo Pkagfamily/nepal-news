@@ -324,6 +324,122 @@
    "feeds": [
     "https://english.onlinekhabar.com/category/business/feed"
    ]
+  },
+  {
+   "name": "Onlinekhabar",
+   "section": "auto",
+   "feeds": [
+    "https://www.onlinekhabar.com/content/auto/feed",
+    "https://www.onlinekhabar.com/content/automobile/feed"
+   ]
+  },
+  {
+   "name": "Online Khabar English",
+   "section": "auto",
+   "feeds": [
+    "https://english.onlinekhabar.com/category/auto/feed",
+    "https://english.onlinekhabar.com/category/automobile/feed"
+   ]
+  },
+  {
+   "name": "Techpana",
+   "search": true,
+   "feeds": [
+    "https://www.techpana.com/feed",
+    "https://techpana.com/feed"
+   ]
+  },
+  {
+   "name": "Gadgetbyte Nepal",
+   "feeds": [
+    "https://www.gadgetbytenepal.com/feed",
+    "https://gadgetbytenepal.com/feed"
+   ]
+  },
+  {
+   "name": "Auto Life Nepal",
+   "feeds": [
+    "https://www.autolifenepal.com/feed",
+    "https://autolifenepal.com/feed"
+   ]
+  },
+  {
+   "name": "Nepal Drives",
+   "feeds": [
+    "https://nepaldrives.com/feed",
+    "https://www.nepaldrives.com/feed"
+   ]
+  },
+  {
+   "name": "Autonepal",
+   "feeds": [
+    "https://www.autonepal.com/feed",
+    "https://autonepal.com/feed"
+   ]
+  },
+  {
+   "name": "Ultimate Nepal",
+   "feeds": [
+    "https://www.ultimatenepal.com/feed"
+   ]
+  },
+  {
+   "name": "Tech Lekh",
+   "feeds": [
+    "https://techlekh.com/feed",
+    "https://www.techlekh.com/feed"
+   ]
+  },
+  {
+   "name": "Rushlane",
+   "scope": "world",
+   "feeds": [
+    "https://www.rushlane.com/feed"
+   ]
+  },
+  {
+   "name": "GaadiWaadi",
+   "scope": "world",
+   "feeds": [
+    "https://gaadiwaadi.com/feed",
+    "https://www.gaadiwaadi.com/feed"
+   ]
+  },
+  {
+   "name": "Autocar India",
+   "scope": "world",
+   "feeds": [
+    "https://www.autocarindia.com/rss/all",
+    "https://www.autocarindia.com/rss"
+   ]
+  },
+  {
+   "name": "MotorBeam",
+   "scope": "world",
+   "feeds": [
+    "https://www.motorbeam.com/feed/"
+   ]
+  },
+  {
+   "name": "Autopunditz",
+   "scope": "world",
+   "feeds": [
+    "https://www.autopunditz.com/feed"
+   ]
+  },
+  {
+   "name": "Carscoops",
+   "scope": "world",
+   "feeds": [
+    "https://www.carscoops.com/feed/"
+   ]
+  },
+  {
+   "name": "Electrek",
+   "scope": "world",
+   "feeds": [
+    "https://electrek.co/feed/"
+   ]
   }
  ]
 }

@@ -52,7 +52,7 @@ MONEY_WORDS = re.compile(r"भन्सार|महसुल|भ्याट|�
                          r"आईपीओ|आइपीओ|लाभांश|बोनस|धितोपत्र|सेबोन|सहकारी|बीमा|विप्रेषण|मुद्रास्फीति|बजेट|"
                          r"gold|silver|petrol|diesel|\bLPG\b|fuel|\bNOC\b|bank|interest rate|loan|NEPSE|share|IPO|"
                          r"dividend|SEBON|cooperative|insurance|remittance|inflation|budget", re.I)
-CATEGORIES = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Tax & Customs", "Banking & Finance", "Business", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
+CATEGORIES = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Tax & Customs", "Banking & Finance", "Business", "Automobile", "Auto · India & World", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
 SKIP_TITLE = re.compile(r"राशिफल|horoscope|आजको राशि|भिडियो|video|फोटो फिचर|photo feature|"
                         r"तस्बिरहरू|in pictures|quiz|crossword|आजको मौसम", re.I)
 SKIP_TAGS = re.compile(r"^(विश्व|अन्तर्राष्ट्रिय|international|world|global|विदेश|horoscope|राशिफल|video|भिडियो)$", re.I)
@@ -149,7 +149,7 @@ def read_source(src):
                 report["error"] = f"{url}: no stories in feed"
                 continue
             items = []
-            for e in f.entries[:40]:
+            for e in f.entries[:12 if src.get("scope") == "world" else 40]:
                 link = e.get("link") or ""
                 title = clean(e.get("title", ""))
                 if not link or not title or SKIP_TITLE.search(title):
@@ -168,7 +168,8 @@ def read_source(src):
                 items.append({"id": sid(link), "url": link, "title": title, "ts": ts,
                               "text": body, "source": src["name"],
                               "money": bool(src.get("section") == "business" or src["name"] in MONEY_SITES
-                                            or MONEY_WORDS.search(title))})
+                                            or MONEY_WORDS.search(title)),
+                              **({"scope": "world"} if src.get("scope") == "world" else {})})
             report.update(ok=True, items=len(items), feed=url, error=None)
             return _label(src), items, report
         except Exception as ex:
@@ -401,7 +402,8 @@ def main():
     # 3. write stories in English, newest and most-reported first, within this run's time
     # newest first; widely reported stories and money news (shares, gold, fuel, banking) get priority
     # money news (shares, gold, fuel, banking) first, then stories reported by several sites, then newest
-    queue.sort(key=lambda q: (bool(q.get("money")), len(q.get("also", [])) > 0, q["ts"]), reverse=True)
+    queue.sort(key=lambda q: (q.get("scope") != "world", bool(q.get("money")), len(q.get("also", [])) > 0, q["ts"]),
+               reverse=True)
     writer = ai.Writer(state.get("ai", {}))
     writers = [writer] + [ai.Writer(writer.state, start=k) for k in (1, 2)]   # 3 writers in parallel
     done_ids = set()
@@ -427,7 +429,8 @@ def main():
         audit.append({"id": b["id"], "source": b["source"], "title": b["title"], "text": b["text"][:8000]})
         stories.append({
             "id": b["id"], "url": b["url"], "source": b["source"], "also": b.get("also", []),
-            "ts": b["ts"], "cat": res["category"] if res["category"] in CATEGORIES else "Society",
+            "ts": b["ts"], "cat": "Auto · India & World" if b.get("scope") == "world" else
+                   (res["category"] if res["category"] in CATEGORIES else "Society"),
             "headline": res["headline"], "points": res["points"], "summary": res["summary"],
             "body": res["body"], "major": bool(res.get("major")), "rule": bool(res.get("rule_change")),
             "orig_title": b["title"],

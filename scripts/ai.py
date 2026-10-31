@@ -17,7 +17,7 @@ BATCH = 2                      # stories per AI request (saves the daily request
 GEMINI = "https://generativelanguage.googleapis.com/v1beta"
 GH_MODELS = "https://models.github.ai/inference/chat/completions"
 GH_LIST = ["openai/gpt-4.1-mini", "openai/gpt-4o-mini"]
-CATS = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Tax & Customs", "Banking & Finance", "Business", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
+CATS = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Tax & Customs", "Banking & Finance", "Business", "Automobile", "Auto · India & World", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
 
 SYSTEM = """You are a senior editor at an English-language newspaper in Kathmandu.
 You receive news articles from Nepali news sites, usually written in Nepali.
@@ -46,6 +46,8 @@ Strict rules:
   "Share Market" = NEPSE, shares, IPOs, brokers, SEBON, mutual funds;
   "Gold & Silver" = gold/silver prices, FENEGOSIDA, bullion, jewellery trade;
   "Fuel & Oil" = petrol, diesel, LPG, kerosene, Nepal Oil Corporation, fuel prices and supply;
+  "Automobile" = cars, bikes, scooters, EVs, trucks and buses in Nepal: launches, prices, dealers, imports, sales;
+  "Auto · India & World" = car/bike/EV launches and auto industry news from India or other countries;
   "Tax & Customs" = customs duty, tariffs, VAT, excise, income tax, import/export rules, quotas, customs valuation;
   "Banking & Finance" = banks, Nepal Rastra Bank, interest rates, loans, cooperatives, insurance;
   "Economy" = budget, inflation, trade deficit, remittance totals, GDP, revenue, foreign exchange;
@@ -55,6 +57,8 @@ Strict rules:
   "Weather & Disasters" = weather, floods, landslides, earthquakes, fires;
   "Energy" = electricity, hydropower, NEA; "Infrastructure" = roads, bridges, airports, big projects;
   "Diaspora" = Nepalis abroad; "World & Nepal" = foreign news that directly involves Nepal.
+- Articles marked scope="world" are automobile news from India or abroad: always set nepal_related true and
+  category "Auto · India & World".
 - "nepal_related": true only if the story is about Nepal, happens in Nepal, or directly involves Nepal or
   Nepalis (including the Nepal market, Nepali companies, Nepalis abroad). Foreign news with no Nepal link
   (e.g. a crypto exchange hack abroad, another country's elections) is false.
@@ -208,7 +212,8 @@ def check(src, res):
 def prompt(batch):
     parts = []
     for b in batch:
-        parts.append(f'<article id="{b["id"]}" source="{b["source"]}">\nTITLE: {b["title"]}\n\n{b["text"][:12000]}\n</article>')
+        scope = ' scope="world"' if b.get("scope") == "world" else ""
+        parts.append(f'<article id="{b["id"]}" source="{b["source"]}"{scope}>\nTITLE: {b["title"]}\n\n{b["text"][:12000]}\n</article>')
     return ("Rewrite each article below as instructed. Return {\"stories\": [...]} with one entry per article, "
             "using the same id.\n\n" + "\n\n".join(parts))
 
