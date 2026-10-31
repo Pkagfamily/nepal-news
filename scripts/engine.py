@@ -171,7 +171,7 @@ def read_source(src):
                                             or MONEY_WORDS.search(title)),
                               **({"scope": "world"} if src.get("scope") == "world" else {})})
             report.update(ok=True, items=len(items), feed=url, error=None,
-                          sample=[i["title"][:60] for i in items[:2]])
+                          sample=[f'{i["title"][:50]} ({(NOW - i["ts"]) / 3600:.0f}h old)' for i in items[:3]])
             return _label(src), items, report
         except Exception as ex:
             report["error"] = f"{url}: {type(ex).__name__}: {ex}"[:300]
