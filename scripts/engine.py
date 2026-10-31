@@ -170,7 +170,8 @@ def read_source(src):
                               "money": bool(src.get("section") == "business" or src["name"] in MONEY_SITES
                                             or MONEY_WORDS.search(title)),
                               **({"scope": "world"} if src.get("scope") == "world" else {})})
-            report.update(ok=True, items=len(items), feed=url, error=None)
+            report.update(ok=True, items=len(items), feed=url, error=None,
+                          sample=[i["title"][:60] for i in items[:2]])
             return _label(src), items, report
         except Exception as ex:
             report["error"] = f"{url}: {type(ex).__name__}: {ex}"[:300]
@@ -210,7 +211,8 @@ def read_page(src):
     return _label(src), [], report
 
 
-SEARCH_WORDS = ["भन्सार", "भन्सार महसुल", "भ्याट", "अन्तःशुल्क", "आयात", "कपडा", "customs duty", "सुनको मूल्य", "चाँदी", "नेप्से", "शेयर बजार", "पेट्रोल", "डिजेल", "ग्यास", "आयल निगम",
+SEARCH_WORDS = ["गाडी", "कार", "बाइक", "स्कुटर", "इभी", "विद्युतीय गाडी", "अटो", "electric vehicle", "car launch",
+                "भन्सार", "भन्सार महसुल", "भ्याट", "अन्तःशुल्क", "आयात", "कपडा", "customs duty", "सुनको मूल्य", "चाँदी", "नेप्से", "शेयर बजार", "पेट्रोल", "डिजेल", "ग्यास", "आयल निगम",
                 "राष्ट्र बैंक", "ब्याजदर", "बैंक", "आईपीओ", "gold price", "NEPSE", "petrol", "Nepal Rastra Bank"]
 
 
@@ -380,7 +382,8 @@ def main():
             fresh.append(it)
 
     for name, rep in status_sources.items():
-        print(f"{'OK ' if rep['ok'] else 'NO '} {name:22} {rep['items']:3} stories  {rep['error'] or rep['feed']}")
+        print(f"{'OK ' if rep['ok'] else 'NO '} {name:22} {rep['items']:3} stories  {rep['error'] or rep['feed']}"
+              f"  {' / '.join(rep.get('sample', []))}")
     print(f"new stories found: {len(fresh)}")
 
     # 2. the same story from several sites is written once; the others are listed as "also in"
