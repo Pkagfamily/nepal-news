@@ -13,7 +13,7 @@ import time
 
 import requests
 
-BATCH = 2                      # stories per AI request (saves the daily request allowance)
+BATCH = 4                      # stories per AI request (saves the daily request allowance)
 GEMINI = "https://generativelanguage.googleapis.com/v1beta"
 GH_MODELS = "https://models.github.ai/inference/chat/completions"
 GH_LIST = ["openai/gpt-4.1-mini", "openai/gpt-4o-mini"]
@@ -209,11 +209,11 @@ def check(src, res):
     return None
 
 
-def prompt(batch):
+def prompt(batch, limit=12000):
     parts = []
     for b in batch:
         scope = ' scope="world"' if b.get("scope") == "world" else ""
-        parts.append(f'<article id="{b["id"]}" source="{b["source"]}"{scope}>\nTITLE: {b["title"]}\n\n{b["text"][:12000]}\n</article>')
+        parts.append(f'<article id="{b["id"]}" source="{b["source"]}"{scope}>\nTITLE: {b["title"]}\n\n{b["text"][:limit]}\n</article>')
     return ("Rewrite each article below as instructed. Return {\"stories\": [...]} with one entry per article, "
             "using the same id.\n\n" + "\n\n".join(parts))
 
@@ -302,7 +302,7 @@ class Writer:
                 self.state["think"][model] = {"level": "budget", "budget": "none"}[think]
                 return self._call(kind, model, text)
             if r.status_code != 200:
-                return r.status_code, r.text[:400], None
+                return r.status_code, r.text[:3000], None
             try:
                 j = r.json()
             except Exception:
@@ -346,13 +346,35 @@ class Writer:
                 continue
             if kind == "gemini" and not self.key or kind == "github" and not self.gh:
                 continue
-            code, info, out = self._call(kind, model, text)
-            self.log["requests"] += 1
-            if code == 429:
-                daily = re.search(r"PerDay|per day|daily|RESOURCE_EXHAUSTED.*day|UserByModelByDay", info, re.I)
-                if daily:
-                    self._block(model, 3 * 3600, "daily allowance used up")
+            if kind == "github":                       # free tier: about 8,000 words of input per request
+                out_all, code = {}, 200
+                for b in batch:
+                    c, info, o = self._call(kind, model, prompt([b], limit=4500))
+                    self.log["requests"] += 1
+                    if c != 200:
+                        code = c
+                        break
+                    try:
+                        out_all.update({s.get("id"): s for s in json.loads(o).get("stories", []) if isinstance(s, dict)})
+                    except Exception:
+                        pass
+                if code != 200 and not out_all:
+                    self._block(model, 600 if code != 429 else 1800, f"HTTP {code} {str(info)[:150]}")
                     continue
+                out = json.dumps({"stories": list(out_all.values())})
+                code = 200
+            else:
+                code, info, out = self._call(kind, model, text)
+                self.log["requests"] += 1
+            if code == 429:
+                daily = re.search(r"PerDay|per day|daily|UserByModelByDay|quota exceeded for metric.*day", info, re.I)
+                if daily:
+                    # Google's free allowance resets at midnight Pacific time (13:45 in Nepal)
+                    reset = (int(time.time() - 7 * 3600) // 86400 + 1) * 86400 + 7 * 3600
+                    self._block(model, max(600, reset - time.time()), "daily allowance used up")
+                    continue
+                q = re.search(r'"quotaId":\s*"([^"]+)"', info)
+                self.log["errors"].append(f"{model}: 429 {q.group(1) if q else info[:160]}")
                 self._block(model, 90, "busy (per-minute limit)")   # free again within a minute or two
                 continue
             if code in (400, 403, 404):
