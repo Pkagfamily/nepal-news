@@ -39,8 +39,8 @@ import ai  # noqa: E402  (reads GEMINI_KEY when used)
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.environ.get("OUT_DIR", "out")            # the published branch is checked out here
 NOW = int(time.time())
-KEEP_HOURS = 48                                   # stories older than this leave the app
-MAX_STORIES = 1200                                 # 2 full days of news from all sites
+KEEP_HOURS = 72                                   # the app's main list: 3 days (older days: archive)
+MAX_STORIES = 2400                                 # 3 full days of news from all sites
 QUEUE_HOURS = 40                                  # every story found in the last ~2 days gets written
 RUN_SECONDS = int(os.environ.get("RUN_SECONDS", "400"))
 UA = ("Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -235,6 +235,46 @@ def search_sweep(sources):
     return out
 
 
+def nepal_day(ts):
+    return time.strftime("%Y-%m-%d", time.gmtime(ts + 20700))      # Nepal time is UTC+5:45
+
+
+def archive_days(public, state):
+    """Each finished day (2 days after it ends, so late stories are in) is saved once, permanently, as a
+    locked file in the project's Releases (one release per month). Releases do not count towards the
+    project's size limit, so years of news fit."""
+    today = nepal_day(NOW)
+    done = set(state.setdefault("archived", []))
+    days = sorted({nepal_day(x["ts"]) for x in public})
+    for day in days:
+        age = (time.mktime(time.strptime(today, "%Y-%m-%d")) - time.mktime(time.strptime(day, "%Y-%m-%d"))) / 86400
+        if day in done or age < 2:
+            continue
+        items = [x for x in public if nepal_day(x["ts"]) == day]
+        path = os.path.join(OUT, f"{day}.bin")
+        open(path, "w").write(seal("day", {"v": 1, "day": day, "stories": items}))
+        tag = "archive-" + day[:7]
+        env = dict(os.environ, GH_TOKEN=os.environ.get("GITHUB_TOKEN", ""))
+        repo = os.environ.get("REPO", "Pkagfamily/nepal-news")
+        import subprocess
+        try:
+            subprocess.run(["gh", "release", "create", tag, "-R", repo, "--title", f"News archive {day[:7]}",
+                            "--notes", "Locked daily news files used by the app's date view."],
+                           env=env, capture_output=True, timeout=60)
+            r = subprocess.run(["gh", "release", "upload", tag, path, "--clobber", "-R", repo],
+                               env=env, capture_output=True, text=True, timeout=120)
+        except Exception as ex:
+            print(f"archive {day} failed: {ex}")
+            continue
+        finally:
+            os.remove(path)
+        if r.returncode == 0:
+            state["archived"].append(day)
+            print(f"archived {day}: {len(items)} stories")
+        else:
+            print(f"archive {day} failed: {r.stderr[:200]}")
+
+
 def _label(src):
     return src["name"] + (f" ({src['section']})" if src.get("section") else "")
 
@@ -389,7 +429,7 @@ def main():
             "ts": b["ts"], "cat": res["category"] if res["category"] in CATEGORIES else "Society",
             "headline": res["headline"], "points": res["points"], "summary": res["summary"],
             "body": res["body"], "major": bool(res.get("major")), "orig_title": b["title"],
-            "by": res["_model"],
+            "by": res["_model"], "at": NOW,
         })
 
     def work(w):
@@ -438,10 +478,17 @@ def main():
     stories = stories[:MAX_STORIES]
     public = [{k: v for k, v in s.items() if k not in ("orig_title",)} for s in stories]
     save("feed", {"v": 1, "ts": NOW, "stories": public})
+    # small file with only what changed in the last 6 hours + the list of current stories, so the app
+    # does not download all 3 days every time
+    save("latest", {"v": 1, "ts": NOW, "since": NOW - 6 * 3600,
+                    "stories": [x for x in public if x.get("at", 0) >= NOW - 6 * 3600],
+                    "ids": [x["id"] for x in public]})
+    archive_days(public, state)
     major = [{"id": s["id"], "headline": s["headline"], "cat": s["cat"], "ts": s["ts"]}
              for s in stories if s.get("major") and s["ts"] >= NOW - 24 * 3600][:10]
     save("pulse", {"v": 1, "ts": NOW, "major": major, "count": len(stories)})
-    save("state", {"seen": seen, "queue": queue[:900], "ai": writer.state, "last_search": state.get("last_search", 0), "cleanup_v1": True, "audit": audit[-60:],
+    save("state", {"seen": seen, "queue": queue[:900], "ai": writer.state, "last_search": state.get("last_search", 0), "cleanup_v1": True,
+                   "archived": state.get("archived", [])[-800:], "audit": audit[-60:],
                    "rejects": (state.get("rejects", []) + writer.rejects)[-20:]})
 
     status = {

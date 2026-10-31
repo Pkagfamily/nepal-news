@@ -16,7 +16,7 @@ while :; do
   cp /tmp/logs/round.txt /tmp/logs/last_round.txt
   if [ $CODE -eq 0 ] && [ -f out/feed.bin ]; then
     T=$(mktemp -d)
-    cp out/feed.bin out/pulse.bin out/state.bin out/status.json "$T"/
+    cp out/feed.bin out/latest.bin out/pulse.bin out/state.bin out/status.json "$T"/
     (cd "$T" && git init -q -b feed && git add -A &&
       git -c user.name=news-robot -c user.email=robot@local commit -qm "news $(date -u +%H:%M)" &&
       git push -qf "https://x-access-token:${GH_PUSH}@github.com/${REPO}" feed) || echo "publish failed"
