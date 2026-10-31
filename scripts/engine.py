@@ -405,8 +405,9 @@ def main():
     # 3. write stories in English, newest and most-reported first, within this run's time
     # newest first; widely reported stories and money news (shares, gold, fuel, banking) get priority
     # money news (shares, gold, fuel, banking) first, then stories reported by several sites, then newest
-    queue.sort(key=lambda q: (q.get("scope") != "world", bool(q.get("money")), len(q.get("also", [])) > 0, q["ts"]),
-               reverse=True)
+    # brand-new news first (last 90 minutes), then money news, then widely reported, then newest; world auto last
+    queue.sort(key=lambda q: (q.get("scope") != "world", q["ts"] >= NOW - 90 * 60, bool(q.get("money")),
+                              len(q.get("also", [])) > 0, q["ts"]), reverse=True)
     writer = ai.Writer(state.get("ai", {}))
     writers = [writer] + [ai.Writer(writer.state, start=k) for k in (1, 2)]   # 3 writers in parallel
     done_ids = set()

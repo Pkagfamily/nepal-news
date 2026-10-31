@@ -440,6 +440,150 @@
    "feeds": [
     "https://electrek.co/feed/"
    ]
+  },
+  {
+   "name": "Naya Patrika",
+   "search": true,
+   "feeds": [
+    "https://nayapatrikadaily.com/feed",
+    "https://www.nayapatrikadaily.com/feed"
+   ]
+  },
+  {
+   "name": "Ekagaj",
+   "search": true,
+   "feeds": [
+    "https://ekagaj.com/feed",
+    "https://www.ekagaj.com/feed"
+   ]
+  },
+  {
+   "name": "Thaha Khabar",
+   "search": true,
+   "feeds": [
+    "https://thahakhabar.com/feed",
+    "https://www.thahakhabar.com/feed"
+   ]
+  },
+  {
+   "name": "Pahilo Post",
+   "search": true,
+   "feeds": [
+    "https://pahilopost.com/feed",
+    "https://www.pahilopost.com/feed"
+   ]
+  },
+  {
+   "name": "DC Nepal",
+   "search": true,
+   "feeds": [
+    "https://dcnepal.com/feed",
+    "https://www.dcnepal.com/feed"
+   ]
+  },
+  {
+   "name": "Kathmandu Press",
+   "search": true,
+   "feeds": [
+    "https://kathmandupress.com/feed",
+    "https://www.kathmandupress.com/feed"
+   ]
+  },
+  {
+   "name": "Nepal Samaya",
+   "search": true,
+   "feeds": [
+    "https://nepalsamaya.com/feed",
+    "https://www.nepalsamaya.com/feed"
+   ]
+  },
+  {
+   "name": "News of Nepal",
+   "search": true,
+   "feeds": [
+    "https://newsofnepal.com/feed",
+    "https://www.newsofnepal.com/feed"
+   ]
+  },
+  {
+   "name": "Rajdhani Daily",
+   "search": true,
+   "feeds": [
+    "https://rajdhanidaily.com/feed",
+    "https://www.rajdhanidaily.com/feed"
+   ]
+  },
+  {
+   "name": "Ukaalo",
+   "search": true,
+   "feeds": [
+    "https://ukaalo.com/feed",
+    "https://www.ukaalo.com/feed"
+   ]
+  },
+  {
+   "name": "Image Khabar",
+   "search": true,
+   "feeds": [
+    "https://imagekhabar.com/feed",
+    "https://www.imagekhabar.com/feed"
+   ]
+  },
+  {
+   "name": "Hamra Kura",
+   "search": true,
+   "feeds": [
+    "https://hamrakura.com/feed",
+    "https://www.hamrakura.com/feed"
+   ]
+  },
+  {
+   "name": "Shilapatra",
+   "search": true,
+   "feeds": [
+    "https://shilapatra.com/feed",
+    "https://www.shilapatra.com/feed"
+   ]
+  },
+  {
+   "name": "Nepal Khabar",
+   "search": true,
+   "feeds": [
+    "https://nepalkhabar.com/feed",
+    "https://www.nepalkhabar.com/feed"
+   ]
+  },
+  {
+   "name": "Nepali Times",
+   "search": true,
+   "feeds": [
+    "https://nepalitimes.com/feed",
+    "https://www.nepalitimes.com/feed"
+   ]
+  },
+  {
+   "name": "Kathmandu Tribune",
+   "search": true,
+   "feeds": [
+    "https://kathmandutribune.com/feed",
+    "https://www.kathmandutribune.com/feed"
+   ]
+  },
+  {
+   "name": "Nepal Monitor",
+   "search": true,
+   "feeds": [
+    "https://nepalmonitor.com/feed",
+    "https://www.nepalmonitor.com/feed"
+   ]
+  },
+  {
+   "name": "Hamro Kalam",
+   "search": true,
+   "feeds": [
+    "https://hamrokalam.com/feed",
+    "https://www.hamrokalam.com/feed"
+   ]
   }
  ]
 }

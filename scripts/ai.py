@@ -313,11 +313,20 @@ class Writer:
         body = {"model": model, "temperature": 0.3, "response_format": {"type": "json_object"},
                 "messages": [{"role": "system", "content": SYSTEM + "\nJSON shape: " + json.dumps(SCHEMA)},
                              {"role": "user", "content": text}]}
-        try:
-            r = requests.post(GH_MODELS, json=body, timeout=150,
-                              headers={"Authorization": f"Bearer {self.gh}", "Accept": "application/json"})
-        except requests.RequestException as ex:
-            return 599, f"no answer in time ({type(ex).__name__})", None
+        r = None
+        for url in (GH_MODELS, "https://models.inference.ai.azure.com/chat/completions"):
+            try:
+                r = requests.post(url, json=body if "github.ai" in url else {**body, "model": model.split("/")[-1]},
+                                  timeout=150,
+                                  headers={"Authorization": f"Bearer {self.gh}", "Accept": "application/vnd.github+json",
+                                           "X-GitHub-Api-Version": "2022-11-28", "Content-Type": "application/json"})
+            except requests.RequestException as ex:
+                r = None
+                continue
+            if r.status_code == 200 and "json" in r.headers.get("content-type", ""):
+                break
+        if r is None:
+            return 599, "no answer in time", None
         if r.status_code != 200:
             return r.status_code, r.text[:400], None
         try:
@@ -344,12 +353,8 @@ class Writer:
                 if daily:
                     self._block(model, 3 * 3600, "daily allowance used up")
                     continue
-                time.sleep(35)                          # per-minute limit: wait and try this model once more
-                code, info, out = self._call(kind, model, text)
-                self.log["requests"] += 1
-                if code == 429:
-                    self._block(model, 15 * 60, "busy (per-minute limit)")
-                    continue
+                self._block(model, 90, "busy (per-minute limit)")   # free again within a minute or two
+                continue
             if code in (400, 403, 404):
                 self._block(model, 24 * 3600, f"not usable: HTTP {code} {info[:150]}")
                 continue
@@ -360,7 +365,7 @@ class Writer:
                     self._block(model, 30 * 60, "too slow right now")
                 continue
             if code != 200:
-                self._block(model, 10 * 60, f"HTTP {code} {info[:150]}")
+                self._block(model, 120 if code in (500, 502, 503, 504) else 10 * 60, f"HTTP {code} {info[:150]}")
                 continue
             try:
                 data = json.loads(out)

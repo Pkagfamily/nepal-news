@@ -8,6 +8,7 @@ on:
     paths: ["scripts/**", ".github/workflows/update.yml"]
 permissions:
   contents: write
+  actions: write        # lets each run start the next one (GitHub's timer alone skips runs)
   models: read          # GitHub's AI models (backup writer)
 concurrency:
   group: news
@@ -37,8 +38,13 @@ jobs:
           GH_PUSH: ${{ github.token }}
           REPO: ${{ github.repository }}
           OUT_DIR: out
-          RUN_SECONDS: "210"
+          RUN_SECONDS: "130"
         run: scripts/cycle.sh
+      - name: Start the next run straight away (keeps the news flowing without gaps)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update.yml -R ${{ github.repository }} --ref main || true
       - name: Weekly heartbeat (keeps GitHub's schedule switched on)
         run: |
           W=$(date -u +%G-W%V)

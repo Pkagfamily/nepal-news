@@ -1,7 +1,7 @@
 #!/bin/bash
 # Runs the engine again and again for up to ~50 minutes, publishing after every round.
 # GitHub starts scheduled jobs late, so one long job (and the next one queued behind it)
-# keeps the news fresh: a new round starts about every 5 minutes.
+# keeps the news fresh: a new round starts about every 3 minutes.
 set -u
 END=$(( $(date +%s) + ${LOOP_MINUTES:-50} * 60 ))
 ROUND=0
@@ -27,7 +27,7 @@ while :; do
     git -c user.name=news-robot -c user.email=robot@local commit -qm "round $ROUND" &&
     git push -qf "https://x-access-token:${GH_PUSH}@github.com/${REPO}" logs) >/dev/null 2>&1 || true
   NOW=$(date +%s)
-  [ $(( NOW + 300 )) -gt $END ] && break
-  WAIT=$(( 300 - (NOW - START) ))
+  [ $(( NOW + 180 )) -gt $END ] && break
+  WAIT=$(( 180 - (NOW - START) ))
   [ $WAIT -gt 0 ] && sleep $WAIT
 done
