@@ -16,7 +16,7 @@ import requests
 BATCH = 5                      # stories per AI request (saves the daily request allowance)
 GEMINI = "https://generativelanguage.googleapis.com/v1beta"
 GH_MODELS = "https://models.github.ai/inference/chat/completions"
-GH_LIST = ["openai/gpt-4.1-mini", "openai/gpt-4o-mini"]
+GH_LIST = []                   # GitHub Models was shut down on 30 July 2026 – no free backup left
 CATS = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Tax & Customs", "Banking & Finance", "Business", "Automobile", "Auto · India & World", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
 
 SYSTEM = """You are a senior editor at an English-language newspaper in Kathmandu.

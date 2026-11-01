@@ -417,7 +417,7 @@ def main():
     writer = ai.Writer(state.get("ai", {}))
     writers = [writer] + [ai.Writer(writer.state, start=k) for k in (1, 2)]   # up to 3 writers in parallel
     probe = state.get("gh_probe") or {}
-    if probe.get("at", 0) < NOW - (3600 if probe.get("code") == 200 else 120) and os.environ.get("GITHUB_TOKEN"):
+    if False:                                  # GitHub Models (the old backup) was shut down on 30 July 2026
         try:                                   # hourly check that GitHub's free AI (the backup) answers
             code, info, out = writer._call("github", "openai/gpt-4o-mini",
                                            ai.prompt([{"id": "t1", "source": "test", "title": "परीक्षण",
@@ -538,7 +538,6 @@ def main():
         "run": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime(NOW)),
         "stories_in_app": len(stories), "new_found": added, "written_now": len(done_ids),
         "today": state.get("daily", {}).get(time.strftime("%Y-%m-%d", time.gmtime(NOW - 8 * 3600))),
-        "backup_ai_test": state.get("gh_probe"),
         "waiting": len(queue), "left_out_old_or_undated": skipped[-20:], "ai": writer.report(), "sources": status_sources,
         "newest_story_minutes_old": round((NOW - stories[0]["ts"]) / 60) if stories else None,
     }
