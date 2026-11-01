@@ -314,7 +314,7 @@ class Writer:
                 "messages": [{"role": "system", "content": SYSTEM + "\nJSON shape: " + json.dumps(SCHEMA)},
                              {"role": "user", "content": text}]}
         r, last = None, ""
-        for url in (GH_MODELS, "https://models.inference.ai.azure.com/chat/completions"):
+        for url in (GH_MODELS,):
             try:
                 r = requests.post(url, json=body if "github.ai" in url else {**body, "model": model.split("/")[-1]},
                                   timeout=150,
