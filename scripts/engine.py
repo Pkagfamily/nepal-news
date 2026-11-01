@@ -403,6 +403,7 @@ def main():
             if it["source"] not in also and it["source"] != twin["source"]:
                 also.append(it["source"])
             continue
+        it["found"] = NOW
         queue.append(it)
         known.append((w, it))
         added += 1
@@ -414,13 +415,29 @@ def main():
     queue.sort(key=lambda q: (q.get("scope") != "world", q["ts"] >= NOW - 90 * 60, bool(q.get("money")),
                               len(q.get("also", [])) > 0, q["ts"]), reverse=True)
     writer = ai.Writer(state.get("ai", {}))
-    writers = [writer] + [ai.Writer(writer.state, start=k) for k in (1, 2)]   # 3 writers in parallel
+    writers = [writer] + [ai.Writer(writer.state, start=k) for k in (1, 2)]   # up to 3 writers in parallel
+    if (state.get("gh_probe") or {}).get("at", 0) < NOW - 3600 and os.environ.get("GITHUB_TOKEN"):
+        try:                                   # hourly check that GitHub's free AI (the backup) answers
+            code, info, out = writer._call("github", "openai/gpt-4o-mini",
+                                           ai.prompt([{"id": "t1", "source": "test", "title": "परीक्षण",
+                                                       "text": "काठमाडौं । आज मौसम सफा छ।"}]))
+            state["gh_probe"] = {"at": NOW, "code": code, "info": str(info)[:300], "reply": str(out)[:120]}
+        except Exception as ex:
+            state["gh_probe"] = {"at": NOW, "code": -1, "info": f"{type(ex).__name__}: {ex}"[:300]}
     done_ids = set()
     audit = state.get("audit", [])
     deadline = time.time() + RUN_SECONDS
     lock = threading.Lock()
     skipped = []
     batches = [queue[i:i + ai.BATCH] for i in range(0, len(queue), ai.BATCH)]
+    if batches and len(batches[-1]) < ai.BATCH and min(q.get("found", 0) for q in batches[-1]) > NOW - 6 * 60:
+        batches = batches[:-1]               # not full yet and still fresh: wait for more (saves the allowance)
+    # world auto news: at most 25 a day, so Nepal news always has the allowance
+    day = time.strftime("%Y-%m-%d", time.gmtime(NOW - 8 * 3600))
+    stats = state.setdefault("daily", {}).setdefault(day, {"requests": 0, "stories": 0, "world": 0, "exhausted": {}})
+    if stats["world"] >= 25:
+        batches = [[q for q in b if q.get("scope") != "world"] for b in batches]
+        batches = [b for b in batches if b]
     nxt = iter(batches)
 
     def add(b, res):
@@ -474,8 +491,17 @@ def main():
                         done_ids.add(b["id"])
                         add(b, out[b["id"]])
 
-    with ThreadPoolExecutor(3) as ex:
-        list(ex.map(work, writers))
+    need = 1 if len(batches) <= 3 else 2 if len(batches) <= 8 else 3
+    with ThreadPoolExecutor(need) as ex:
+        list(ex.map(work, writers[:need]))
+    for w in writers:                              # daily usage record (kept 7 days, for checking)
+        stats["requests"] += w.log["requests"]
+        stats["stories"] += w.log["stories"]
+        for m, t in w.state.get("blocked", {}).items():
+            if t > NOW + 3600 and m not in stats["exhausted"]:
+                stats["exhausted"][m] = time.strftime("%H:%M NPT", time.gmtime(NOW + 20700))
+    stats["world"] += sum(1 for s in stories if s.get("at") == NOW and s.get("cat") == "Auto · India & World")
+    state["daily"] = dict(sorted(state["daily"].items())[-7:])
     for w in writers[1:]:                          # one combined report
         for k in ("requests", "stories"):
             writer.log[k] += w.log[k]
@@ -503,13 +529,15 @@ def main():
     business = [{"id": s["id"], "headline": s["headline"], "cat": s["cat"], "ts": s["ts"]}
                 for s in stories if s.get("rule") and s.get("at", 0) >= NOW - 24 * 3600][:20]
     save("pulse", {"v": 1, "ts": NOW, "major": major, "business": business, "count": len(stories)})
-    save("state", {"sweep_at": state.get("sweep_at", 0), "seen": seen, "queue": queue[:900], "ai": writer.state, "last_search": state.get("last_search", 0), "cleanup_v1": True,
+    save("state", {"daily": state.get("daily", {}), "gh_probe": state.get("gh_probe"), "sweep_at": state.get("sweep_at", 0), "seen": seen, "queue": queue[:900], "ai": writer.state, "last_search": state.get("last_search", 0), "cleanup_v1": True,
                    "archived": state.get("archived", [])[-800:], "audit": audit[-60:],
                    "rejects": (state.get("rejects", []) + writer.rejects)[-20:]})
 
     status = {
         "run": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime(NOW)),
         "stories_in_app": len(stories), "new_found": added, "written_now": len(done_ids),
+        "today": state.get("daily", {}).get(time.strftime("%Y-%m-%d", time.gmtime(NOW - 8 * 3600))),
+        "backup_ai_test": state.get("gh_probe"),
         "waiting": len(queue), "left_out_old_or_undated": skipped[-20:], "ai": writer.report(), "sources": status_sources,
         "newest_story_minutes_old": round((NOW - stories[0]["ts"]) / 60) if stories else None,
     }

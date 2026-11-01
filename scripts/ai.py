@@ -13,7 +13,7 @@ import time
 
 import requests
 
-BATCH = 4                      # stories per AI request (saves the daily request allowance)
+BATCH = 5                      # stories per AI request (saves the daily request allowance)
 GEMINI = "https://generativelanguage.googleapis.com/v1beta"
 GH_MODELS = "https://models.github.ai/inference/chat/completions"
 GH_LIST = ["openai/gpt-4.1-mini", "openai/gpt-4o-mini"]
