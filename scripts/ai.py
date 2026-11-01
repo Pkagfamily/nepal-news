@@ -313,7 +313,7 @@ class Writer:
         body = {"model": model, "temperature": 0.3, "response_format": {"type": "json_object"},
                 "messages": [{"role": "system", "content": SYSTEM + "\nJSON shape: " + json.dumps(SCHEMA)},
                              {"role": "user", "content": text}]}
-        r = None
+        r, last = None, ""
         for url in (GH_MODELS, "https://models.inference.ai.azure.com/chat/completions"):
             try:
                 r = requests.post(url, json=body if "github.ai" in url else {**body, "model": model.split("/")[-1]},
@@ -321,12 +321,13 @@ class Writer:
                                   headers={"Authorization": f"Bearer {self.gh}", "Accept": "application/vnd.github+json",
                                            "X-GitHub-Api-Version": "2022-11-28", "Content-Type": "application/json"})
             except requests.RequestException as ex:
-                r = None
+                r, last = None, f"{url.split('/')[2]}: {type(ex).__name__}: {str(ex)[:160]}"
                 continue
             if r.status_code == 200 and "json" in r.headers.get("content-type", ""):
                 break
-        if r is None:
-            return 599, "no answer in time", None
+            last = f"{url.split('/')[2]}: HTTP {r.status_code} {r.headers.get('content-type')} {r.text[:120]}"
+        if r is None or not (r.status_code == 200 and "json" in r.headers.get("content-type", "")):
+            return 599 if r is None else (r.status_code if r.status_code != 200 else 502), last, None
         if r.status_code != 200:
             return r.status_code, r.text[:400], None
         try:

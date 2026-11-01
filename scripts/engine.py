@@ -416,7 +416,8 @@ def main():
                               len(q.get("also", [])) > 0, q["ts"]), reverse=True)
     writer = ai.Writer(state.get("ai", {}))
     writers = [writer] + [ai.Writer(writer.state, start=k) for k in (1, 2)]   # up to 3 writers in parallel
-    if (state.get("gh_probe") or {}).get("at", 0) < NOW - 3600 and os.environ.get("GITHUB_TOKEN"):
+    probe = state.get("gh_probe") or {}
+    if probe.get("at", 0) < NOW - (3600 if probe.get("code") == 200 else 900) and os.environ.get("GITHUB_TOKEN"):
         try:                                   # hourly check that GitHub's free AI (the backup) answers
             code, info, out = writer._call("github", "openai/gpt-4o-mini",
                                            ai.prompt([{"id": "t1", "source": "test", "title": "परीक्षण",
