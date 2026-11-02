@@ -449,6 +449,10 @@ def main():
     if stats["world"] >= 25:
         batches = [[q for q in b if q.get("scope") != "world"] for b in batches]
         batches = [b for b in batches if b]
+    # Night hold: no AI writing from midnight to 6 AM Nepal time (saves the free allowance for the day).
+    # Sites are still read, so overnight stories wait in the queue and are written after 6 AM.
+    if time.gmtime(NOW + 20700).tm_hour < 6:
+        batches = []
     nxt = iter(batches)
 
     def add(b, res):
