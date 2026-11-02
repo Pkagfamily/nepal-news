@@ -183,7 +183,7 @@ def read_page(src):
     report = {"ok": False, "items": 0, "feed": None, "error": None}
     for pg in src["pages"]:
         try:
-            r = requests.get(pg["url"], headers={"User-Agent": UA}, timeout=20)
+            r = get_html(pg["url"])
             if r.status_code != 200:
                 report["error"] = f"{pg['url']}: HTTP {r.status_code}"
                 continue
@@ -287,6 +287,16 @@ def _label(src):
     return src["name"] + (f" ({src['section']})" if src.get("section") else "")
 
 
+def get_html(url):
+    r = requests.get(url, headers={"User-Agent": UA}, timeout=20)
+    if "charset" not in r.headers.get("content-type", "").lower():
+        r.encoding = "utf-8"
+    return r
+
+
+GARBLED = re.compile(r"à¤|à¥|Ã.|â€")
+
+
 def page_date(html_text, url):
     """Publish date of an article (from the page itself, or the date in its address)."""
     try:
@@ -315,7 +325,7 @@ def full_text(item):
     if len(item["text"]) >= 1500 and not item.get("cut") and len(item["text"]) != 1500 and not item.get("nodate"):
         return item["text"]
     try:
-        r = requests.get(item["url"], headers={"User-Agent": UA}, timeout=20)
+        r = get_html(item["url"])
         if r.status_code == 200 and item.get("nodate"):
             day = page_date(r.text, item["url"])
             if day:
@@ -472,7 +482,8 @@ def main():
                 return
             for b in batch:
                 b["text"] = full_text(b)
-            ok = [b for b in batch if not b.get("nodate") and b["ts"] >= NOW - KEEP_HOURS * 3600 and b["text"]]
+            ok = [b for b in batch if not b.get("nodate") and b["ts"] >= NOW - KEEP_HOURS * 3600 and b["text"]
+                  and not GARBLED.search(b["text"][:3000])]
             with lock:
                 for b in batch:
                     if b not in ok:

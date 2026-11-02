@@ -109,6 +109,32 @@ AMT = re.compile(r"(\d+(?:\.\d+)?)\s*(हजार|लाख|करोड|अर
                  r"million|billion|trillion)(?![a-z])", re.I)
 
 
+# Nepali numbers written with words and units: "१४ हजार १३८" = 14138, "तीन हजार" = 3000,
+# "१ लाख ३३ हजार ३३४" = 133334, "चार सय" = 400, "२०.७ मिलियन" = 20,700,000
+SMALL = {"एक": 1, "दुई": 2, "तीन": 3, "चार": 4, "पाँच": 5, "पांच": 5, "छ": 6, "सात": 7, "आठ": 8, "नौ": 9,
+         "डेढ": 1.5, "अढाई": 2.5, "साढे दुई": 2.5}
+NE_UNITS = {"सय": 1e2, "हजार": 1e3, "लाख": 1e5, "करोड": 1e7, "अर्ब": 1e9, "खर्ब": 1e11,
+            "मिलियन": 1e6, "बिलियन": 1e9, "ट्रिलियन": 1e12}
+_UNIT_RX = "|".join(NE_UNITS)
+_CHAIN = re.compile(r"((?:\d+(?:\.\d+)?\s*(?:" + _UNIT_RX + r")\s*)+)(\d+(?:\.\d+)?)?")
+
+
+def nepali_values(text):
+    """Every value written as a Nepali chain of numbers and units (each running total counts)."""
+    t = re.sub(r"(?<=\d),(?=\d)", "", (text or "").translate(DEV))
+    for w, v in sorted({**WORDS, **SMALL}.items(), key=lambda x: -len(x[0])):
+        t = re.sub(r"(?<![\u0900-\u097F])" + w + r"(?=\s*(?:" + _UNIT_RX + r"))", str(v), t)
+    vals = set()
+    for m in _CHAIN.finditer(t):
+        total = 0.0
+        for n, u in re.findall(r"(\d+(?:\.\d+)?)\s*(" + _UNIT_RX + ")", m.group(1)):
+            total += float(n) * NE_UNITS[u]
+            vals.add(total)
+        if m.group(2):
+            vals.add(total + float(m.group(2)))
+    return vals
+
+
 def amounts_with_text(text):
     t = re.sub(r"(?<=\d),(?=\d)", "", (text or "").translate(DEV))
     return [(float(m.group(1)) * UNITS[m.group(2).lower()], m.group(0)) for m in AMT.finditer(t)]
@@ -195,13 +221,15 @@ def check(src, res):
     if src_len > 600 and len(body) < need * src_len:
         return f"shortened ({len(body)} of {src_len} characters)"
     have = numbers(src["text"] + " " + src["title"], source=True)
+    nv = nepali_values(src["text"] + " " + src["title"])
+    have |= {_fmt(v) for v in nv} | {_fmt(v / 1e6) for v in nv} | {_fmt(v / 1e9) for v in nv}
     eng = body + " " + res["headline"] + " " + res.get("summary", "") + " " + " ".join(res.get("points", []))
     # money amounts ("Rs 28 million", "8.89 arba") are checked by value further down, not digit by digit
     out = numbers(AMT.sub(" ", re.sub(r"(?<=\d),(?=\d)", "", eng.translate(DEV))))
     invented = sorted(n for n in out - have if n not in {"00"})
     if invented:
         return "numbers not in the article: " + ", ".join(invented[:5])
-    src_vals = amounts(src["text"] + " " + src["title"])
+    src_vals = amounts(src["text"] + " " + src["title"]) + list(nv)
     for v, txt in amounts_with_text(body + " " + res["headline"] + " " + res.get("summary", "") + " " +
                                     " ".join(res.get("points", []))):
         if not any(abs(v - x) <= 0.006 * x for x in src_vals):
