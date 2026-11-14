@@ -1,0 +1,1072 @@
+aalo                   0 stories  https://www.ukaalo.com/feed: HTTP 404  
+OK  Image Khabar            10 stories  https://imagekhabar.com/feed  विराटनगरलाई हराउँदै लुम्बिनी लिग चरणको शीर्ष स्थान (3h old) / विराटनगरले लुम्बिनीलाई दियो १६७ रनको लक्ष्य (5h old) / काठमाडौं उपत्यकामा छठको तयारी अन्तिम चरणमा (6h old)
+NO  Hamra Kura               0 stories  https://www.hamrakura.com/feed: HTTP 403  
+OK  Shilapatra               5 stories  https://shilapatra.com/feed  छठमा सुरक्षा व्यवस्था चुस्त बनाउन देशभरका प्रहरीला (3h old) / विराटनगरलाई हराउँदै साविक विजेता लुम्बिनी क्वालिफा (3h old) / छठका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (तस्वीर (4h old)
+OK  Nepal Khabar            20 stories  https://nepalkhabar.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (0h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (0h old) / गंगासागरमा छठ मनाउँदै निकिता पौडेल, शुरु गरिन् धार (0h old)
+OK  Nepali Times            30 stories  https://nepalitimes.com/feed  Mountaineering, as war waged by other means (16h old) / Nepal caught in contraband timber stalemate (31h old) / When is enough, enough? (40h old)
+OK  Kathmandu Tribune       10 stories  https://kathmandutribune.com/feed  Can AI Save Journalism? (1796h old) / सुकरातहरुको नौनाडी गलेको छ (2399h old) / यात्रा मात्र होइन, जीवनको खोज: ‘फुकुवा’ का लेखक बी (2533h old)
+OK  Nepal Monitor           10 stories  https://nepalmonitor.com/feed  Families in Devighat, Nepal, Face Uncertain Return (56h old) / Nepal Remittance 2026: Why Inflows Stay Strong as  (1045h old) / Nepal Economy 2026: Growth, Jobs and Investment (1424h old)
+NO  Hamro Kalam              0 stories  https://www.hamrokalam.com/feed: ConnectTimeout: HTTPSConnectionPool(host='www.hamrokalam.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hamrokalam.com', port=443) at 0x7fdf6575b980>, 'Connection to www.hamrokalam.com timed out. (conne  
+new stories found: 1
+{
+ "run": "2026-11-14 18:26 UTC",
+ "stories_in_app": 1852,
+ "new_found": 1,
+ "written_now": 0,
+ "today": {
+  "requests": 323,
+  "stories": 680,
+  "world": 13,
+  "exhausted": {}
+ },
+ "waiting": 2,
+ "left_out_old_or_undated": [],
+ "ai": {
+  "used_today": {
+   "gemini-3.1-flash-lite-preview": 157,
+   "gemini-flash-lite-latest": 82,
+   "gemini-3.5-flash-lite": 16
+  },
+  "models": [
+   "gemini-3.1-flash-lite-preview",
+   "gemini-flash-lite-latest",
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.8-flash"
+  ],
+  "paused": {},
+  "requests": 0,
+  "stories": 0,
+  "rejected": [],
+  "errors": []
+ },
+ "newest_story_minutes_old": 26
+}
+sites not readable this run: Kantipur, Ujyaalo, Lokantar, Nepal Press, myRepublica, Aarthik News, Abhiyan Daily, New Business Age, Kantipur (alt), Kantipur (business), Bizshala, Nepalnews English, Spotlight Nepal, Online Khabar English (business2), Techpana, Gadgetbyte Nepal, Auto Life Nepal, Autonepal, Ultimate Nepal, Tech Lekh, Autocar India, Autopunditz, Naya Patrika, Ekagaj, Pahilo Post, DC Nepal, Ukaalo, Hamra Kura, Hamro Kalam
+===== round 7 18:29:18
+OK  Onlinekhabar            38 stories  https://www.onlinekhabar.com/feed  पुछारदेखि शीर्षसम्म लुम्बिनीको यात्रा, अब उपाधि रक (1h old) / एनपीएल सिजन–३ : प्लेअफ पुग्ने चारै टोलीको टुङ्गो ल (3h old) / मञ्जुश्रीको पदचाप पछ्याउँदै हिमालको काखमा (3h old)
+NO  Kantipur                 0 stories  https://ekantipur.com/feed: HTTP 403  
+OK  Setopati                 5 stories  https://www.setopati.com/feed  इनमको मोबाइल २ दिनसम्म आफूसँग राख्ने अधिकार कुमार  (1h old) / दुई जुवाखालमा एकै साथ प्रहरी कारबाही, १७ जना पक्रा (2h old) / गाडीले मोटरसाइकललाई ठक्कर दिँदा बाबुछोराको मृत्यु, (2h old)
+OK  Ratopati                24 stories  https://www.ratopati.com/feed  छठको तयारी: गुह्येश्वरीबाट गौरीघाटसम्मको वाग्मती स (0h old) / १२ बजे १२ समाचार : रसुवागढी नाका तीन महिनादेखि ठप् (0h old) / भारत र पाकिस्तानले साफ च्याम्पियनसिपको उपाधिका लाग (1h old)
+OK  Nagarik                 20 stories  https://nagariknews.nagariknetwork.com/feed  विश्व मधुमेह दिवस: चालीस प्रतिशतलाई मधुमेह भएको था (13h old) / आज यसरी मनाइँदैछ विश्व मधुमेह दिवस (16h old) / तनहुँमा स्क्रब टाइफसको प्रकोप: असोजमै भेटिए १५५ बि (98h old)
+OK  Himal Khabar             5 stories  https://www.himalkhabar.com/feed  विभेदकारी वैचारिकी र दलित शिल्पीको मुक्तिमार्ग (38h old) / पहिलो विश्वयुद्धको गोर्खाली कथा सुनाइरहेको छ, छत्र (60h old) / जेरुशा ! तिमी कहाँ छौ? (107h old)
+OK  Baahrakhari              4 stories  https://baahrakhari.com/feed  एमालेमा रहेर अरू दललाई मत दिनेलाई कारबाही गरिन्छ : (2h old) / एपेक बैठकको ‘साइडलाइन’मा ट्रम्प, सी र पुटिनबीच ‘त् (2h old) / लुम्बिनी शीर्ष स्थानमा रहँदै प्लेअफमा (3h old)
+NO  Ujyaalo                  0 stories  https://ujyaaloonline.com/feed: HTTP 403  
+NO  Lokantar                 0 stories  https://lokaantar.com/feed: HTTP 404  
+NO  Nepal Press              0 stories  https://www.nepalpress.com/feed: HTTP 403  
+OK  Annapurna Post          20 stories  https://annapurnapost.com/rss  कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old) / गगन थापाकै कारण चुनावमा कांग्रेसको सिट संख्या खुम् (0h old)
+OK  Gorkhapatra             10 stories  https://gorkhapatraonline.com/rss  सजाइयो घडीअर्वा पोखरी छठघाट परिसर (फोटोफिचर) (1h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (1h old) / कान्ति तालको बिजोग : १० करोडको लगानी बालुवामा पानी (1h old)
+OK  Kathmandu Post          40 stories  https://kathmandupost.com/rss  Who is the real prime minister? (0h old) / Congress leader Umesh Shrestha’s brother arrested  (0h old) / Lumbini beat Biratnagar to reach Qualifier, Kings  (0h old)
+NO  myRepublica              0 stories  https://myrepublica.nagariknetwork.com/feed: HTTP 404  
+OK  Himalayan Times         40 stories  https://thehimalayantimes.com/rssFeed/15  Sama-Chakewa festival begins across Mithila region (11h old) / Govt declares public holiday on Monday for Chhath (33h old) / Is Outlook down? Widespread outage hits Microsoft  (35h old)
+OK  Online Khabar English   20 stories  https://english.onlinekhabar.com/feed  Domestic workers need protection beyond the househ (6h old) / The hidden cost of Nepal’s rising public debt (9h old) / Nepal must build, but it must build smarter (12h old)
+OK  Onlinekhabar (business)  40 stories  https://www.onlinekhabar.com/content/business/feed  जनकपुरदेखि अयोध्यासम्म साप्ताहिक रेल सेवा सञ्चालन  (3h old) / भूकम्पले क्षतिग्रस्त जाजरकोट दरबार पुनर्निर्माणका  (10h old) / नेपालमा एआई र उद्योग ४.० (13h old)
+OK  Annapurna Post (business)  20 stories  https://annapurnapost.com/rss/economy  कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old) / गगन थापाकै कारण चुनावमा कांग्रेसको सिट संख्या खुम् (0h old)
+OK  Online Khabar English (business)  20 stories  https://english.onlinekhabar.com/category/economy/feed  The hidden cost of Nepal’s rising public debt (9h old) / Will PM Balen Shah’s India visit resolve cross-bor (18h old) / NEPSE falls 6.44 points in first trading session a (33h old)
+OK  Bizmandu                15 stories  https://bizmandu.com/feed  विराटनगरमाथिको थ्रिलर जितले लुम्बिनी क्वालिफायरमा, (3h old) / छठ पर्वको पूर्वसन्ध्यामा बेहुलीझैं सिँगारियो कमलपो (3h old) / इँटा उद्योगमा ९ अर्बको कार्बन फाइनान्सिङ, ३०० उद्य (4h old)
+OK  Arthasarokar            20 stories  https://arthasarokar.com/feed  तिहार बिदामा मुस्ताङ घुम्ने पर्यटक बढ्दै (153h old) / कुकुर तिहारः भैरव वाहन गुल्ममा विशेष ‘डग शो’ प्रदर (155h old) / एनपिएल अपडेट: लुम्बिनीको अपराजित यात्रामा ब्रेक, क (155h old)
+NO  Aarthik News             0 stories  https://aarthiknews.com/feed: HTTP 403  
+OK  Clickmandu              10 stories  https://clickmandu.com/feed  कोप–३१ मा हिमताल र हिमनदीको सङ्कटबारे विश्व समुदाय (3h old) / नेपाल र साउथ पोलबीच ठूलो परिमाणको ‘जुरिडिक्सनल रेड (3h old) / २६ लाख हेक्टर वनबाट कार्बन व्यापार गर्ने नेपालको त (8h old)
+OK  Karobar Daily           40 stories  https://www.karobardaily.com/feed  शरद् ऋतुमा पर्वतारोहण अनुमति लिएका १६१३ जनाबाट ३३  (2h old) / छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / विराटनगरविरुद्ध लुम्बिनीको जित, प्लेअफ समीकरण पूरा (3h old)
+NO  Abhiyan Daily            0 stories  https://www.abhiyandaily.com/feed: HTTP 403  
+NO  New Business Age         0 stories  https://newbusinessage.com/feed: HTTP 403  
+OK  Nepal Live Today        10 stories  https://www.nepallivetoday.com/feed  Media’s role vital to strengthen democracy: Speake (16548h old) / Two people arrested for offensive conduct after NP (16596h old) / PM Oli felicitates NPL Champions Janakpur Bolts (16620h old)
+OK  Rising Nepal            10 stories  https://risingnepaldaily.com/rss  Minister Chaudhary pledges to prioritize indigenou (3h old) / Call to submit claims to form new govt in Madhesh (3h old) / No dispute between RSP and Government: Chair Lamic (4h old)
+OK  Desh Sanchar            11 stories  https://deshsanchar.com/feed  छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / यमनमा सर्वसाधारणको सुरक्षाप्रति राष्ट्रसङ्घको चासो (3h old) / विराटनगर बाहिरिएसँगै प्लेअफ पुग्ने चार टिमको तय, ल (3h old)
+OK  Khabarhub                8 stories  https://khabarhub.com/feed  एनपिएल प्लेअफ समीकरण पूरा : सनसनीपूर्ण जित निकाल्द (3h old) / भन्सार छलिका १६ लाखभन्दा बढीको अवैध सामान बरामद (5h old) / छठ पर्वका लागि कमलपोखरीमा सम्पूर्ण तयारी पूरा (5h old)
+NO  Kantipur (alt)           0 stories  https://kantipurdaily.com/feed: HTTP 404  
+OK  ShareSansar             13 stories  https://www.sharesansar.com/category/latest  
+OK  Mero Lagani              8 stories  https://merolagani.com/NewsList.aspx  
+NO  Kantipur (business)      0 stories  https://ekantipur.com/business: HTTP 403  
+OK  B360 Nepal               5 stories  https://www.b360nepal.com/feed  Nepal called for grant-based climate finance and m (1h old) / Light rain, snowfall likely in hills, mountains as (12h old) / Nepal must strengthen preparation, institutional c (12h old)
+NO  Bizshala                 0 stories  https://bizshala.com/feed: HTTP 404  
+OK  Nepalnews               12 stories  https://www.nepalnews.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old) / मधेस प्रदेशमा नयाँ सरकार गठनका लागि दाबी पेस गर्न  (3h old) / नेपालको २५ लाख हेक्टर वनमा कार्बन कार्यक्रम विकास  (3h old)
+NO  Nepalnews English        0 stories  https://english.nepalnews.com/feed: HTTP 403  
+OK  Ratopati English        30 stories  https://english.ratopati.com/feed  India and Pakistan to Compete in SAFF Championship (1h old) / Motorcyclist Dies in Car Collision in Jhapa (1h old) / Brazil's Decision on Raphinha Sparks Controversy w (1h old)
+NO  Spotlight Nepal          0 stories  https://www.spotlightnepal.com/feed: HTTP 403  
+OK  NEPSE Trading            7 stories  https://nepsetrading.com/news  
+OK  Bizshala (page)         30 stories  https://www.bizshala.com/  
+NO  Online Khabar English (business2)   0 stories  https://english.onlinekhabar.com/category/business/feed: no stories in feed  
+OK  Onlinekhabar (auto)     38 stories  https://www.onlinekhabar.com/content/auto/feed  प्रोटोन ई.मास ५ दुई अन्तर्राष्ट्रिय अवार्डबाट सम्म (33h old) / न रोकिए घातक दुर्घटना, न ब्युँझिए शासक-प्रशासक (51h old) / रोयल इन्फिल्डको ‘मिस्टिक मुस्ताङ राइड २’ मा ४० महि (225h old)
+OK  Online Khabar English (auto)  20 stories  https://english.onlinekhabar.com/category/auto/feed  Yamaha XSR 155 combines retro styling with modern  (223h old) / Sipradi Yatri announces price of locally made Yatr (1377h old) / Why Yatri and Sipradi joined hands to build a two- (1527h old)
+NO  Techpana                 0 stories  https://techpana.com/feed: HTTP 403  
+NO  Gadgetbyte Nepal         0 stories  https://gadgetbytenepal.com/feed: HTTP 404  
+NO  Auto Life Nepal          0 stories  https://autolifenepal.com/feed: ConnectionError: HTTPSConnectionPool(host='autolifenepal.com', port=443): Max retries exceeded with url: /feed (Caused by NameResolutionError("HTTPSConnection(host='autolifenepal.com', port=443): Failed to resolve 'autolifenepal.com' ([Errno -2] Name or service not kn  
+OK  Nepal Drives             5 stories  https://nepaldrives.com/feed  BAIC and Arcfox Inaugurate New Showroom in Pokhara (204h old) / Chery Q Premium Variant Launched in Nepal at Rs 33 (204h old) / 40 Women Riders Complete Four-Day Mystic Mustang R (229h old)
+NO  Autonepal                0 stories  https://autonepal.com/feed: no stories in feed  
+NO  Ultimate Nepal           0 stories  https://www.ultimatenepal.com/feed: no stories in feed  
+NO  Tech Lekh                0 stories  https://www.techlekh.com/feed: no stories in feed  
+OK  Rushlane                 8 stories  https://www.rushlane.com/feed  New Toyota Innova Hycross Facelift First Official  (5h old) / TVS Norton Atlas GT, Manx R Patented In India – La (6h old) / New Maruti SUV Spied Testing – Next Gen Brezza 202 (10h old)
+OK  GaadiWaadi               8 stories  https://gaadiwaadi.com/feed  Mahindra Plans Capacity For 10,000 Units A Month F (7h old) / New Gen Toyota Fortuner To Debut Soon – What We Kn (8h old) / Kia October 2026 Sales Analysis – Seltos, Sonet, C (10h old)
+NO  Autocar India            0 stories  https://www.autocarindia.com/rss: HTTP 410  
+OK  MotorBeam               12 stories  https://www.motorbeam.com/feed/  AEB To Become Mandatory In All Cars From October 2 (537h old) / Ducati Hypermotard V2 Launched At Rs 16.53 Lakh (540h old) / BMW Motorrad Vision CE Patented In India (540h old)
+NO  Autopunditz              0 stories  https://www.autopunditz.com/feed: HTTP 404  
+OK  Carscoops               12 stories  https://www.carscoops.com/feed/  The 5 Worst Rebadges In Automotive History (0h old) / BMW Pays Tribute To Alex Zanardi With A Very Speci (1h old) / What Do All The Flags Mean In Racing? (2h old)
+OK  Electrek                12 stories  https://electrek.co/feed/  Check your ego at the door: Stellantis’ new electr (1h old) / Huawei set to challenge Tesla Powerwall with new,  (2h old) / Tesla Cybercab’s autonomy agreement is insane: $29 (5h old)
+NO  Naya Patrika             0 stories  https://www.nayapatrikadaily.com/feed: HTTP 404  
+NO  Ekagaj                   0 stories  https://www.ekagaj.com/feed: HTTP 403  
+OK  Thaha Khabar             5 stories  https://thahakhabar.com/feed  ‘पाकिस्तानको बाढी पुनःस्थापनाको अनुभवबाट नेपालले स (2h old) / मधेशका मुख्यमन्त्री यादवद्वारा राजीनामा, सरकार बना (2h old) / चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old)
+NO  Pahilo Post              0 stories  https://www.pahilopost.com/feed: HTTP 503  
+NO  DC Nepal                 0 stories  https://www.dcnepal.com/feed: HTTP 403  
+OK  Kathmandu Press          5 stories  https://kathmandupress.com/feed  भित्री र बाहिरी शक्तिको संयुक्त आक्रमणका कारण एमाल (7h old) / मधेशले मालिक होइन, सेवक खोजेको हो : रवि लामिछाने (7h old) / रास्वपा सभापति लामिछाने दम्पती जनकपुरमा (7h old)
+OK  Nepal Samaya             1 stories  https://nepalsamaya.com/feed  एनपीएल : लुम्बिनी पहिलो क्वालिफायरमा प्रवेश,विराटन (3h old)
+OK  News of Nepal           12 stories  https://newsofnepal.com/feed  क्रिस्टियानो रोनाल्डोद्वारा अन्तर्राष्ट्रिय फुटबलल (2h old) / अन्तिम साससम्म कांग्रेसको हितमा लड्छु : देउवा (7h old) / मधेशका मुख्यमन्त्री कृष्णप्रसाद यादवद्वारा राजीनाम (9h old)
+OK  Rajdhani Daily          10 stories  https://rajdhanidaily.com/feed  लुम्बिनीसँग हारेपछि विराटनगर प्लेअफबाट बाहिरियो (3h old) / लघुकथा पुरस्कार डा. टीकाराम पोखरेललाई (3h old) / मधेशमा मुख्यमन्त्रीका लागि दाबी आह्वान, मंसिर ४ गत (5h old)
+NO  Ukaalo                   0 stories  https://www.ukaalo.com/feed: HTTP 404  
+OK  Image Khabar            10 stories  https://imagekhabar.com/feed  विराटनगरलाई हराउँदै लुम्बिनी लिग चरणको शीर्ष स्थान (3h old) / विराटनगरले लुम्बिनीलाई दियो १६७ रनको लक्ष्य (6h old) / काठमाडौं उपत्यकामा छठको तयारी अन्तिम चरणमा (6h old)
+NO  Hamra Kura               0 stories  https://www.hamrakura.com/feed: HTTP 403  
+OK  Shilapatra               5 stories  https://shilapatra.com/feed  छठमा सुरक्षा व्यवस्था चुस्त बनाउन देशभरका प्रहरीला (3h old) / विराटनगरलाई हराउँदै साविक विजेता लुम्बिनी क्वालिफा (3h old) / छठका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (तस्वीर (4h old)
+OK  Nepal Khabar            20 stories  https://nepalkhabar.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (0h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (0h old) / गंगासागरमा छठ मनाउँदै निकिता पौडेल, शुरु गरिन् धार (0h old)
+OK  Nepali Times            30 stories  https://nepalitimes.com/feed  Mountaineering, as war waged by other means (16h old) / Nepal caught in contraband timber stalemate (31h old) / When is enough, enough? (40h old)
+OK  Kathmandu Tribune       10 stories  https://kathmandutribune.com/feed  Can AI Save Journalism? (1796h old) / सुकरातहरुको नौनाडी गलेको छ (2399h old) / यात्रा मात्र होइन, जीवनको खोज: ‘फुकुवा’ का लेखक बी (2533h old)
+OK  Nepal Monitor           10 stories  https://nepalmonitor.com/feed  Families in Devighat, Nepal, Face Uncertain Return (56h old) / Nepal Remittance 2026: Why Inflows Stay Strong as  (1045h old) / Nepal Economy 2026: Growth, Jobs and Investment (1424h old)
+NO  Hamro Kalam              0 stories  https://www.hamrokalam.com/feed: ConnectTimeout: HTTPSConnectionPool(host='www.hamrokalam.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hamrokalam.com', port=443) at 0x7fd66695aed0>, 'Connection to www.hamrokalam.com timed out. (conne  
+new stories found: 0
+{
+ "run": "2026-11-14 18:29 UTC",
+ "stories_in_app": 1852,
+ "new_found": 0,
+ "written_now": 0,
+ "today": {
+  "requests": 323,
+  "stories": 680,
+  "world": 13,
+  "exhausted": {}
+ },
+ "waiting": 2,
+ "left_out_old_or_undated": [],
+ "ai": {
+  "used_today": {
+   "gemini-3.1-flash-lite-preview": 157,
+   "gemini-flash-lite-latest": 82,
+   "gemini-3.5-flash-lite": 16
+  },
+  "models": [
+   "gemini-3.1-flash-lite-preview",
+   "gemini-flash-lite-latest",
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.8-flash"
+  ],
+  "paused": {},
+  "requests": 0,
+  "stories": 0,
+  "rejected": [],
+  "errors": []
+ },
+ "newest_story_minutes_old": 29
+}
+sites not readable this run: Kantipur, Ujyaalo, Lokantar, Nepal Press, myRepublica, Aarthik News, Abhiyan Daily, New Business Age, Kantipur (alt), Kantipur (business), Bizshala, Nepalnews English, Spotlight Nepal, Online Khabar English (business2), Techpana, Gadgetbyte Nepal, Auto Life Nepal, Autonepal, Ultimate Nepal, Tech Lekh, Autocar India, Autopunditz, Naya Patrika, Ekagaj, Pahilo Post, DC Nepal, Ukaalo, Hamra Kura, Hamro Kalam
+===== round 8 18:32:18
+OK  Onlinekhabar            38 stories  https://www.onlinekhabar.com/feed  पुछारदेखि शीर्षसम्म लुम्बिनीको यात्रा, अब उपाधि रक (1h old) / एनपीएल सिजन–३ : प्लेअफ पुग्ने चारै टोलीको टुङ्गो ल (3h old) / मञ्जुश्रीको पदचाप पछ्याउँदै हिमालको काखमा (3h old)
+NO  Kantipur                 0 stories  https://ekantipur.com/feed: HTTP 403  
+OK  Setopati                 5 stories  https://www.setopati.com/feed  इनमको मोबाइल २ दिनसम्म आफूसँग राख्ने अधिकार कुमार  (1h old) / दुई जुवाखालमा एकै साथ प्रहरी कारबाही, १७ जना पक्रा (2h old) / गाडीले मोटरसाइकललाई ठक्कर दिँदा बाबुछोराको मृत्यु, (2h old)
+OK  Ratopati                24 stories  https://www.ratopati.com/feed  महिला अन्तर्राष्ट्रिय गोल्डकपः अक्वा एफसीलाई हराउँ (0h old) / छठको तयारी: गुह्येश्वरीबाट गौरीघाटसम्मको वाग्मती स (0h old) / १२ बजे १२ समाचार : रसुवागढी नाका तीन महिनादेखि ठप् (0h old)
+OK  Nagarik                 20 stories  https://nagariknews.nagariknetwork.com/feed  बूढीगण्डकी जलविद्युत् आयोजनामा लगानी गर्न युएईसमक् (2h old) / म्यानमामा विस्थापितको शिविरमा हवाई आक्रमण, १२ जनाक (3h old) / चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (3h old)
+OK  Himal Khabar             5 stories  https://www.himalkhabar.com/feed  विभेदकारी वैचारिकी र दलित शिल्पीको मुक्तिमार्ग (38h old) / पहिलो विश्वयुद्धको गोर्खाली कथा सुनाइरहेको छ, छत्र (60h old) / जेरुशा ! तिमी कहाँ छौ? (107h old)
+OK  Baahrakhari              4 stories  https://baahrakhari.com/feed  एमालेमा रहेर अरू दललाई मत दिनेलाई कारबाही गरिन्छ : (2h old) / एपेक बैठकको ‘साइडलाइन’मा ट्रम्प, सी र पुटिनबीच ‘त् (2h old) / लुम्बिनी शीर्ष स्थानमा रहँदै प्लेअफमा (4h old)
+NO  Ujyaalo                  0 stories  https://ujyaaloonline.com/feed: HTTP 403  
+NO  Lokantar                 0 stories  https://lokaantar.com/feed: HTTP 404  
+NO  Nepal Press              0 stories  https://www.nepalpress.com/feed: HTTP 403  
+OK  Annapurna Post          20 stories  https://annapurnapost.com/rss  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Gorkhapatra             10 stories  https://gorkhapatraonline.com/rss  सजाइयो घडीअर्वा पोखरी छठघाट परिसर (फोटोफिचर) (1h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (1h old) / कान्ति तालको बिजोग : १० करोडको लगानी बालुवामा पानी (1h old)
+OK  Kathmandu Post          40 stories  https://kathmandupost.com/rss  Who is the real prime minister? (0h old) / Congress leader Umesh Shrestha’s brother arrested  (0h old) / Lumbini beat Biratnagar to reach Qualifier, Kings  (0h old)
+NO  myRepublica              0 stories  https://myrepublica.nagariknetwork.com/feed: HTTP 404  
+OK  Himalayan Times         40 stories  https://thehimalayantimes.com/rssFeed/15  Sama-Chakewa festival begins across Mithila region (11h old) / Govt declares public holiday on Monday for Chhath (33h old) / Is Outlook down? Widespread outage hits Microsoft  (35h old)
+OK  Online Khabar English   20 stories  https://english.onlinekhabar.com/feed  Domestic workers need protection beyond the househ (6h old) / The hidden cost of Nepal’s rising public debt (9h old) / Nepal must build, but it must build smarter (12h old)
+OK  Onlinekhabar (business)  40 stories  https://www.onlinekhabar.com/content/business/feed  जनकपुरदेखि अयोध्यासम्म साप्ताहिक रेल सेवा सञ्चालन  (3h old) / भूकम्पले क्षतिग्रस्त जाजरकोट दरबार पुनर्निर्माणका  (10h old) / नेपालमा एआई र उद्योग ४.० (13h old)
+OK  Annapurna Post (business)  20 stories  https://annapurnapost.com/rss/economy  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Online Khabar English (business)  20 stories  https://english.onlinekhabar.com/category/economy/feed  The hidden cost of Nepal’s rising public debt (9h old) / Will PM Balen Shah’s India visit resolve cross-bor (18h old) / NEPSE falls 6.44 points in first trading session a (33h old)
+OK  Bizmandu                15 stories  https://bizmandu.com/feed  विराटनगरमाथिको थ्रिलर जितले लुम्बिनी क्वालिफायरमा, (3h old) / छठ पर्वको पूर्वसन्ध्यामा बेहुलीझैं सिँगारियो कमलपो (3h old) / इँटा उद्योगमा ९ अर्बको कार्बन फाइनान्सिङ, ३०० उद्य (4h old)
+OK  Arthasarokar            20 stories  https://arthasarokar.com/feed  तिहार बिदामा मुस्ताङ घुम्ने पर्यटक बढ्दै (153h old) / कुकुर तिहारः भैरव वाहन गुल्ममा विशेष ‘डग शो’ प्रदर (155h old) / एनपिएल अपडेट: लुम्बिनीको अपराजित यात्रामा ब्रेक, क (155h old)
+NO  Aarthik News             0 stories  https://aarthiknews.com/feed: HTTP 403  
+OK  Clickmandu              10 stories  https://clickmandu.com/feed  कोप–३१ मा हिमताल र हिमनदीको सङ्कटबारे विश्व समुदाय (3h old) / नेपाल र साउथ पोलबीच ठूलो परिमाणको ‘जुरिडिक्सनल रेड (3h old) / २६ लाख हेक्टर वनबाट कार्बन व्यापार गर्ने नेपालको त (8h old)
+OK  Karobar Daily           40 stories  https://www.karobardaily.com/feed  शरद् ऋतुमा पर्वतारोहण अनुमति लिएका १६१३ जनाबाट ३३  (2h old) / छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / विराटनगरविरुद्ध लुम्बिनीको जित, प्लेअफ समीकरण पूरा (3h old)
+NO  Abhiyan Daily            0 stories  https://www.abhiyandaily.com/feed: HTTP 403  
+NO  New Business Age         0 stories  https://newbusinessage.com/feed: HTTP 403  
+OK  Nepal Live Today        10 stories  https://www.nepallivetoday.com/feed  Media’s role vital to strengthen democracy: Speake (16548h old) / Two people arrested for offensive conduct after NP (16596h old) / PM Oli felicitates NPL Champions Janakpur Bolts (16620h old)
+OK  Rising Nepal            10 stories  https://risingnepaldaily.com/rss  Minister Chaudhary pledges to prioritize indigenou (3h old) / Call to submit claims to form new govt in Madhesh (3h old) / No dispute between RSP and Government: Chair Lamic (4h old)
+OK  Desh Sanchar            11 stories  https://deshsanchar.com/feed  छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / यमनमा सर्वसाधारणको सुरक्षाप्रति राष्ट्रसङ्घको चासो (3h old) / विराटनगर बाहिरिएसँगै प्लेअफ पुग्ने चार टिमको तय, ल (3h old)
+OK  Khabarhub                8 stories  https://khabarhub.com/feed  एनपिएल प्लेअफ समीकरण पूरा : सनसनीपूर्ण जित निकाल्द (3h old) / भन्सार छलिका १६ लाखभन्दा बढीको अवैध सामान बरामद (5h old) / छठ पर्वका लागि कमलपोखरीमा सम्पूर्ण तयारी पूरा (5h old)
+NO  Kantipur (alt)           0 stories  https://kantipurdaily.com/feed: HTTP 404  
+OK  ShareSansar             13 stories  https://www.sharesansar.com/category/latest  
+OK  Mero Lagani              8 stories  https://merolagani.com/NewsList.aspx  
+NO  Kantipur (business)      0 stories  https://ekantipur.com/business: HTTP 403  
+OK  B360 Nepal               5 stories  https://www.b360nepal.com/feed  Nepal called for grant-based climate finance and m (1h old) / Light rain, snowfall likely in hills, mountains as (12h old) / Nepal must strengthen preparation, institutional c (12h old)
+NO  Bizshala                 0 stories  https://bizshala.com/feed: HTTP 404  
+OK  Nepalnews               12 stories  https://www.nepalnews.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old) / मधेस प्रदेशमा नयाँ सरकार गठनका लागि दाबी पेस गर्न  (3h old) / नेपालको २५ लाख हेक्टर वनमा कार्बन कार्यक्रम विकास  (3h old)
+NO  Nepalnews English        0 stories  https://english.nepalnews.com/feed: HTTP 403  
+OK  Ratopati English        30 stories  https://english.ratopati.com/feed  India and Pakistan to Compete in SAFF Championship (1h old) / Motorcyclist Dies in Car Collision in Jhapa (1h old) / Brazil's Decision on Raphinha Sparks Controversy w (1h old)
+NO  Spotlight Nepal          0 stories  https://www.spotlightnepal.com/feed: HTTP 403  
+OK  NEPSE Trading            7 stories  https://nepsetrading.com/news  
+OK  Bizshala (page)         30 stories  https://www.bizshala.com/  
+NO  Online Khabar English (business2)   0 stories  https://english.onlinekhabar.com/category/business/feed: no stories in feed  
+OK  Onlinekhabar (auto)     38 stories  https://www.onlinekhabar.com/content/auto/feed  प्रोटोन ई.मास ५ दुई अन्तर्राष्ट्रिय अवार्डबाट सम्म (33h old) / न रोकिए घातक दुर्घटना, न ब्युँझिए शासक-प्रशासक (51h old) / रोयल इन्फिल्डको ‘मिस्टिक मुस्ताङ राइड २’ मा ४० महि (225h old)
+OK  Online Khabar English (auto)  20 stories  https://english.onlinekhabar.com/category/auto/feed  Yamaha XSR 155 combines retro styling with modern  (223h old) / Sipradi Yatri announces price of locally made Yatr (1377h old) / Why Yatri and Sipradi joined hands to build a two- (1527h old)
+NO  Techpana                 0 stories  https://techpana.com/feed: HTTP 403  
+NO  Gadgetbyte Nepal         0 stories  https://gadgetbytenepal.com/feed: HTTP 404  
+NO  Auto Life Nepal          0 stories  https://autolifenepal.com/feed: ConnectionError: HTTPSConnectionPool(host='autolifenepal.com', port=443): Max retries exceeded with url: /feed (Caused by NameResolutionError("HTTPSConnection(host='autolifenepal.com', port=443): Failed to resolve 'autolifenepal.com' ([Errno -2] Name or service not kn  
+OK  Nepal Drives             5 stories  https://nepaldrives.com/feed  BAIC and Arcfox Inaugurate New Showroom in Pokhara (204h old) / Chery Q Premium Variant Launched in Nepal at Rs 33 (204h old) / 40 Women Riders Complete Four-Day Mystic Mustang R (229h old)
+NO  Autonepal                0 stories  https://autonepal.com/feed: HTTP 503  
+NO  Ultimate Nepal           0 stories  https://www.ultimatenepal.com/feed: no stories in feed  
+NO  Tech Lekh                0 stories  https://www.techlekh.com/feed: no stories in feed  
+OK  Rushlane                 8 stories  https://www.rushlane.com/feed  New Toyota Innova Hycross Facelift First Official  (5h old) / TVS Norton Atlas GT, Manx R Patented In India – La (6h old) / New Maruti SUV Spied Testing – Next Gen Brezza 202 (10h old)
+OK  GaadiWaadi               8 stories  https://gaadiwaadi.com/feed  Mahindra Plans Capacity For 10,000 Units A Month F (7h old) / New Gen Toyota Fortuner To Debut Soon – What We Kn (9h old) / Kia October 2026 Sales Analysis – Seltos, Sonet, C (10h old)
+NO  Autocar India            0 stories  https://www.autocarindia.com/rss: HTTP 410  
+OK  MotorBeam               12 stories  https://www.motorbeam.com/feed/  AEB To Become Mandatory In All Cars From October 2 (537h old) / Ducati Hypermotard V2 Launched At Rs 16.53 Lakh (540h old) / BMW Motorrad Vision CE Patented In India (540h old)
+NO  Autopunditz              0 stories  https://www.autopunditz.com/feed: HTTP 404  
+OK  Carscoops               12 stories  https://www.carscoops.com/feed/  The 5 Worst Rebadges In Automotive History (1h old) / BMW Pays Tribute To Alex Zanardi With A Very Speci (2h old) / What Do All The Flags Mean In Racing? (3h old)
+OK  Electrek                12 stories  https://electrek.co/feed/  Check your ego at the door: Stellantis’ new electr (1h old) / Huawei set to challenge Tesla Powerwall with new,  (2h old) / Tesla Cybercab’s autonomy agreement is insane: $29 (5h old)
+NO  Naya Patrika             0 stories  https://www.nayapatrikadaily.com/feed: HTTP 404  
+NO  Ekagaj                   0 stories  https://www.ekagaj.com/feed: HTTP 403  
+OK  Thaha Khabar             5 stories  https://thahakhabar.com/feed  ‘पाकिस्तानको बाढी पुनःस्थापनाको अनुभवबाट नेपालले स (2h old) / मधेशका मुख्यमन्त्री यादवद्वारा राजीनामा, सरकार बना (2h old) / चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old)
+NO  Pahilo Post              0 stories  https://www.pahilopost.com/feed: HTTP 503  
+NO  DC Nepal                 0 stories  https://www.dcnepal.com/feed: HTTP 403  
+OK  Kathmandu Press          5 stories  https://kathmandupress.com/feed  भित्री र बाहिरी शक्तिको संयुक्त आक्रमणका कारण एमाल (7h old) / मधेशले मालिक होइन, सेवक खोजेको हो : रवि लामिछाने (7h old) / रास्वपा सभापति लामिछाने दम्पती जनकपुरमा (7h old)
+OK  Nepal Samaya             1 stories  https://nepalsamaya.com/feed  एनपीएल : लुम्बिनी पहिलो क्वालिफायरमा प्रवेश,विराटन (3h old)
+OK  News of Nepal           12 stories  https://newsofnepal.com/feed  क्रिस्टियानो रोनाल्डोद्वारा अन्तर्राष्ट्रिय फुटबलल (2h old) / अन्तिम साससम्म कांग्रेसको हितमा लड्छु : देउवा (7h old) / मधेशका मुख्यमन्त्री कृष्णप्रसाद यादवद्वारा राजीनाम (9h old)
+OK  Rajdhani Daily          10 stories  https://rajdhanidaily.com/feed  लुम्बिनीसँग हारेपछि विराटनगर प्लेअफबाट बाहिरियो (3h old) / लघुकथा पुरस्कार डा. टीकाराम पोखरेललाई (3h old) / मधेशमा मुख्यमन्त्रीका लागि दाबी आह्वान, मंसिर ४ गत (5h old)
+NO  Ukaalo                   0 stories  https://www.ukaalo.com/feed: HTTP 404  
+OK  Image Khabar            10 stories  https://imagekhabar.com/feed  विराटनगरलाई हराउँदै लुम्बिनी लिग चरणको शीर्ष स्थान (3h old) / विराटनगरले लुम्बिनीलाई दियो १६७ रनको लक्ष्य (6h old) / काठमाडौं उपत्यकामा छठको तयारी अन्तिम चरणमा (6h old)
+NO  Hamra Kura               0 stories  https://www.hamrakura.com/feed: HTTP 403  
+OK  Shilapatra               5 stories  https://shilapatra.com/feed  छठमा सुरक्षा व्यवस्था चुस्त बनाउन देशभरका प्रहरीला (3h old) / विराटनगरलाई हराउँदै साविक विजेता लुम्बिनी क्वालिफा (4h old) / छठका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (तस्वीर (4h old)
+OK  Nepal Khabar            20 stories  https://nepalkhabar.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (0h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (0h old) / गंगासागरमा छठ मनाउँदै निकिता पौडेल, शुरु गरिन् धार (0h old)
+OK  Nepali Times            30 stories  https://nepalitimes.com/feed  Mountaineering, as war waged by other means (16h old) / Nepal caught in contraband timber stalemate (32h old) / When is enough, enough? (41h old)
+OK  Kathmandu Tribune       10 stories  https://kathmandutribune.com/feed  Can AI Save Journalism? (1796h old) / सुकरातहरुको नौनाडी गलेको छ (2399h old) / यात्रा मात्र होइन, जीवनको खोज: ‘फुकुवा’ का लेखक बी (2533h old)
+OK  Nepal Monitor           10 stories  https://nepalmonitor.com/feed  Families in Devighat, Nepal, Face Uncertain Return (56h old) / Nepal Remittance 2026: Why Inflows Stay Strong as  (1045h old) / Nepal Economy 2026: Growth, Jobs and Investment (1424h old)
+NO  Hamro Kalam              0 stories  https://www.hamrokalam.com/feed: ConnectTimeout: HTTPSConnectionPool(host='www.hamrokalam.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hamrokalam.com', port=443) at 0x7f38013a7dd0>, 'Connection to www.hamrokalam.com timed out. (conne  
+new stories found: 2
+{
+ "run": "2026-11-14 18:32 UTC",
+ "stories_in_app": 1851,
+ "new_found": 2,
+ "written_now": 0,
+ "today": {
+  "requests": 323,
+  "stories": 680,
+  "world": 13,
+  "exhausted": {}
+ },
+ "waiting": 4,
+ "left_out_old_or_undated": [],
+ "ai": {
+  "used_today": {
+   "gemini-3.1-flash-lite-preview": 157,
+   "gemini-flash-lite-latest": 82,
+   "gemini-3.5-flash-lite": 16
+  },
+  "models": [
+   "gemini-3.1-flash-lite-preview",
+   "gemini-flash-lite-latest",
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.8-flash"
+  ],
+  "paused": {},
+  "requests": 0,
+  "stories": 0,
+  "rejected": [],
+  "errors": []
+ },
+ "newest_story_minutes_old": 32
+}
+sites not readable this run: Kantipur, Ujyaalo, Lokantar, Nepal Press, myRepublica, Aarthik News, Abhiyan Daily, New Business Age, Kantipur (alt), Kantipur (business), Bizshala, Nepalnews English, Spotlight Nepal, Online Khabar English (business2), Techpana, Gadgetbyte Nepal, Auto Life Nepal, Autonepal, Ultimate Nepal, Tech Lekh, Autocar India, Autopunditz, Naya Patrika, Ekagaj, Pahilo Post, DC Nepal, Ukaalo, Hamra Kura, Hamro Kalam
+===== round 9 18:35:18
+OK  Onlinekhabar            38 stories  https://www.onlinekhabar.com/feed  पुछारदेखि शीर्षसम्म लुम्बिनीको यात्रा, अब उपाधि रक (1h old) / एनपीएल सिजन–३ : प्लेअफ पुग्ने चारै टोलीको टुङ्गो ल (3h old) / मञ्जुश्रीको पदचाप पछ्याउँदै हिमालको काखमा (3h old)
+NO  Kantipur                 0 stories  https://ekantipur.com/feed: HTTP 403  
+OK  Setopati                 5 stories  https://www.setopati.com/feed  इनमको मोबाइल २ दिनसम्म आफूसँग राख्ने अधिकार कुमार  (1h old) / दुई जुवाखालमा एकै साथ प्रहरी कारबाही, १७ जना पक्रा (2h old) / गाडीले मोटरसाइकललाई ठक्कर दिँदा बाबुछोराको मृत्यु, (2h old)
+OK  Ratopati                24 stories  https://www.ratopati.com/feed  महिला अन्तर्राष्ट्रिय गोल्डकपः अक्वा एफसीलाई हराउँ (0h old) / छठको तयारी: गुह्येश्वरीबाट गौरीघाटसम्मको वाग्मती स (0h old) / १२ बजे १२ समाचार : रसुवागढी नाका तीन महिनादेखि ठप् (0h old)
+OK  Nagarik                 20 stories  https://nagariknews.nagariknetwork.com/feed  बूढीगण्डकी जलविद्युत् आयोजनामा लगानी गर्न युएईसमक् (2h old) / म्यानमामा विस्थापितको शिविरमा हवाई आक्रमण, १२ जनाक (3h old) / चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (3h old)
+OK  Himal Khabar             5 stories  https://www.himalkhabar.com/feed  विभेदकारी वैचारिकी र दलित शिल्पीको मुक्तिमार्ग (38h old) / पहिलो विश्वयुद्धको गोर्खाली कथा सुनाइरहेको छ, छत्र (60h old) / जेरुशा ! तिमी कहाँ छौ? (107h old)
+OK  Baahrakhari              4 stories  https://baahrakhari.com/feed  एमालेमा रहेर अरू दललाई मत दिनेलाई कारबाही गरिन्छ : (2h old) / एपेक बैठकको ‘साइडलाइन’मा ट्रम्प, सी र पुटिनबीच ‘त् (2h old) / लुम्बिनी शीर्ष स्थानमा रहँदै प्लेअफमा (4h old)
+NO  Ujyaalo                  0 stories  https://ujyaaloonline.com/feed: HTTP 403  
+NO  Lokantar                 0 stories  https://lokaantar.com/feed: HTTP 404  
+NO  Nepal Press              0 stories  https://www.nepalpress.com/feed: HTTP 403  
+OK  Annapurna Post          20 stories  https://annapurnapost.com/rss  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Gorkhapatra             10 stories  https://gorkhapatraonline.com/rss  सजाइयो घडीअर्वा पोखरी छठघाट परिसर (फोटोफिचर) (1h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (1h old) / कान्ति तालको बिजोग : १० करोडको लगानी बालुवामा पानी (1h old)
+OK  Kathmandu Post          40 stories  https://kathmandupost.com/rss  Who is the real prime minister? (0h old) / Congress leader Umesh Shrestha’s brother arrested  (0h old) / Lumbini beat Biratnagar to reach Qualifier, Kings  (0h old)
+NO  myRepublica              0 stories  https://myrepublica.nagariknetwork.com/feed: HTTP 404  
+OK  Himalayan Times         40 stories  https://thehimalayantimes.com/rssFeed/15  Sama-Chakewa festival begins across Mithila region (11h old) / Govt declares public holiday on Monday for Chhath (33h old) / Is Outlook down? Widespread outage hits Microsoft  (35h old)
+OK  Online Khabar English   20 stories  https://english.onlinekhabar.com/feed  Domestic workers need protection beyond the househ (6h old) / The hidden cost of Nepal’s rising public debt (9h old) / Nepal must build, but it must build smarter (12h old)
+OK  Onlinekhabar (business)  40 stories  https://www.onlinekhabar.com/content/business/feed  जनकपुरदेखि अयोध्यासम्म साप्ताहिक रेल सेवा सञ्चालन  (3h old) / भूकम्पले क्षतिग्रस्त जाजरकोट दरबार पुनर्निर्माणका  (10h old) / नेपालमा एआई र उद्योग ४.० (13h old)
+OK  Annapurna Post (business)  20 stories  https://annapurnapost.com/rss/economy  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Online Khabar English (business)  20 stories  https://english.onlinekhabar.com/category/economy/feed  The hidden cost of Nepal’s rising public debt (9h old) / Will PM Balen Shah’s India visit resolve cross-bor (18h old) / NEPSE falls 6.44 points in first trading session a (33h old)
+OK  Bizmandu                15 stories  https://bizmandu.com/feed  विराटनगरमाथिको थ्रिलर जितले लुम्बिनी क्वालिफायरमा, (3h old) / छठ पर्वको पूर्वसन्ध्यामा बेहुलीझैं सिँगारियो कमलपो (3h old) / इँटा उद्योगमा ९ अर्बको कार्बन फाइनान्सिङ, ३०० उद्य (4h old)
+OK  Arthasarokar            20 stories  https://arthasarokar.com/feed  तिहार बिदामा मुस्ताङ घुम्ने पर्यटक बढ्दै (153h old) / कुकुर तिहारः भैरव वाहन गुल्ममा विशेष ‘डग शो’ प्रदर (155h old) / एनपिएल अपडेट: लुम्बिनीको अपराजित यात्रामा ब्रेक, क (155h old)
+NO  Aarthik News             0 stories  https://aarthiknews.com/feed: HTTP 403  
+OK  Clickmandu              10 stories  https://clickmandu.com/feed  कोप–३१ मा हिमताल र हिमनदीको सङ्कटबारे विश्व समुदाय (3h old) / नेपाल र साउथ पोलबीच ठूलो परिमाणको ‘जुरिडिक्सनल रेड (3h old) / २६ लाख हेक्टर वनबाट कार्बन व्यापार गर्ने नेपालको त (8h old)
+OK  Karobar Daily           40 stories  https://www.karobardaily.com/feed  शरद् ऋतुमा पर्वतारोहण अनुमति लिएका १६१३ जनाबाट ३३  (2h old) / छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / विराटनगरविरुद्ध लुम्बिनीको जित, प्लेअफ समीकरण पूरा (3h old)
+NO  Abhiyan Daily            0 stories  https://www.abhiyandaily.com/feed: HTTP 403  
+NO  New Business Age         0 stories  https://newbusinessage.com/feed: HTTP 403  
+OK  Nepal Live Today        10 stories  https://www.nepallivetoday.com/feed  Media’s role vital to strengthen democracy: Speake (16548h old) / Two people arrested for offensive conduct after NP (16596h old) / PM Oli felicitates NPL Champions Janakpur Bolts (16620h old)
+OK  Rising Nepal            10 stories  https://risingnepaldaily.com/rss  Minister Chaudhary pledges to prioritize indigenou (3h old) / Call to submit claims to form new govt in Madhesh (4h old) / No dispute between RSP and Government: Chair Lamic (4h old)
+OK  Desh Sanchar            11 stories  https://deshsanchar.com/feed  छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / यमनमा सर्वसाधारणको सुरक्षाप्रति राष्ट्रसङ्घको चासो (3h old) / विराटनगर बाहिरिएसँगै प्लेअफ पुग्ने चार टिमको तय, ल (3h old)
+OK  Khabarhub                8 stories  https://khabarhub.com/feed  एनपिएल प्लेअफ समीकरण पूरा : सनसनीपूर्ण जित निकाल्द (3h old) / भन्सार छलिका १६ लाखभन्दा बढीको अवैध सामान बरामद (5h old) / छठ पर्वका लागि कमलपोखरीमा सम्पूर्ण तयारी पूरा (5h old)
+NO  Kantipur (alt)           0 stories  https://kantipurdaily.com/feed: HTTP 404  
+OK  ShareSansar             13 stories  https://www.sharesansar.com/category/latest  
+OK  Mero Lagani              8 stories  https://merolagani.com/NewsList.aspx  
+NO  Kantipur (business)      0 stories  https://ekantipur.com/business: HTTP 403  
+OK  B360 Nepal               5 stories  https://www.b360nepal.com/feed  Nepal called for grant-based climate finance and m (1h old) / Light rain, snowfall likely in hills, mountains as (12h old) / Nepal must strengthen preparation, institutional c (12h old)
+NO  Bizshala                 0 stories  https://bizshala.com/feed: HTTP 404  
+OK  Nepalnews               12 stories  https://www.nepalnews.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old) / मधेस प्रदेशमा नयाँ सरकार गठनका लागि दाबी पेस गर्न  (3h old) / नेपालको २५ लाख हेक्टर वनमा कार्बन कार्यक्रम विकास  (3h old)
+NO  Nepalnews English        0 stories  https://english.nepalnews.com/feed: HTTP 403  
+OK  Ratopati English        30 stories  https://english.ratopati.com/feed  India and Pakistan to Compete in SAFF Championship (1h old) / Motorcyclist Dies in Car Collision in Jhapa (1h old) / Brazil's Decision on Raphinha Sparks Controversy w (1h old)
+NO  Spotlight Nepal          0 stories  https://www.spotlightnepal.com/feed: HTTP 403  
+OK  NEPSE Trading            7 stories  https://nepsetrading.com/news  
+OK  Bizshala (page)         30 stories  https://www.bizshala.com/  
+NO  Online Khabar English (business2)   0 stories  https://english.onlinekhabar.com/category/business/feed: no stories in feed  
+OK  Onlinekhabar (auto)     38 stories  https://www.onlinekhabar.com/content/auto/feed  प्रोटोन ई.मास ५ दुई अन्तर्राष्ट्रिय अवार्डबाट सम्म (33h old) / न रोकिए घातक दुर्घटना, न ब्युँझिए शासक-प्रशासक (51h old) / रोयल इन्फिल्डको ‘मिस्टिक मुस्ताङ राइड २’ मा ४० महि (225h old)
+OK  Online Khabar English (auto)  20 stories  https://english.onlinekhabar.com/category/auto/feed  Yamaha XSR 155 combines retro styling with modern  (223h old) / Sipradi Yatri announces price of locally made Yatr (1377h old) / Why Yatri and Sipradi joined hands to build a two- (1527h old)
+NO  Techpana                 0 stories  https://techpana.com/feed: HTTP 403  
+NO  Gadgetbyte Nepal         0 stories  https://gadgetbytenepal.com/feed: HTTP 404  
+NO  Auto Life Nepal          0 stories  https://autolifenepal.com/feed: ConnectionError: HTTPSConnectionPool(host='autolifenepal.com', port=443): Max retries exceeded with url: /feed (Caused by NameResolutionError("HTTPSConnection(host='autolifenepal.com', port=443): Failed to resolve 'autolifenepal.com' ([Errno -2] Name or service not kn  
+OK  Nepal Drives             5 stories  https://nepaldrives.com/feed  BAIC and Arcfox Inaugurate New Showroom in Pokhara (204h old) / Chery Q Premium Variant Launched in Nepal at Rs 33 (204h old) / 40 Women Riders Complete Four-Day Mystic Mustang R (229h old)
+NO  Autonepal                0 stories  https://autonepal.com/feed: no stories in feed  
+NO  Ultimate Nepal           0 stories  https://www.ultimatenepal.com/feed: no stories in feed  
+NO  Tech Lekh                0 stories  https://www.techlekh.com/feed: no stories in feed  
+OK  Rushlane                 8 stories  https://www.rushlane.com/feed  New Toyota Innova Hycross Facelift First Official  (5h old) / TVS Norton Atlas GT, Manx R Patented In India – La (6h old) / New Maruti SUV Spied Testing – Next Gen Brezza 202 (10h old)
+OK  GaadiWaadi               8 stories  https://gaadiwaadi.com/feed  Mahindra Plans Capacity For 10,000 Units A Month F (7h old) / New Gen Toyota Fortuner To Debut Soon – What We Kn (9h old) / Kia October 2026 Sales Analysis – Seltos, Sonet, C (10h old)
+NO  Autocar India            0 stories  https://www.autocarindia.com/rss: HTTP 410  
+OK  MotorBeam               12 stories  https://www.motorbeam.com/feed/  AEB To Become Mandatory In All Cars From October 2 (537h old) / Ducati Hypermotard V2 Launched At Rs 16.53 Lakh (540h old) / BMW Motorrad Vision CE Patented In India (540h old)
+NO  Autopunditz              0 stories  https://www.autopunditz.com/feed: HTTP 404  
+OK  Carscoops               12 stories  https://www.carscoops.com/feed/  The 5 Worst Rebadges In Automotive History (1h old) / BMW Pays Tribute To Alex Zanardi With A Very Speci (2h old) / What Do All The Flags Mean In Racing? (3h old)
+OK  Electrek                12 stories  https://electrek.co/feed/  Check your ego at the door: Stellantis’ new electr (1h old) / Huawei set to challenge Tesla Powerwall with new,  (2h old) / Tesla Cybercab’s autonomy agreement is insane: $29 (5h old)
+NO  Naya Patrika             0 stories  https://www.nayapatrikadaily.com/feed: HTTP 404  
+NO  Ekagaj                   0 stories  https://www.ekagaj.com/feed: HTTP 403  
+OK  Thaha Khabar             5 stories  https://thahakhabar.com/feed  ‘पाकिस्तानको बाढी पुनःस्थापनाको अनुभवबाट नेपालले स (2h old) / मधेशका मुख्यमन्त्री यादवद्वारा राजीनामा, सरकार बना (2h old) / चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old)
+NO  Pahilo Post              0 stories  https://www.pahilopost.com/feed: HTTP 503  
+NO  DC Nepal                 0 stories  https://www.dcnepal.com/feed: HTTP 403  
+OK  Kathmandu Press          5 stories  https://kathmandupress.com/feed  भित्री र बाहिरी शक्तिको संयुक्त आक्रमणका कारण एमाल (7h old) / मधेशले मालिक होइन, सेवक खोजेको हो : रवि लामिछाने (7h old) / रास्वपा सभापति लामिछाने दम्पती जनकपुरमा (7h old)
+OK  Nepal Samaya             1 stories  https://nepalsamaya.com/feed  एनपीएल : लुम्बिनी पहिलो क्वालिफायरमा प्रवेश,विराटन (3h old)
+OK  News of Nepal           12 stories  https://newsofnepal.com/feed  क्रिस्टियानो रोनाल्डोद्वारा अन्तर्राष्ट्रिय फुटबलल (2h old) / अन्तिम साससम्म कांग्रेसको हितमा लड्छु : देउवा (7h old) / मधेशका मुख्यमन्त्री कृष्णप्रसाद यादवद्वारा राजीनाम (9h old)
+OK  Rajdhani Daily          10 stories  https://rajdhanidaily.com/feed  लुम्बिनीसँग हारेपछि विराटनगर प्लेअफबाट बाहिरियो (3h old) / लघुकथा पुरस्कार डा. टीकाराम पोखरेललाई (4h old) / मधेशमा मुख्यमन्त्रीका लागि दाबी आह्वान, मंसिर ४ गत (6h old)
+NO  Ukaalo                   0 stories  https://www.ukaalo.com/feed: HTTP 404  
+OK  Image Khabar            10 stories  https://imagekhabar.com/feed  विराटनगरलाई हराउँदै लुम्बिनी लिग चरणको शीर्ष स्थान (3h old) / विराटनगरले लुम्बिनीलाई दियो १६७ रनको लक्ष्य (6h old) / काठमाडौं उपत्यकामा छठको तयारी अन्तिम चरणमा (6h old)
+NO  Hamra Kura               0 stories  https://www.hamrakura.com/feed: HTTP 403  
+OK  Shilapatra               5 stories  https://shilapatra.com/feed  छठमा सुरक्षा व्यवस्था चुस्त बनाउन देशभरका प्रहरीला (3h old) / विराटनगरलाई हराउँदै साविक विजेता लुम्बिनी क्वालिफा (4h old) / छठका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (तस्वीर (4h old)
+OK  Nepal Khabar            20 stories  https://nepalkhabar.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (0h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (0h old) / गंगासागरमा छठ मनाउँदै निकिता पौडेल, शुरु गरिन् धार (0h old)
+OK  Nepali Times            30 stories  https://nepalitimes.com/feed  Mountaineering, as war waged by other means (16h old) / Nepal caught in contraband timber stalemate (32h old) / When is enough, enough? (41h old)
+OK  Kathmandu Tribune       10 stories  https://kathmandutribune.com/feed  Can AI Save Journalism? (1796h old) / सुकरातहरुको नौनाडी गलेको छ (2399h old) / यात्रा मात्र होइन, जीवनको खोज: ‘फुकुवा’ का लेखक बी (2533h old)
+OK  Nepal Monitor           10 stories  https://nepalmonitor.com/feed  Families in Devighat, Nepal, Face Uncertain Return (56h old) / Nepal Remittance 2026: Why Inflows Stay Strong as  (1045h old) / Nepal Economy 2026: Growth, Jobs and Investment (1424h old)
+NO  Hamro Kalam              0 stories  https://www.hamrokalam.com/feed: ConnectTimeout: HTTPSConnectionPool(host='www.hamrokalam.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hamrokalam.com', port=443) at 0x7f15f23b4530>, 'Connection to www.hamrokalam.com timed out. (conne  
+new stories found: 0
+{
+ "run": "2026-11-14 18:35 UTC",
+ "stories_in_app": 1851,
+ "new_found": 0,
+ "written_now": 0,
+ "today": {
+  "requests": 323,
+  "stories": 680,
+  "world": 13,
+  "exhausted": {}
+ },
+ "waiting": 4,
+ "left_out_old_or_undated": [],
+ "ai": {
+  "used_today": {
+   "gemini-3.1-flash-lite-preview": 157,
+   "gemini-flash-lite-latest": 82,
+   "gemini-3.5-flash-lite": 16
+  },
+  "models": [
+   "gemini-3.1-flash-lite-preview",
+   "gemini-flash-lite-latest",
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.8-flash"
+  ],
+  "paused": {},
+  "requests": 0,
+  "stories": 0,
+  "rejected": [],
+  "errors": []
+ },
+ "newest_story_minutes_old": 35
+}
+sites not readable this run: Kantipur, Ujyaalo, Lokantar, Nepal Press, myRepublica, Aarthik News, Abhiyan Daily, New Business Age, Kantipur (alt), Kantipur (business), Bizshala, Nepalnews English, Spotlight Nepal, Online Khabar English (business2), Techpana, Gadgetbyte Nepal, Auto Life Nepal, Autonepal, Ultimate Nepal, Tech Lekh, Autocar India, Autopunditz, Naya Patrika, Ekagaj, Pahilo Post, DC Nepal, Ukaalo, Hamra Kura, Hamro Kalam
+===== round 10 18:38:18
+OK  Onlinekhabar            38 stories  https://www.onlinekhabar.com/feed  पुछारदेखि शीर्षसम्म लुम्बिनीको यात्रा, अब उपाधि रक (1h old) / एनपीएल सिजन–३ : प्लेअफ पुग्ने चारै टोलीको टुङ्गो ल (3h old) / मञ्जुश्रीको पदचाप पछ्याउँदै हिमालको काखमा (3h old)
+NO  Kantipur                 0 stories  https://ekantipur.com/feed: HTTP 403  
+OK  Setopati                 5 stories  https://www.setopati.com/feed  इनमको मोबाइल २ दिनसम्म आफूसँग राख्ने अधिकार कुमार  (2h old) / दुई जुवाखालमा एकै साथ प्रहरी कारबाही, १७ जना पक्रा (2h old) / गाडीले मोटरसाइकललाई ठक्कर दिँदा बाबुछोराको मृत्यु, (2h old)
+OK  Ratopati                24 stories  https://www.ratopati.com/feed  महिला अन्तर्राष्ट्रिय गोल्डकपः अक्वा एफसीलाई हराउँ (0h old) / छठको तयारी: गुह्येश्वरीबाट गौरीघाटसम्मको वाग्मती स (0h old) / १२ बजे १२ समाचार : रसुवागढी नाका तीन महिनादेखि ठप् (0h old)
+OK  Nagarik                 20 stories  https://nagariknews.nagariknetwork.com/feed  सार्वजनिक बिदामा पनि आरटिजीएस प्रणाली सञ्चालन हुने (13h old) / दबाबमा अर्थतन्त्र (14h old) / खिम्ती-ठोसे-शिवालय जलाशययुक्त आयोजना अघि बढाउन तीन (17h old)
+OK  Himal Khabar             5 stories  https://www.himalkhabar.com/feed  विभेदकारी वैचारिकी र दलित शिल्पीको मुक्तिमार्ग (38h old) / पहिलो विश्वयुद्धको गोर्खाली कथा सुनाइरहेको छ, छत्र (60h old) / जेरुशा ! तिमी कहाँ छौ? (107h old)
+OK  Baahrakhari              4 stories  https://baahrakhari.com/feed  एमालेमा रहेर अरू दललाई मत दिनेलाई कारबाही गरिन्छ : (2h old) / एपेक बैठकको ‘साइडलाइन’मा ट्रम्प, सी र पुटिनबीच ‘त् (2h old) / लुम्बिनी शीर्ष स्थानमा रहँदै प्लेअफमा (4h old)
+NO  Ujyaalo                  0 stories  https://ujyaaloonline.com/feed: HTTP 403  
+NO  Lokantar                 0 stories  https://lokaantar.com/feed: HTTP 404  
+NO  Nepal Press              0 stories  https://www.nepalpress.com/feed: HTTP 403  
+OK  Annapurna Post          20 stories  https://annapurnapost.com/rss  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Gorkhapatra             10 stories  https://gorkhapatraonline.com/rss  सजाइयो घडीअर्वा पोखरी छठघाट परिसर (फोटोफिचर) (1h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (1h old) / कान्ति तालको बिजोग : १० करोडको लगानी बालुवामा पानी (1h old)
+OK  Kathmandu Post          40 stories  https://kathmandupost.com/rss  Who is the real prime minister? (0h old) / Congress leader Umesh Shrestha’s brother arrested  (0h old) / Lumbini beat Biratnagar to reach Qualifier, Kings  (0h old)
+NO  myRepublica              0 stories  https://myrepublica.nagariknetwork.com/feed: HTTP 404  
+OK  Himalayan Times         40 stories  https://thehimalayantimes.com/rssFeed/15  Sama-Chakewa festival begins across Mithila region (11h old) / Govt declares public holiday on Monday for Chhath (33h old) / Is Outlook down? Widespread outage hits Microsoft  (35h old)
+OK  Online Khabar English   20 stories  https://english.onlinekhabar.com/feed  Domestic workers need protection beyond the househ (6h old) / The hidden cost of Nepal’s rising public debt (9h old) / Nepal must build, but it must build smarter (12h old)
+OK  Onlinekhabar (business)  40 stories  https://www.onlinekhabar.com/content/business/feed  जनकपुरदेखि अयोध्यासम्म साप्ताहिक रेल सेवा सञ्चालन  (4h old) / भूकम्पले क्षतिग्रस्त जाजरकोट दरबार पुनर्निर्माणका  (10h old) / नेपालमा एआई र उद्योग ४.० (13h old)
+OK  Annapurna Post (business)  20 stories  https://annapurnapost.com/rss/economy  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Online Khabar English (business)  20 stories  https://english.onlinekhabar.com/category/economy/feed  The hidden cost of Nepal’s rising public debt (9h old) / Will PM Balen Shah’s India visit resolve cross-bor (18h old) / NEPSE falls 6.44 points in first trading session a (33h old)
+OK  Bizmandu                15 stories  https://bizmandu.com/feed  विराटनगरमाथिको थ्रिलर जितले लुम्बिनी क्वालिफायरमा, (3h old) / छठ पर्वको पूर्वसन्ध्यामा बेहुलीझैं सिँगारियो कमलपो (4h old) / इँटा उद्योगमा ९ अर्बको कार्बन फाइनान्सिङ, ३०० उद्य (4h old)
+OK  Arthasarokar            20 stories  https://arthasarokar.com/feed  तिहार बिदामा मुस्ताङ घुम्ने पर्यटक बढ्दै (153h old) / कुकुर तिहारः भैरव वाहन गुल्ममा विशेष ‘डग शो’ प्रदर (155h old) / एनपिएल अपडेट: लुम्बिनीको अपराजित यात्रामा ब्रेक, क (155h old)
+NO  Aarthik News             0 stories  https://aarthiknews.com/feed: HTTP 403  
+OK  Clickmandu              10 stories  https://clickmandu.com/feed  कोप–३१ मा हिमताल र हिमनदीको सङ्कटबारे विश्व समुदाय (3h old) / नेपाल र साउथ पोलबीच ठूलो परिमाणको ‘जुरिडिक्सनल रेड (3h old) / २६ लाख हेक्टर वनबाट कार्बन व्यापार गर्ने नेपालको त (8h old)
+OK  Karobar Daily           40 stories  https://www.karobardaily.com/feed  शरद् ऋतुमा पर्वतारोहण अनुमति लिएका १६१३ जनाबाट ३३  (2h old) / छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / विराटनगरविरुद्ध लुम्बिनीको जित, प्लेअफ समीकरण पूरा (3h old)
+NO  Abhiyan Daily            0 stories  https://www.abhiyandaily.com/feed: HTTP 403  
+NO  New Business Age         0 stories  https://newbusinessage.com/feed: HTTP 403  
+OK  Nepal Live Today        10 stories  https://www.nepallivetoday.com/feed  Media’s role vital to strengthen democracy: Speake (16548h old) / Two people arrested for offensive conduct after NP (16596h old) / PM Oli felicitates NPL Champions Janakpur Bolts (16620h old)
+OK  Rising Nepal            10 stories  https://risingnepaldaily.com/rss  Minister Chaudhary pledges to prioritize indigenou (3h old) / Call to submit claims to form new govt in Madhesh (4h old) / No dispute between RSP and Government: Chair Lamic (4h old)
+OK  Desh Sanchar            11 stories  https://deshsanchar.com/feed  छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / यमनमा सर्वसाधारणको सुरक्षाप्रति राष्ट्रसङ्घको चासो (3h old) / विराटनगर बाहिरिएसँगै प्लेअफ पुग्ने चार टिमको तय, ल (3h old)
+OK  Khabarhub                8 stories  https://khabarhub.com/feed  एनपिएल प्लेअफ समीकरण पूरा : सनसनीपूर्ण जित निकाल्द (3h old) / भन्सार छलिका १६ लाखभन्दा बढीको अवैध सामान बरामद (5h old) / छठ पर्वका लागि कमलपोखरीमा सम्पूर्ण तयारी पूरा (5h old)
+NO  Kantipur (alt)           0 stories  https://kantipurdaily.com/feed: HTTP 404  
+OK  ShareSansar             13 stories  https://www.sharesansar.com/category/latest  
+OK  Mero Lagani              8 stories  https://merolagani.com/NewsList.aspx  
+NO  Kantipur (business)      0 stories  https://ekantipur.com/business: HTTP 403  
+OK  B360 Nepal               5 stories  https://www.b360nepal.com/feed  Nepal called for grant-based climate finance and m (2h old) / Light rain, snowfall likely in hills, mountains as (12h old) / Nepal must strengthen preparation, institutional c (12h old)
+NO  Bizshala                 0 stories  https://bizshala.com/feed: HTTP 404  
+OK  Nepalnews               12 stories  https://www.nepalnews.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old) / मधेस प्रदेशमा नयाँ सरकार गठनका लागि दाबी पेस गर्न  (3h old) / नेपालको २५ लाख हेक्टर वनमा कार्बन कार्यक्रम विकास  (3h old)
+NO  Nepalnews English        0 stories  https://english.nepalnews.com/feed: HTTP 403  
+OK  Ratopati English        30 stories  https://english.ratopati.com/feed  India and Pakistan to Compete in SAFF Championship (1h old) / Motorcyclist Dies in Car Collision in Jhapa (1h old) / Brazil's Decision on Raphinha Sparks Controversy w (1h old)
+NO  Spotlight Nepal          0 stories  https://www.spotlightnepal.com/feed: HTTP 403  
+OK  NEPSE Trading            7 stories  https://nepsetrading.com/news  
+OK  Bizshala (page)         30 stories  https://www.bizshala.com/  
+NO  Online Khabar English (business2)   0 stories  https://english.onlinekhabar.com/category/business/feed: no stories in feed  
+OK  Onlinekhabar (auto)     38 stories  https://www.onlinekhabar.com/content/auto/feed  प्रोटोन ई.मास ५ दुई अन्तर्राष्ट्रिय अवार्डबाट सम्म (34h old) / न रोकिए घातक दुर्घटना, न ब्युँझिए शासक-प्रशासक (51h old) / रोयल इन्फिल्डको ‘मिस्टिक मुस्ताङ राइड २’ मा ४० महि (225h old)
+OK  Online Khabar English (auto)  20 stories  https://english.onlinekhabar.com/category/auto/feed  Yamaha XSR 155 combines retro styling with modern  (223h old) / Sipradi Yatri announces price of locally made Yatr (1377h old) / Why Yatri and Sipradi joined hands to build a two- (1527h old)
+NO  Techpana                 0 stories  https://techpana.com/feed: HTTP 403  
+NO  Gadgetbyte Nepal         0 stories  https://gadgetbytenepal.com/feed: HTTP 404  
+NO  Auto Life Nepal          0 stories  https://autolifenepal.com/feed: ConnectionError: HTTPSConnectionPool(host='autolifenepal.com', port=443): Max retries exceeded with url: /feed (Caused by NameResolutionError("HTTPSConnection(host='autolifenepal.com', port=443): Failed to resolve 'autolifenepal.com' ([Errno -2] Name or service not kn  
+OK  Nepal Drives             5 stories  https://nepaldrives.com/feed  BAIC and Arcfox Inaugurate New Showroom in Pokhara (204h old) / Chery Q Premium Variant Launched in Nepal at Rs 33 (204h old) / 40 Women Riders Complete Four-Day Mystic Mustang R (229h old)
+NO  Autonepal                0 stories  https://autonepal.com/feed: HTTP 503  
+NO  Ultimate Nepal           0 stories  https://www.ultimatenepal.com/feed: no stories in feed  
+NO  Tech Lekh                0 stories  https://www.techlekh.com/feed: no stories in feed  
+OK  Rushlane                 8 stories  https://www.rushlane.com/feed  New Toyota Innova Hycross Facelift First Official  (5h old) / TVS Norton Atlas GT, Manx R Patented In India – La (6h old) / New Maruti SUV Spied Testing – Next Gen Brezza 202 (10h old)
+OK  GaadiWaadi               8 stories  https://gaadiwaadi.com/feed  Mahindra Plans Capacity For 10,000 Units A Month F (7h old) / New Gen Toyota Fortuner To Debut Soon – What We Kn (9h old) / Kia October 2026 Sales Analysis – Seltos, Sonet, C (10h old)
+NO  Autocar India            0 stories  https://www.autocarindia.com/rss: HTTP 410  
+OK  MotorBeam               12 stories  https://www.motorbeam.com/feed/  AEB To Become Mandatory In All Cars From October 2 (537h old) / Ducati Hypermotard V2 Launched At Rs 16.53 Lakh (540h old) / BMW Motorrad Vision CE Patented In India (540h old)
+NO  Autopunditz              0 stories  https://www.autopunditz.com/feed: HTTP 404  
+OK  Carscoops               12 stories  https://www.carscoops.com/feed/  The 5 Worst Rebadges In Automotive History (1h old) / BMW Pays Tribute To Alex Zanardi With A Very Speci (2h old) / What Do All The Flags Mean In Racing? (3h old)
+OK  Electrek                12 stories  https://electrek.co/feed/  Check your ego at the door: Stellantis’ new electr (1h old) / Huawei set to challenge Tesla Powerwall with new,  (2h old) / Tesla Cybercab’s autonomy agreement is insane: $29 (5h old)
+NO  Naya Patrika             0 stories  https://www.nayapatrikadaily.com/feed: HTTP 404  
+NO  Ekagaj                   0 stories  https://www.ekagaj.com/feed: HTTP 403  
+OK  Thaha Khabar             5 stories  https://thahakhabar.com/feed  ‘पाकिस्तानको बाढी पुनःस्थापनाको अनुभवबाट नेपालले स (2h old) / मधेशका मुख्यमन्त्री यादवद्वारा राजीनामा, सरकार बना (2h old) / चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old)
+NO  Pahilo Post              0 stories  https://www.pahilopost.com/feed: HTTP 503  
+NO  DC Nepal                 0 stories  https://www.dcnepal.com/feed: HTTP 403  
+OK  Kathmandu Press          5 stories  https://kathmandupress.com/feed  भित्री र बाहिरी शक्तिको संयुक्त आक्रमणका कारण एमाल (7h old) / मधेशले मालिक होइन, सेवक खोजेको हो : रवि लामिछाने (7h old) / रास्वपा सभापति लामिछाने दम्पती जनकपुरमा (7h old)
+OK  Nepal Samaya             1 stories  https://nepalsamaya.com/feed  एनपीएल : लुम्बिनी पहिलो क्वालिफायरमा प्रवेश,विराटन (3h old)
+OK  News of Nepal           12 stories  https://newsofnepal.com/feed  क्रिस्टियानो रोनाल्डोद्वारा अन्तर्राष्ट्रिय फुटबलल (2h old) / अन्तिम साससम्म कांग्रेसको हितमा लड्छु : देउवा (7h old) / मधेशका मुख्यमन्त्री कृष्णप्रसाद यादवद्वारा राजीनाम (9h old)
+OK  Rajdhani Daily          10 stories  https://rajdhanidaily.com/feed  लुम्बिनीसँग हारेपछि विराटनगर प्लेअफबाट बाहिरियो (3h old) / लघुकथा पुरस्कार डा. टीकाराम पोखरेललाई (4h old) / मधेशमा मुख्यमन्त्रीका लागि दाबी आह्वान, मंसिर ४ गत (6h old)
+NO  Ukaalo                   0 stories  https://www.ukaalo.com/feed: HTTP 404  
+OK  Image Khabar            10 stories  https://imagekhabar.com/feed  विराटनगरलाई हराउँदै लुम्बिनी लिग चरणको शीर्ष स्थान (3h old) / विराटनगरले लुम्बिनीलाई दियो १६७ रनको लक्ष्य (6h old) / काठमाडौं उपत्यकामा छठको तयारी अन्तिम चरणमा (6h old)
+NO  Hamra Kura               0 stories  https://www.hamrakura.com/feed: HTTP 403  
+OK  Shilapatra               5 stories  https://shilapatra.com/feed  छठमा सुरक्षा व्यवस्था चुस्त बनाउन देशभरका प्रहरीला (3h old) / विराटनगरलाई हराउँदै साविक विजेता लुम्बिनी क्वालिफा (4h old) / छठका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (तस्वीर (4h old)
+OK  Nepal Khabar            20 stories  https://nepalkhabar.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (0h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (0h old) / गंगासागरमा छठ मनाउँदै निकिता पौडेल, शुरु गरिन् धार (0h old)
+OK  Nepali Times            30 stories  https://nepalitimes.com/feed  Mountaineering, as war waged by other means (16h old) / Nepal caught in contraband timber stalemate (32h old) / When is enough, enough? (41h old)
+OK  Kathmandu Tribune       10 stories  https://kathmandutribune.com/feed  Can AI Save Journalism? (1796h old) / सुकरातहरुको नौनाडी गलेको छ (2399h old) / यात्रा मात्र होइन, जीवनको खोज: ‘फुकुवा’ का लेखक बी (2533h old)
+OK  Nepal Monitor           10 stories  https://nepalmonitor.com/feed  Families in Devighat, Nepal, Face Uncertain Return (56h old) / Nepal Remittance 2026: Why Inflows Stay Strong as  (1045h old) / Nepal Economy 2026: Growth, Jobs and Investment (1424h old)
+NO  Hamro Kalam              0 stories  https://www.hamrokalam.com/feed: ConnectTimeout: HTTPSConnectionPool(host='www.hamrokalam.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hamrokalam.com', port=443) at 0x7fe6a09bf740>, 'Connection to www.hamrokalam.com timed out. (conne  
+new stories found: 0
+{
+ "run": "2026-11-14 18:38 UTC",
+ "stories_in_app": 1851,
+ "new_found": 0,
+ "written_now": 0,
+ "today": {
+  "requests": 323,
+  "stories": 680,
+  "world": 13,
+  "exhausted": {}
+ },
+ "waiting": 4,
+ "left_out_old_or_undated": [],
+ "ai": {
+  "used_today": {
+   "gemini-3.1-flash-lite-preview": 157,
+   "gemini-flash-lite-latest": 82,
+   "gemini-3.5-flash-lite": 16
+  },
+  "models": [
+   "gemini-3.1-flash-lite-preview",
+   "gemini-flash-lite-latest",
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.8-flash"
+  ],
+  "paused": {},
+  "requests": 0,
+  "stories": 0,
+  "rejected": [],
+  "errors": []
+ },
+ "newest_story_minutes_old": 38
+}
+sites not readable this run: Kantipur, Ujyaalo, Lokantar, Nepal Press, myRepublica, Aarthik News, Abhiyan Daily, New Business Age, Kantipur (alt), Kantipur (business), Bizshala, Nepalnews English, Spotlight Nepal, Online Khabar English (business2), Techpana, Gadgetbyte Nepal, Auto Life Nepal, Autonepal, Ultimate Nepal, Tech Lekh, Autocar India, Autopunditz, Naya Patrika, Ekagaj, Pahilo Post, DC Nepal, Ukaalo, Hamra Kura, Hamro Kalam
+===== round 11 18:41:18
+OK  Onlinekhabar            38 stories  https://www.onlinekhabar.com/feed  पुछारदेखि शीर्षसम्म लुम्बिनीको यात्रा, अब उपाधि रक (1h old) / एनपीएल सिजन–३ : प्लेअफ पुग्ने चारै टोलीको टुङ्गो ल (3h old) / मञ्जुश्रीको पदचाप पछ्याउँदै हिमालको काखमा (3h old)
+NO  Kantipur                 0 stories  https://ekantipur.com/feed: HTTP 403  
+OK  Setopati                 5 stories  https://www.setopati.com/feed  इनमको मोबाइल २ दिनसम्म आफूसँग राख्ने अधिकार कुमार  (2h old) / दुई जुवाखालमा एकै साथ प्रहरी कारबाही, १७ जना पक्रा (2h old) / गाडीले मोटरसाइकललाई ठक्कर दिँदा बाबुछोराको मृत्यु, (2h old)
+OK  Ratopati                24 stories  https://www.ratopati.com/feed  महिला अन्तर्राष्ट्रिय गोल्डकपः अक्वा एफसीलाई हराउँ (0h old) / छठको तयारी: गुह्येश्वरीबाट गौरीघाटसम्मको वाग्मती स (0h old) / १२ बजे १२ समाचार : रसुवागढी नाका तीन महिनादेखि ठप् (0h old)
+OK  Nagarik                 20 stories  https://nagariknews.nagariknetwork.com/feed  आजको कार्टुन (1213h old) / कृषि उत्पादन ‘पकेट’ क्षेत्र विकास गर्न पाँच करोड ५ (2170h old) / आजकाे कार्टुन (6996h old)
+OK  Himal Khabar             5 stories  https://www.himalkhabar.com/feed  विभेदकारी वैचारिकी र दलित शिल्पीको मुक्तिमार्ग (38h old) / पहिलो विश्वयुद्धको गोर्खाली कथा सुनाइरहेको छ, छत्र (60h old) / जेरुशा ! तिमी कहाँ छौ? (107h old)
+OK  Baahrakhari              4 stories  https://baahrakhari.com/feed  एमालेमा रहेर अरू दललाई मत दिनेलाई कारबाही गरिन्छ : (2h old) / एपेक बैठकको ‘साइडलाइन’मा ट्रम्प, सी र पुटिनबीच ‘त् (3h old) / लुम्बिनी शीर्ष स्थानमा रहँदै प्लेअफमा (4h old)
+NO  Ujyaalo                  0 stories  https://ujyaaloonline.com/feed: HTTP 403  
+NO  Lokantar                 0 stories  https://lokaantar.com/feed: HTTP 404  
+NO  Nepal Press              0 stories  https://www.nepalpress.com/feed: HTTP 403  
+OK  Annapurna Post          20 stories  https://annapurnapost.com/rss  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Gorkhapatra             10 stories  https://gorkhapatraonline.com/rss  सजाइयो घडीअर्वा पोखरी छठघाट परिसर (फोटोफिचर) (1h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (1h old) / कान्ति तालको बिजोग : १० करोडको लगानी बालुवामा पानी (1h old)
+OK  Kathmandu Post          40 stories  https://kathmandupost.com/rss  Who is the real prime minister? (0h old) / Congress leader Umesh Shrestha’s brother arrested  (0h old) / Lumbini beat Biratnagar to reach Qualifier, Kings  (0h old)
+NO  myRepublica              0 stories  https://myrepublica.nagariknetwork.com/feed: HTTP 404  
+OK  Himalayan Times         40 stories  https://thehimalayantimes.com/rssFeed/15  Sama-Chakewa festival begins across Mithila region (11h old) / Govt declares public holiday on Monday for Chhath (33h old) / Is Outlook down? Widespread outage hits Microsoft  (35h old)
+OK  Online Khabar English   20 stories  https://english.onlinekhabar.com/feed  Domestic workers need protection beyond the househ (6h old) / The hidden cost of Nepal’s rising public debt (9h old) / Nepal must build, but it must build smarter (12h old)
+OK  Onlinekhabar (business)  40 stories  https://www.onlinekhabar.com/content/business/feed  जनकपुरदेखि अयोध्यासम्म साप्ताहिक रेल सेवा सञ्चालन  (4h old) / भूकम्पले क्षतिग्रस्त जाजरकोट दरबार पुनर्निर्माणका  (10h old) / नेपालमा एआई र उद्योग ४.० (13h old)
+OK  Annapurna Post (business)  20 stories  https://annapurnapost.com/rss/economy  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Online Khabar English (business)  20 stories  https://english.onlinekhabar.com/category/economy/feed  The hidden cost of Nepal’s rising public debt (9h old) / Will PM Balen Shah’s India visit resolve cross-bor (18h old) / NEPSE falls 6.44 points in first trading session a (33h old)
+OK  Bizmandu                15 stories  https://bizmandu.com/feed  विराटनगरमाथिको थ्रिलर जितले लुम्बिनी क्वालिफायरमा, (4h old) / छठ पर्वको पूर्वसन्ध्यामा बेहुलीझैं सिँगारियो कमलपो (4h old) / इँटा उद्योगमा ९ अर्बको कार्बन फाइनान्सिङ, ३०० उद्य (4h old)
+OK  Arthasarokar            20 stories  https://arthasarokar.com/feed  तिहार बिदामा मुस्ताङ घुम्ने पर्यटक बढ्दै (153h old) / कुकुर तिहारः भैरव वाहन गुल्ममा विशेष ‘डग शो’ प्रदर (155h old) / एनपिएल अपडेट: लुम्बिनीको अपराजित यात्रामा ब्रेक, क (155h old)
+NO  Aarthik News             0 stories  https://aarthiknews.com/feed: HTTP 403  
+OK  Clickmandu              10 stories  https://clickmandu.com/feed  कोप–३१ मा हिमताल र हिमनदीको सङ्कटबारे विश्व समुदाय (3h old) / नेपाल र साउथ पोलबीच ठूलो परिमाणको ‘जुरिडिक्सनल रेड (3h old) / २६ लाख हेक्टर वनबाट कार्बन व्यापार गर्ने नेपालको त (8h old)
+OK  Karobar Daily           40 stories  https://www.karobardaily.com/feed  शरद् ऋतुमा पर्वतारोहण अनुमति लिएका १६१३ जनाबाट ३३  (2h old) / छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / विराटनगरविरुद्ध लुम्बिनीको जित, प्लेअफ समीकरण पूरा (3h old)
+NO  Abhiyan Daily            0 stories  https://www.abhiyandaily.com/feed: HTTP 403  
+NO  New Business Age         0 stories  https://newbusinessage.com/feed: HTTP 403  
+OK  Nepal Live Today        10 stories  https://www.nepallivetoday.com/feed  Media’s role vital to strengthen democracy: Speake (16548h old) / Two people arrested for offensive conduct after NP (16596h old) / PM Oli felicitates NPL Champions Janakpur Bolts (16620h old)
+OK  Rising Nepal            10 stories  https://risingnepaldaily.com/rss  Minister Chaudhary pledges to prioritize indigenou (4h old) / Call to submit claims to form new govt in Madhesh (4h old) / No dispute between RSP and Government: Chair Lamic (4h old)
+OK  Desh Sanchar            11 stories  https://deshsanchar.com/feed  गाउँमै उद्यम र रोजगारी सिर्जना गर्ने सम्भावना खोज् (2h old) / एआई प्रविधिमा लगानी बढाउने र सहकार्य सुदृढ गर्ने ई (2h old) / अमेरिकामा घण्टौँपछि हवाई सेवा पुनः सञ्चालन, पुरानो (3h old)
+OK  Khabarhub                8 stories  https://khabarhub.com/feed  एनपिएल प्लेअफ समीकरण पूरा : सनसनीपूर्ण जित निकाल्द (3h old) / भन्सार छलिका १६ लाखभन्दा बढीको अवैध सामान बरामद (5h old) / छठ पर्वका लागि कमलपोखरीमा सम्पूर्ण तयारी पूरा (5h old)
+NO  Kantipur (alt)           0 stories  https://kantipurdaily.com/feed: HTTP 404  
+OK  ShareSansar             13 stories  https://www.sharesansar.com/category/latest  
+OK  Mero Lagani              8 stories  https://merolagani.com/NewsList.aspx  
+NO  Kantipur (business)      0 stories  https://ekantipur.com/business: HTTP 403  
+OK  B360 Nepal               5 stories  https://www.b360nepal.com/feed  Nepal called for grant-based climate finance and m (2h old) / Light rain, snowfall likely in hills, mountains as (12h old) / Nepal must strengthen preparation, institutional c (12h old)
+NO  Bizshala                 0 stories  https://bizshala.com/feed: HTTP 404  
+OK  Nepalnews               12 stories  https://www.nepalnews.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old) / मधेस प्रदेशमा नयाँ सरकार गठनका लागि दाबी पेस गर्न  (3h old) / नेपालको २५ लाख हेक्टर वनमा कार्बन कार्यक्रम विकास  (3h old)
+NO  Nepalnews English        0 stories  https://english.nepalnews.com/feed: HTTP 403  
+OK  Ratopati English        30 stories  https://english.ratopati.com/feed  India and Pakistan to Compete in SAFF Championship (1h old) / Motorcyclist Dies in Car Collision in Jhapa (1h old) / Brazil's Decision on Raphinha Sparks Controversy w (1h old)
+NO  Spotlight Nepal          0 stories  https://www.spotlightnepal.com/feed: HTTP 403  
+OK  NEPSE Trading            7 stories  https://nepsetrading.com/news  
+OK  Bizshala (page)         30 stories  https://www.bizshala.com/  
+NO  Online Khabar English (business2)   0 stories  https://english.onlinekhabar.com/category/business/feed: no stories in feed  
+OK  Onlinekhabar (auto)     38 stories  https://www.onlinekhabar.com/content/auto/feed  प्रोटोन ई.मास ५ दुई अन्तर्राष्ट्रिय अवार्डबाट सम्म (34h old) / न रोकिए घातक दुर्घटना, न ब्युँझिए शासक-प्रशासक (51h old) / रोयल इन्फिल्डको ‘मिस्टिक मुस्ताङ राइड २’ मा ४० महि (225h old)
+OK  Online Khabar English (auto)  20 stories  https://english.onlinekhabar.com/category/auto/feed  Yamaha XSR 155 combines retro styling with modern  (223h old) / Sipradi Yatri announces price of locally made Yatr (1377h old) / Why Yatri and Sipradi joined hands to build a two- (1527h old)
+NO  Techpana                 0 stories  https://techpana.com/feed: HTTP 403  
+NO  Gadgetbyte Nepal         0 stories  https://gadgetbytenepal.com/feed: HTTP 404  
+NO  Auto Life Nepal          0 stories  https://autolifenepal.com/feed: ConnectionError: HTTPSConnectionPool(host='autolifenepal.com', port=443): Max retries exceeded with url: /feed (Caused by NameResolutionError("HTTPSConnection(host='autolifenepal.com', port=443): Failed to resolve 'autolifenepal.com' ([Errno -2] Name or service not kn  
+OK  Nepal Drives             5 stories  https://nepaldrives.com/feed  BAIC and Arcfox Inaugurate New Showroom in Pokhara (204h old) / Chery Q Premium Variant Launched in Nepal at Rs 33 (204h old) / 40 Women Riders Complete Four-Day Mystic Mustang R (229h old)
+NO  Autonepal                0 stories  https://autonepal.com/feed: no stories in feed  
+NO  Ultimate Nepal           0 stories  https://www.ultimatenepal.com/feed: no stories in feed  
+NO  Tech Lekh                0 stories  https://www.techlekh.com/feed: no stories in feed  
+OK  Rushlane                 8 stories  https://www.rushlane.com/feed  New Toyota Innova Hycross Facelift First Official  (5h old) / TVS Norton Atlas GT, Manx R Patented In India – La (6h old) / New Maruti SUV Spied Testing – Next Gen Brezza 202 (10h old)
+OK  GaadiWaadi               8 stories  https://gaadiwaadi.com/feed  Mahindra Plans Capacity For 10,000 Units A Month F (7h old) / New Gen Toyota Fortuner To Debut Soon – What We Kn (9h old) / Kia October 2026 Sales Analysis – Seltos, Sonet, C (10h old)
+NO  Autocar India            0 stories  https://www.autocarindia.com/rss: HTTP 410  
+OK  MotorBeam               12 stories  https://www.motorbeam.com/feed/  AEB To Become Mandatory In All Cars From October 2 (537h old) / Ducati Hypermotard V2 Launched At Rs 16.53 Lakh (540h old) / BMW Motorrad Vision CE Patented In India (540h old)
+NO  Autopunditz              0 stories  https://www.autopunditz.com/feed: HTTP 404  
+OK  Carscoops               12 stories  https://www.carscoops.com/feed/  The 5 Worst Rebadges In Automotive History (1h old) / BMW Pays Tribute To Alex Zanardi With A Very Speci (2h old) / What Do All The Flags Mean In Racing? (3h old)
+OK  Electrek                12 stories  https://electrek.co/feed/  Check your ego at the door: Stellantis’ new electr (1h old) / Huawei set to challenge Tesla Powerwall with new,  (2h old) / Tesla Cybercab’s autonomy agreement is insane: $29 (5h old)
+NO  Naya Patrika             0 stories  https://www.nayapatrikadaily.com/feed: HTTP 404  
+NO  Ekagaj                   0 stories  https://www.ekagaj.com/feed: HTTP 403  
+OK  Thaha Khabar             5 stories  https://thahakhabar.com/feed  ‘पाकिस्तानको बाढी पुनःस्थापनाको अनुभवबाट नेपालले स (2h old) / मधेशका मुख्यमन्त्री यादवद्वारा राजीनामा, सरकार बना (2h old) / चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (3h old)
+NO  Pahilo Post              0 stories  https://www.pahilopost.com/feed: HTTP 503  
+NO  DC Nepal                 0 stories  https://www.dcnepal.com/feed: HTTP 403  
+OK  Kathmandu Press          5 stories  https://kathmandupress.com/feed  भित्री र बाहिरी शक्तिको संयुक्त आक्रमणका कारण एमाल (7h old) / मधेशले मालिक होइन, सेवक खोजेको हो : रवि लामिछाने (7h old) / रास्वपा सभापति लामिछाने दम्पती जनकपुरमा (7h old)
+OK  Nepal Samaya             1 stories  https://nepalsamaya.com/feed  एनपीएल : लुम्बिनी पहिलो क्वालिफायरमा प्रवेश,विराटन (3h old)
+OK  News of Nepal           12 stories  https://newsofnepal.com/feed  क्रिस्टियानो रोनाल्डोद्वारा अन्तर्राष्ट्रिय फुटबलल (2h old) / अन्तिम साससम्म कांग्रेसको हितमा लड्छु : देउवा (8h old) / मधेशका मुख्यमन्त्री कृष्णप्रसाद यादवद्वारा राजीनाम (9h old)
+OK  Rajdhani Daily          10 stories  https://rajdhanidaily.com/feed  लुम्बिनीसँग हारेपछि विराटनगर प्लेअफबाट बाहिरियो (3h old) / लघुकथा पुरस्कार डा. टीकाराम पोखरेललाई (4h old) / मधेशमा मुख्यमन्त्रीका लागि दाबी आह्वान, मंसिर ४ गत (6h old)
+NO  Ukaalo                   0 stories  https://www.ukaalo.com/feed: HTTP 404  
+OK  Image Khabar            10 stories  https://imagekhabar.com/feed  विराटनगरलाई हराउँदै लुम्बिनी लिग चरणको शीर्ष स्थान (3h old) / विराटनगरले लुम्बिनीलाई दियो १६७ रनको लक्ष्य (6h old) / काठमाडौं उपत्यकामा छठको तयारी अन्तिम चरणमा (6h old)
+NO  Hamra Kura               0 stories  https://www.hamrakura.com/feed: HTTP 403  
+OK  Shilapatra               5 stories  https://shilapatra.com/feed  छठमा सुरक्षा व्यवस्था चुस्त बनाउन देशभरका प्रहरीला (3h old) / विराटनगरलाई हराउँदै साविक विजेता लुम्बिनी क्वालिफा (4h old) / छठका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (तस्वीर (4h old)
+OK  Nepal Khabar            20 stories  https://nepalkhabar.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (0h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (0h old) / गंगासागरमा छठ मनाउँदै निकिता पौडेल, शुरु गरिन् धार (0h old)
+OK  Nepali Times            30 stories  https://nepalitimes.com/feed  Mountaineering, as war waged by other means (16h old) / Nepal caught in contraband timber stalemate (32h old) / When is enough, enough? (41h old)
+OK  Kathmandu Tribune       10 stories  https://kathmandutribune.com/feed  Can AI Save Journalism? (1796h old) / सुकरातहरुको नौनाडी गलेको छ (2399h old) / यात्रा मात्र होइन, जीवनको खोज: ‘फुकुवा’ का लेखक बी (2534h old)
+OK  Nepal Monitor           10 stories  https://nepalmonitor.com/feed  Families in Devighat, Nepal, Face Uncertain Return (56h old) / Nepal Remittance 2026: Why Inflows Stay Strong as  (1045h old) / Nepal Economy 2026: Growth, Jobs and Investment (1424h old)
+NO  Hamro Kalam              0 stories  https://www.hamrokalam.com/feed: ConnectTimeout: HTTPSConnectionPool(host='www.hamrokalam.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hamrokalam.com', port=443) at 0x7f33257f3170>, 'Connection to www.hamrokalam.com timed out. (conne  
+new stories found: 3
+{
+ "run": "2026-11-14 18:41 UTC",
+ "stories_in_app": 1851,
+ "new_found": 3,
+ "written_now": 0,
+ "today": {
+  "requests": 323,
+  "stories": 680,
+  "world": 13,
+  "exhausted": {}
+ },
+ "waiting": 7,
+ "left_out_old_or_undated": [],
+ "ai": {
+  "used_today": {
+   "gemini-3.1-flash-lite-preview": 157,
+   "gemini-flash-lite-latest": 82,
+   "gemini-3.5-flash-lite": 16
+  },
+  "models": [
+   "gemini-3.1-flash-lite-preview",
+   "gemini-flash-lite-latest",
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.8-flash"
+  ],
+  "paused": {},
+  "requests": 0,
+  "stories": 0,
+  "rejected": [],
+  "errors": []
+ },
+ "newest_story_minutes_old": 41
+}
+sites not readable this run: Kantipur, Ujyaalo, Lokantar, Nepal Press, myRepublica, Aarthik News, Abhiyan Daily, New Business Age, Kantipur (alt), Kantipur (business), Bizshala, Nepalnews English, Spotlight Nepal, Online Khabar English (business2), Techpana, Gadgetbyte Nepal, Auto Life Nepal, Autonepal, Ultimate Nepal, Tech Lekh, Autocar India, Autopunditz, Naya Patrika, Ekagaj, Pahilo Post, DC Nepal, Ukaalo, Hamra Kura, Hamro Kalam
+===== round 12 18:44:18
+OK  Onlinekhabar            38 stories  https://www.onlinekhabar.com/feed  पुछारदेखि शीर्षसम्म लुम्बिनीको यात्रा, अब उपाधि रक (1h old) / एनपीएल सिजन–३ : प्लेअफ पुग्ने चारै टोलीको टुङ्गो ल (3h old) / मञ्जुश्रीको पदचाप पछ्याउँदै हिमालको काखमा (3h old)
+NO  Kantipur                 0 stories  https://ekantipur.com/feed: HTTP 403  
+OK  Setopati                 5 stories  https://www.setopati.com/feed  इनमको मोबाइल २ दिनसम्म आफूसँग राख्ने अधिकार कुमार  (2h old) / दुई जुवाखालमा एकै साथ प्रहरी कारबाही, १७ जना पक्रा (2h old) / गाडीले मोटरसाइकललाई ठक्कर दिँदा बाबुछोराको मृत्यु, (2h old)
+OK  Ratopati                24 stories  https://www.ratopati.com/feed  महिला अन्तर्राष्ट्रिय गोल्डकपः अक्वा एफसीलाई हराउँ (0h old) / छठको तयारी: गुह्येश्वरीबाट गौरीघाटसम्मको वाग्मती स (0h old) / १२ बजे १२ समाचार : रसुवागढी नाका तीन महिनादेखि ठप् (0h old)
+OK  Nagarik                 20 stories  https://nagariknews.nagariknetwork.com/feed  आजको कार्टुन (1213h old) / कृषि उत्पादन ‘पकेट’ क्षेत्र विकास गर्न पाँच करोड ५ (2170h old) / आजकाे कार्टुन (6996h old)
+OK  Himal Khabar             5 stories  https://www.himalkhabar.com/feed  विभेदकारी वैचारिकी र दलित शिल्पीको मुक्तिमार्ग (38h old) / पहिलो विश्वयुद्धको गोर्खाली कथा सुनाइरहेको छ, छत्र (60h old) / जेरुशा ! तिमी कहाँ छौ? (107h old)
+OK  Baahrakhari              4 stories  https://baahrakhari.com/feed  एमालेमा रहेर अरू दललाई मत दिनेलाई कारबाही गरिन्छ : (2h old) / एपेक बैठकको ‘साइडलाइन’मा ट्रम्प, सी र पुटिनबीच ‘त् (3h old) / लुम्बिनी शीर्ष स्थानमा रहँदै प्लेअफमा (4h old)
+NO  Ujyaalo                  0 stories  https://ujyaaloonline.com/feed: HTTP 403  
+NO  Lokantar                 0 stories  https://lokaantar.com/feed: HTTP 404  
+NO  Nepal Press              0 stories  https://www.nepalpress.com/feed: HTTP 403  
+OK  Annapurna Post          20 stories  https://annapurnapost.com/rss  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Gorkhapatra             10 stories  https://gorkhapatraonline.com/rss  सजाइयो घडीअर्वा पोखरी छठघाट परिसर (फोटोफिचर) (1h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (1h old) / कान्ति तालको बिजोग : १० करोडको लगानी बालुवामा पानी (1h old)
+OK  Kathmandu Post          40 stories  https://kathmandupost.com/rss  Who is the real prime minister? (0h old) / Congress leader Umesh Shrestha’s brother arrested  (0h old) / Lumbini beat Biratnagar to reach Qualifier, Kings  (0h old)
+NO  myRepublica              0 stories  https://myrepublica.nagariknetwork.com/feed: HTTP 404  
+OK  Himalayan Times         40 stories  https://thehimalayantimes.com/rssFeed/15  Sama-Chakewa festival begins across Mithila region (11h old) / Govt declares public holiday on Monday for Chhath (33h old) / Is Outlook down? Widespread outage hits Microsoft  (35h old)
+OK  Online Khabar English   20 stories  https://english.onlinekhabar.com/feed  Domestic workers need protection beyond the househ (6h old) / The hidden cost of Nepal’s rising public debt (9h old) / Nepal must build, but it must build smarter (12h old)
+OK  Onlinekhabar (business)  40 stories  https://www.onlinekhabar.com/content/business/feed  जनकपुरदेखि अयोध्यासम्म साप्ताहिक रेल सेवा सञ्चालन  (4h old) / भूकम्पले क्षतिग्रस्त जाजरकोट दरबार पुनर्निर्माणका  (10h old) / नेपालमा एआई र उद्योग ४.० (13h old)
+OK  Annapurna Post (business)  20 stories  https://annapurnapost.com/rss/economy  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Online Khabar English (business)  20 stories  https://english.onlinekhabar.com/category/economy/feed  The hidden cost of Nepal’s rising public debt (9h old) / Will PM Balen Shah’s India visit resolve cross-bor (18h old) / NEPSE falls 6.44 points in first trading session a (33h old)
+OK  Bizmandu                15 stories  https://bizmandu.com/feed  विराटनगरमाथिको थ्रिलर जितले लुम्बिनी क्वालिफायरमा, (4h old) / छठ पर्वको पूर्वसन्ध्यामा बेहुलीझैं सिँगारियो कमलपो (4h old) / इँटा उद्योगमा ९ अर्बको कार्बन फाइनान्सिङ, ३०० उद्य (4h old)
+OK  Arthasarokar            20 stories  https://arthasarokar.com/feed  तिहार बिदामा मुस्ताङ घुम्ने पर्यटक बढ्दै (153h old) / कुकुर तिहारः भैरव वाहन गुल्ममा विशेष ‘डग शो’ प्रदर (155h old) / एनपिएल अपडेट: लुम्बिनीको अपराजित यात्रामा ब्रेक, क (155h old)
+NO  Aarthik News             0 stories  https://aarthiknews.com/feed: HTTP 403  
+OK  Clickmandu              10 stories  https://clickmandu.com/feed  कोप–३१ मा हिमताल र हिमनदीको सङ्कटबारे विश्व समुदाय (3h old) / नेपाल र साउथ पोलबीच ठूलो परिमाणको ‘जुरिडिक्सनल रेड (3h old) / २६ लाख हेक्टर वनबाट कार्बन व्यापार गर्ने नेपालको त (8h old)
+OK  Karobar Daily           40 stories  https://www.karobardaily.com/feed  शरद् ऋतुमा पर्वतारोहण अनुमति लिएका १६१३ जनाबाट ३३  (2h old) / छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / विराटनगरविरुद्ध लुम्बिनीको जित, प्लेअफ समीकरण पूरा (3h old)
+NO  Abhiyan Daily            0 stories  https://www.abhiyandaily.com/feed: HTTP 403  
+NO  New Business Age         0 stories  https://newbusinessage.com/feed: HTTP 403  
+OK  Nepal Live Today        10 stories  https://www.nepallivetoday.com/feed  Media’s role vital to strengthen democracy: Speake (16548h old) / Two people arrested for offensive conduct after NP (16596h old) / PM Oli felicitates NPL Champions Janakpur Bolts (16620h old)
+OK  Rising Nepal            10 stories  https://risingnepaldaily.com/rss  Minister Chaudhary pledges to prioritize indigenou (4h old) / Call to submit claims to form new govt in Madhesh (4h old) / No dispute between RSP and Government: Chair Lamic (4h old)
+OK  Desh Sanchar            11 stories  https://deshsanchar.com/feed  गाउँमै उद्यम र रोजगारी सिर्जना गर्ने सम्भावना खोज् (2h old) / एआई प्रविधिमा लगानी बढाउने र सहकार्य सुदृढ गर्ने ई (2h old) / अमेरिकामा घण्टौँपछि हवाई सेवा पुनः सञ्चालन, पुरानो (3h old)
+OK  Khabarhub                8 stories  https://khabarhub.com/feed  एनपिएल प्लेअफ समीकरण पूरा : सनसनीपूर्ण जित निकाल्द (3h old) / भन्सार छलिका १६ लाखभन्दा बढीको अवैध सामान बरामद (5h old) / छठ पर्वका लागि कमलपोखरीमा सम्पूर्ण तयारी पूरा (5h old)
+NO  Kantipur (alt)           0 stories  https://kantipurdaily.com/feed: HTTP 404  
+OK  ShareSansar             13 stories  https://www.sharesansar.com/category/latest  
+OK  Mero Lagani              8 stories  https://merolagani.com/NewsList.aspx  
+NO  Kantipur (business)      0 stories  https://ekantipur.com/business: HTTP 403  
+OK  B360 Nepal               5 stories  https://www.b360nepal.com/feed  Nepal called for grant-based climate finance and m (2h old) / Light rain, snowfall likely in hills, mountains as (12h old) / Nepal must strengthen preparation, institutional c (12h old)
+NO  Bizshala                 0 stories  https://bizshala.com/feed: HTTP 404  
+OK  Nepalnews               12 stories  https://www.nepalnews.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old) / मधेस प्रदेशमा नयाँ सरकार गठनका लागि दाबी पेस गर्न  (3h old) / नेपालको २५ लाख हेक्टर वनमा कार्बन कार्यक्रम विकास  (3h old)
+NO  Nepalnews English        0 stories  https://english.nepalnews.com/feed: HTTP 403  
+OK  Ratopati English        30 stories  https://english.ratopati.com/feed  India and Pakistan to Compete in SAFF Championship (1h old) / Motorcyclist Dies in Car Collision in Jhapa (1h old) / Brazil's Decision on Raphinha Sparks Controversy w (1h old)
+NO  Spotlight Nepal          0 stories  https://www.spotlightnepal.com/feed: HTTP 403  
+OK  NEPSE Trading            7 stories  https://nepsetrading.com/news  
+OK  Bizshala (page)         30 stories  https://www.bizshala.com/  
+NO  Online Khabar English (business2)   0 stories  https://english.onlinekhabar.com/category/business/feed: no stories in feed  
+OK  Onlinekhabar (auto)     38 stories  https://www.onlinekhabar.com/content/auto/feed  प्रोटोन ई.मास ५ दुई अन्तर्राष्ट्रिय अवार्डबाट सम्म (34h old) / न रोकिए घातक दुर्घटना, न ब्युँझिए शासक-प्रशासक (51h old) / रोयल इन्फिल्डको ‘मिस्टिक मुस्ताङ राइड २’ मा ४० महि (225h old)
+OK  Online Khabar English (auto)  20 stories  https://english.onlinekhabar.com/category/auto/feed  Yamaha XSR 155 combines retro styling with modern  (223h old) / Sipradi Yatri announces price of locally made Yatr (1377h old) / Why Yatri and Sipradi joined hands to build a two- (1527h old)
+NO  Techpana                 0 stories  https://techpana.com/feed: HTTP 403  
+NO  Gadgetbyte Nepal         0 stories  https://gadgetbytenepal.com/feed: HTTP 404  
+NO  Auto Life Nepal          0 stories  https://autolifenepal.com/feed: ConnectionError: HTTPSConnectionPool(host='autolifenepal.com', port=443): Max retries exceeded with url: /feed (Caused by NameResolutionError("HTTPSConnection(host='autolifenepal.com', port=443): Failed to resolve 'autolifenepal.com' ([Errno -2] Name or service not kn  
+OK  Nepal Drives             5 stories  https://nepaldrives.com/feed  BAIC and Arcfox Inaugurate New Showroom in Pokhara (204h old) / Chery Q Premium Variant Launched in Nepal at Rs 33 (204h old) / 40 Women Riders Complete Four-Day Mystic Mustang R (229h old)
+NO  Autonepal                0 stories  https://autonepal.com/feed: no stories in feed  
+NO  Ultimate Nepal           0 stories  https://www.ultimatenepal.com/feed: no stories in feed  
+NO  Tech Lekh                0 stories  https://www.techlekh.com/feed: no stories in feed  
+OK  Rushlane                 8 stories  https://www.rushlane.com/feed  New Toyota Innova Hycross Facelift First Official  (5h old) / TVS Norton Atlas GT, Manx R Patented In India – La (6h old) / New Maruti SUV Spied Testing – Next Gen Brezza 202 (10h old)
+OK  GaadiWaadi               8 stories  https://gaadiwaadi.com/feed  Mahindra Plans Capacity For 10,000 Units A Month F (7h old) / New Gen Toyota Fortuner To Debut Soon – What We Kn (9h old) / Kia October 2026 Sales Analysis – Seltos, Sonet, C (10h old)
+NO  Autocar India            0 stories  https://www.autocarindia.com/rss: HTTP 410  
+OK  MotorBeam               12 stories  https://www.motorbeam.com/feed/  AEB To Become Mandatory In All Cars From October 2 (537h old) / Ducati Hypermotard V2 Launched At Rs 16.53 Lakh (540h old) / BMW Motorrad Vision CE Patented In India (541h old)
+NO  Autopunditz              0 stories  https://www.autopunditz.com/feed: HTTP 404  
+OK  Carscoops               12 stories  https://www.carscoops.com/feed/  The 5 Worst Rebadges In Automotive History (1h old) / BMW Pays Tribute To Alex Zanardi With A Very Speci (2h old) / What Do All The Flags Mean In Racing? (3h old)
+OK  Electrek                12 stories  https://electrek.co/feed/  Check your ego at the door: Stellantis’ new electr (1h old) / Huawei set to challenge Tesla Powerwall with new,  (2h old) / Tesla Cybercab’s autonomy agreement is insane: $29 (5h old)
+NO  Naya Patrika             0 stories  https://www.nayapatrikadaily.com/feed: HTTP 404  
+NO  Ekagaj                   0 stories  https://www.ekagaj.com/feed: HTTP 403  
+OK  Thaha Khabar             5 stories  https://thahakhabar.com/feed  ‘पाकिस्तानको बाढी पुनःस्थापनाको अनुभवबाट नेपालले स (2h old) / मधेशका मुख्यमन्त्री यादवद्वारा राजीनामा, सरकार बना (2h old) / चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (3h old)
+NO  Pahilo Post              0 stories  https://www.pahilopost.com/feed: HTTP 503  
+NO  DC Nepal                 0 stories  https://www.dcnepal.com/feed: HTTP 403  
+OK  Kathmandu Press          5 stories  https://kathmandupress.com/feed  भित्री र बाहिरी शक्तिको संयुक्त आक्रमणका कारण एमाल (7h old) / मधेशले मालिक होइन, सेवक खोजेको हो : रवि लामिछाने (7h old) / रास्वपा सभापति लामिछाने दम्पती जनकपुरमा (7h old)
+OK  Nepal Samaya             1 stories  https://nepalsamaya.com/feed  एनपीएल : लुम्बिनी पहिलो क्वालिफायरमा प्रवेश,विराटन (3h old)
+OK  News of Nepal           12 stories  https://newsofnepal.com/feed  क्रिस्टियानो रोनाल्डोद्वारा अन्तर्राष्ट्रिय फुटबलल (2h old) / अन्तिम साससम्म कांग्रेसको हितमा लड्छु : देउवा (8h old) / मधेशका मुख्यमन्त्री कृष्णप्रसाद यादवद्वारा राजीनाम (9h old)
+OK  Rajdhani Daily          10 stories  https://rajdhanidaily.com/feed  लुम्बिनीसँग हारेपछि विराटनगर प्लेअफबाट बाहिरियो (3h old) / लघुकथा पुरस्कार डा. टीकाराम पोखरेललाई (4h old) / मधेशमा मुख्यमन्त्रीका लागि दाबी आह्वान, मंसिर ४ गत (6h old)
+NO  Ukaalo                   0 stories  https://www.ukaalo.com/feed: HTTP 404  
+OK  Image Khabar            10 stories  https://imagekhabar.com/feed  विराटनगरलाई हराउँदै लुम्बिनी लिग चरणको शीर्ष स्थान (4h old) / विराटनगरले लुम्बिनीलाई दियो १६७ रनको लक्ष्य (6h old) / काठमाडौं उपत्यकामा छठको तयारी अन्तिम चरणमा (6h old)
+NO  Hamra Kura               0 stories  https://www.hamrakura.com/feed: HTTP 403  
+OK  Shilapatra               5 stories  https://shilapatra.com/feed  छठमा सुरक्षा व्यवस्था चुस्त बनाउन देशभरका प्रहरीला (3h old) / विराटनगरलाई हराउँदै साविक विजेता लुम्बिनी क्वालिफा (4h old) / छठका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (तस्वीर (4h old)
+OK  Nepal Khabar            20 stories  https://nepalkhabar.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (0h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (0h old) / गंगासागरमा छठ मनाउँदै निकिता पौडेल, शुरु गरिन् धार (0h old)
+OK  Nepali Times            30 stories  https://nepalitimes.com/feed  Mountaineering, as war waged by other means (16h old) / Nepal caught in contraband timber stalemate (32h old) / When is enough, enough? (41h old)
+OK  Kathmandu Tribune       10 stories  https://kathmandutribune.com/feed  Can AI Save Journalism? (1796h old) / सुकरातहरुको नौनाडी गलेको छ (2399h old) / यात्रा मात्र होइन, जीवनको खोज: ‘फुकुवा’ का लेखक बी (2534h old)
+OK  Nepal Monitor           10 stories  https://nepalmonitor.com/feed  Families in Devighat, Nepal, Face Uncertain Return (57h old) / Nepal Remittance 2026: Why Inflows Stay Strong as  (1045h old) / Nepal Economy 2026: Growth, Jobs and Investment (1424h old)
+NO  Hamro Kalam              0 stories  https://www.hamrokalam.com/feed: ConnectTimeout: HTTPSConnectionPool(host='www.hamrokalam.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hamrokalam.com', port=443) at 0x7f7564bab680>, 'Connection to www.hamrokalam.com timed out. (conne  
+OK  Search sweep (money news, last 2 days)  21 stories  site searches  
+new stories found: 0
+{
+ "run": "2026-11-14 18:44 UTC",
+ "stories_in_app": 1851,
+ "new_found": 0,
+ "written_now": 0,
+ "today": {
+  "requests": 323,
+  "stories": 680,
+  "world": 13,
+  "exhausted": {}
+ },
+ "waiting": 7,
+ "left_out_old_or_undated": [],
+ "ai": {
+  "used_today": {
+   "gemini-3.1-flash-lite-preview": 157,
+   "gemini-flash-lite-latest": 82,
+   "gemini-3.5-flash-lite": 16
+  },
+  "models": [
+   "gemini-3.1-flash-lite-preview",
+   "gemini-flash-lite-latest",
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.8-flash"
+  ],
+  "paused": {},
+  "requests": 0,
+  "stories": 0,
+  "rejected": [],
+  "errors": []
+ },
+ "newest_story_minutes_old": 44
+}
+sites not readable this run: Kantipur, Ujyaalo, Lokantar, Nepal Press, myRepublica, Aarthik News, Abhiyan Daily, New Business Age, Kantipur (alt), Kantipur (business), Bizshala, Nepalnews English, Spotlight Nepal, Online Khabar English (business2), Techpana, Gadgetbyte Nepal, Auto Life Nepal, Autonepal, Ultimate Nepal, Tech Lekh, Autocar India, Autopunditz, Naya Patrika, Ekagaj, Pahilo Post, DC Nepal, Ukaalo, Hamra Kura, Hamro Kalam
+===== round 13 18:47:18
+OK  Onlinekhabar            38 stories  https://www.onlinekhabar.com/feed  पुछारदेखि शीर्षसम्म लुम्बिनीको यात्रा, अब उपाधि रक (2h old) / एनपीएल सिजन–३ : प्लेअफ पुग्ने चारै टोलीको टुङ्गो ल (3h old) / मञ्जुश्रीको पदचाप पछ्याउँदै हिमालको काखमा (3h old)
+NO  Kantipur                 0 stories  https://ekantipur.com/feed: HTTP 403  
+OK  Setopati                 5 stories  https://www.setopati.com/feed  इनमको मोबाइल २ दिनसम्म आफूसँग राख्ने अधिकार कुमार  (2h old) / दुई जुवाखालमा एकै साथ प्रहरी कारबाही, १७ जना पक्रा (2h old) / गाडीले मोटरसाइकललाई ठक्कर दिँदा बाबुछोराको मृत्यु, (2h old)
+OK  Ratopati                24 stories  https://www.ratopati.com/feed  महिला अन्तर्राष्ट्रिय गोल्डकपः अक्वा एफसीलाई हराउँ (0h old) / छठको तयारी: गुह्येश्वरीबाट गौरीघाटसम्मको वाग्मती स (0h old) / १२ बजे १२ समाचार : रसुवागढी नाका तीन महिनादेखि ठप् (1h old)
+OK  Nagarik                 19 stories  https://nagariknews.nagariknetwork.com/feed  प्रकृतिसँगको सामीप्यमा नेपाल विश्वमै पहिलो (9018h old) / ‘सगरमाथा संकटमा छ, बचाऔं’ (13841h old) / सगरमाथा बचाउन एक वैज्ञानिक 'मिसन' (13972h old)
+OK  Himal Khabar             5 stories  https://www.himalkhabar.com/feed  विभेदकारी वैचारिकी र दलित शिल्पीको मुक्तिमार्ग (38h old) / पहिलो विश्वयुद्धको गोर्खाली कथा सुनाइरहेको छ, छत्र (60h old) / जेरुशा ! तिमी कहाँ छौ? (107h old)
+OK  Baahrakhari              4 stories  https://baahrakhari.com/feed  एमालेमा रहेर अरू दललाई मत दिनेलाई कारबाही गरिन्छ : (2h old) / एपेक बैठकको ‘साइडलाइन’मा ट्रम्प, सी र पुटिनबीच ‘त् (3h old) / लुम्बिनी शीर्ष स्थानमा रहँदै प्लेअफमा (4h old)
+NO  Ujyaalo                  0 stories  https://ujyaaloonline.com/feed: HTTP 403  
+NO  Lokantar                 0 stories  https://lokaantar.com/feed: HTTP 404  
+NO  Nepal Press              0 stories  https://www.nepalpress.com/feed: HTTP 403  
+OK  Annapurna Post          20 stories  https://annapurnapost.com/rss  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Gorkhapatra             10 stories  https://gorkhapatraonline.com/rss  सजाइयो घडीअर्वा पोखरी छठघाट परिसर (फोटोफिचर) (1h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (1h old) / कान्ति तालको बिजोग : १० करोडको लगानी बालुवामा पानी (1h old)
+OK  Kathmandu Post          40 stories  https://kathmandupost.com/rss  Who is the real prime minister? (0h old) / Congress leader Umesh Shrestha’s brother arrested  (0h old) / Lumbini beat Biratnagar to reach Qualifier, Kings  (0h old)
+NO  myRepublica              0 stories  https://myrepublica.nagariknetwork.com/feed: HTTP 404  
+OK  Himalayan Times         40 stories  https://thehimalayantimes.com/rssFeed/15  Sama-Chakewa festival begins across Mithila region (11h old) / Govt declares public holiday on Monday for Chhath (33h old) / Is Outlook down? Widespread outage hits Microsoft  (35h old)
+OK  Online Khabar English   20 stories  https://english.onlinekhabar.com/feed  Domestic workers need protection beyond the househ (7h old) / The hidden cost of Nepal’s rising public debt (10h old) / Nepal must build, but it must build smarter (13h old)
+OK  Onlinekhabar (business)  40 stories  https://www.onlinekhabar.com/content/business/feed  जनकपुरदेखि अयोध्यासम्म साप्ताहिक रेल सेवा सञ्चालन  (4h old) / भूकम्पले क्षतिग्रस्त जाजरकोट दरबार पुनर्निर्माणका  (10h old) / नेपालमा एआई र उद्योग ४.० (13h old)
+OK  Annapurna Post (business)  20 stories  https://annapurnapost.com/rss/economy  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Online Khabar English (business)  20 stories  https://english.onlinekhabar.com/category/economy/feed  The hidden cost of Nepal’s rising public debt (10h old) / Will PM Balen Shah’s India visit resolve cross-bor (19h old) / NEPSE falls 6.44 points in first trading session a (33h old)
+OK  Bizmandu                15 stories  https://bizmandu.com/feed  विराटनगरमाथिको थ्रिलर जितले लुम्बिनी क्वालिफायरमा, (4h old) / छठ पर्वको पूर्वसन्ध्यामा बेहुलीझैं सिँगारियो कमलपो (4h old) / इँटा उद्योगमा ९ अर्बको कार्बन फाइनान्सिङ, ३०० उद्य (4h old)
+OK  Arthasarokar            20 stories  https://arthasarokar.com/feed  तिहार बिदामा मुस्ताङ घुम्ने पर्यटक बढ्दै (153h old) / कुकुर तिहारः भैरव वाहन गुल्ममा विशेष ‘डग शो’ प्रदर (155h old) / एनपिएल अपडेट: लुम्बिनीको अपराजित यात्रामा ब्रेक, क (155h old)
+NO  Aarthik News             0 stories  https://aarthiknews.com/feed: HTTP 403  
+OK  Clickmandu              10 stories  https://clickmandu.com/feed  कोप–३१ मा हिमताल र हिमनदीको सङ्कटबारे विश्व समुदाय (3h old) / नेपाल र साउथ पोलबीच ठूलो परिमाणको ‘जुरिडिक्सनल रेड (3h old) / २६ लाख हेक्टर वनबाट कार्बन व्यापार गर्ने नेपालको त (8h old)
+OK  Karobar Daily           40 stories  https://www.karobardaily.com/feed  शरद् ऋतुमा पर्वतारोहण अनुमति लिएका १६१३ जनाबाट ३३  (2h old) / छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / विराटनगरविरुद्ध लुम्बिनीको जित, प्लेअफ समीकरण पूरा (3h old)
+NO  Abhiyan Daily            0 stories  https://www.abhiyandaily.com/feed: HTTP 403  
+NO  New Business Age         0 stories  https://newbusinessage.com/feed: HTTP 403  
+OK  Nepal Live Today        10 stories  https://www.nepallivetoday.com/feed  Media’s role vital to strengthen democracy: Speake (16549h old) / Two people arrested for offensive conduct after NP (16597h old) / PM Oli felicitates NPL Champions Janakpur Bolts (16621h old)
+OK  Rising Nepal            10 stories  https://risingnepaldaily.com/rss  Minister Chaudhary pledges to prioritize indigenou (4h old) / Call to submit claims to form new govt in Madhesh (4h old) / No dispute between RSP and Government: Chair Lamic (4h old)
+OK  Desh Sanchar            11 stories  https://deshsanchar.com/feed  गाउँमै उद्यम र रोजगारी सिर्जना गर्ने सम्भावना खोज् (2h old) / एआई प्रविधिमा लगानी बढाउने र सहकार्य सुदृढ गर्ने ई (3h old) / अमेरिकामा घण्टौँपछि हवाई सेवा पुनः सञ्चालन, पुरानो (3h old)
+OK  Khabarhub                8 stories  https://khabarhub.com/feed  एनपिएल प्लेअफ समीकरण पूरा : सनसनीपूर्ण जित निकाल्द (3h old) / भन्सार छलिका १६ लाखभन्दा बढीको अवैध सामान बरामद (5h old) / छठ पर्वका लागि कमलपोखरीमा सम्पूर्ण तयारी पूरा (5h old)
+NO  Kantipur (alt)           0 stories  https://kantipurdaily.com/feed: HTTP 404  
+OK  ShareSansar             13 stories  https://www.sharesansar.com/category/latest  
+OK  Mero Lagani              8 stories  https://merolagani.com/NewsList.aspx  
+NO  Kantipur (business)      0 stories  https://ekantipur.com/business: HTTP 403  
+OK  B360 Nepal               5 stories  https://www.b360nepal.com/feed  Nepal called for grant-based climate finance and m (2h old) / Light rain, snowfall likely in hills, mountains as (12h old) / Nepal must strengthen preparation, institutional c (12h old)
+NO  Bizshala                 0 stories  https://bizshala.com/feed: HTTP 404  
+OK  Nepalnews               12 stories  https://www.nepalnews.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old) / मधेस प्रदेशमा नयाँ सरकार गठनका लागि दाबी पेस गर्न  (3h old) / नेपालको २५ लाख हेक्टर वनमा कार्बन कार्यक्रम विकास  (3h old)
+NO  Nepalnews English        0 stories  https://english.nepalnews.com/feed: HTTP 403  
+OK  Ratopati English        30 stories  https://english.ratopati.com/feed  India and Pakistan to Compete in SAFF Championship (1h old) / Motorcyclist Dies in Car Collision in Jhapa (2h old) / Brazil's Decision on Raphinha Sparks Controversy w (2h old)
+NO  Spotlight Nepal          0 stories  https://www.spotlightnepal.com/feed: HTTP 403  
+OK  NEPSE Trading            7 stories  https://nepsetrading.com/news  
+OK  Bizshala (page)         30 stories  https://www.bizshala.com/  
+NO  Online Khabar English (business2)   0 stories  https://english.onlinekhabar.com/category/business/feed: no stories in feed  
+OK  Onlinekhabar (auto)     38 stories  https://www.onlinekhabar.com/content/auto/feed  प्रोटोन ई.मास ५ दुई अन्तर्राष्ट्रिय अवार्डबाट सम्म (34h old) / न रोकिए घातक दुर्घटना, न ब्युँझिए शासक-प्रशासक (51h old) / रोयल इन्फिल्डको ‘मिस्टिक मुस्ताङ राइड २’ मा ४० महि (225h old)
+OK  Online Khabar English (auto)  20 stories  https://english.onlinekhabar.com/category/auto/feed  Yamaha XSR 155 combines retro styling with modern  (223h old) / Sipradi Yatri announces price of locally made Yatr (1377h old) / Why Yatri and Sipradi joined hands to build a two- (1528h old)
+NO  Techpana                 0 stories  https://techpana.com/feed: HTTP 403  
+NO  Gadgetbyte Nepal         0 stories  https://gadgetbytenepal.com/feed: HTTP 404  
+NO  Auto Life Nepal          0 stories  https://autolifenepal.com/feed: ConnectionError: HTTPSConnectionPool(host='autolifenepal.com', port=443): Max retries exceeded with url: /feed (Caused by NameResolutionError("HTTPSConnection(host='autolifenepal.com', port=443): Failed to resolve 'autolifenepal.com' ([Errno -2] Name or service not kn  
+OK  Nepal Drives             5 stories  https://nepaldrives.com/feed  BAIC and Arcfox Inaugurate New Showroom in Pokhara (204h old) / Chery Q Premium Variant Launched in Nepal at Rs 33 (204h old) / 40 Women Riders Complete Four-Day Mystic Mustang R (229h old)
+NO  Autonepal                0 stories  https://autonepal.com/feed: no stories in feed  
+NO  Ultimate Nepal           0 stories  https://www.ultimatenepal.com/feed: no stories in feed  
+NO  Tech Lekh                0 stories  https://www.techlekh.com/feed: no stories in feed  
+OK  Rushlane                 8 stories  https://www.rushlane.com/feed  New Toyota Innova Hycross Facelift First Official  (5h old) / TVS Norton Atlas GT, Manx R Patented In India – La (6h old) / New Maruti SUV Spied Testing – Next Gen Brezza 202 (11h old)
+OK  GaadiWaadi               8 stories  https://gaadiwaadi.com/feed  Mahindra Plans Capacity For 10,000 Units A Month F (7h old) / New Gen Toyota Fortuner To Debut Soon – What We Kn (9h old) / Kia October 2026 Sales Analysis – Seltos, Sonet, C (10h old)
+NO  Autocar India            0 stories  https://www.autocarindia.com/rss: HTTP 410  
+OK  MotorBeam               12 stories  https://www.motorbeam.com/feed/  AEB To Become Mandatory In All Cars From October 2 (537h old) / Ducati Hypermotard V2 Launched At Rs 16.53 Lakh (540h old) / BMW Motorrad Vision CE Patented In India (541h old)
+NO  Autopunditz              0 stories  https://www.autopunditz.com/feed: HTTP 404  
+OK  Carscoops               12 stories  https://www.carscoops.com/feed/  The 5 Worst Rebadges In Automotive History (1h old) / BMW Pays Tribute To Alex Zanardi With A Very Speci (2h old) / What Do All The Flags Mean In Racing? (3h old)
+OK  Electrek                12 stories  https://electrek.co/feed/  Check your ego at the door: Stellantis’ new electr (1h old) / Huawei set to challenge Tesla Powerwall with new,  (2h old) / Tesla Cybercab’s autonomy agreement is insane: $29 (5h old)
+NO  Naya Patrika             0 stories  https://www.nayapatrikadaily.com/feed: HTTP 404  
+NO  Ekagaj                   0 stories  https://www.ekagaj.com/feed: HTTP 403  
+OK  Thaha Khabar             5 stories  https://thahakhabar.com/feed  ‘पाकिस्तानको बाढी पुनःस्थापनाको अनुभवबाट नेपालले स (2h old) / मधेशका मुख्यमन्त्री यादवद्वारा राजीनामा, सरकार बना (3h old) / चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (3h old)
+NO  Pahilo Post              0 stories  https://www.pahilopost.com/feed: HTTP 503  
+NO  DC Nepal                 0 stories  https://www.dcnepal.com/feed: HTTP 403  
+OK  Kathmandu Press          5 stories  https://kathmandupress.com/feed  भित्री र बाहिरी शक्तिको संयुक्त आक्रमणका कारण एमाल (7h old) / मधेशले मालिक होइन, सेवक खोजेको हो : रवि लामिछाने (7h old) / रास्वपा सभापति लामिछाने दम्पती जनकपुरमा (7h old)
+OK  Nepal Samaya             1 stories  https://nepalsamaya.com/feed  एनपीएल : लुम्बिनी पहिलो क्वालिफायरमा प्रवेश,विराटन (3h old)
+OK  News of Nepal           12 stories  https://newsofnepal.com/feed  क्रिस्टियानो रोनाल्डोद्वारा अन्तर्राष्ट्रिय फुटबलल (2h old) / अन्तिम साससम्म कांग्रेसको हितमा लड्छु : देउवा (8h old) / मधेशका मुख्यमन्त्री कृष्णप्रसाद यादवद्वारा राजीनाम (9h old)
+OK  Rajdhani Daily          10 stories  https://rajdhanidaily.com/feed  लुम्बिनीसँग हारेपछि विराटनगर प्लेअफबाट बाहिरियो (3h old) / लघुकथा पुरस्कार डा. टीकाराम पोखरेललाई (4h old) / मधेशमा मुख्यमन्त्रीका लागि दाबी आह्वान, मंसिर ४ गत (6h old)
+NO  Ukaalo                   0 stories  https://www.ukaalo.com/feed: HTTP 404  
+OK  Image Khabar            10 stories  https://imagekhabar.com/feed  विराटनगरलाई हराउँदै लुम्बिनी लिग चरणको शीर्ष स्थान (4h old) / विराटनगरले लुम्बिनीलाई दियो १६७ रनको लक्ष्य (6h old) / काठमाडौं उपत्यकामा छठको तयारी अन्तिम चरणमा (6h old)
+NO  Hamra Kura               0 stories  https://www.hamrakura.com/feed: HTTP 403  
+OK  Shilapatra               5 stories  https://shilapatra.com/feed  छठमा सुरक्षा व्यवस्था चुस्त बनाउन देशभरका प्रहरीला (3h old) / विराटनगरलाई हराउँदै साविक विजेता लुम्बिनी क्वालिफा (4h old) / छठका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (तस्वीर (4h old)
+OK  Nepal Khabar            20 stories  https://nepalkhabar.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (0h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (0h old) / गंगासागरमा छठ मनाउँदै निकिता पौडेल, शुरु गरिन् धार (0h old)
+OK  Nepali Times            30 stories  https://nepalitimes.com/feed  Mountaineering, as war waged by other means (16h old) / Nepal caught in contraband timber stalemate (32h old) / When is enough, enough? (41h old)
+OK  Kathmandu Tribune       10 stories  https://kathmandutribune.com/feed  Can AI Save Journalism? (1796h old) / सुकरातहरुको नौनाडी गलेको छ (2399h old) / यात्रा मात्र होइन, जीवनको खोज: ‘फुकुवा’ का लेखक बी (2534h old)
+OK  Nepal Monitor           10 stories  https://nepalmonitor.com/feed  Families in Devighat, Nepal, Face Uncertain Return (57h old) / Nepal Remittance 2026: Why Inflows Stay Strong as  (1045h old) / Nepal Economy 2026: Growth, Jobs and Investment (1424h old)
+NO  Hamro Kalam              0 stories  https://www.hamrokalam.com/feed: ConnectTimeout: HTTPSConnectionPool(host='www.hamrokalam.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hamrokalam.com', port=443) at 0x7feda494b980>, 'Connection to www.hamrokalam.com timed out. (conne  
+new stories found: 0
+{
+ "run": "2026-11-14 18:47 UTC",
+ "stories_in_app": 1851,
+ "new_found": 0,
+ "written_now": 0,
+ "today": {
+  "requests": 323,
+  "stories": 680,
+  "world": 13,
+  "exhausted": {}
+ },
+ "waiting": 7,
+ "left_out_old_or_undated": [],
+ "ai": {
+  "used_today": {
+   "gemini-3.1-flash-lite-preview": 157,
+   "gemini-flash-lite-latest": 82,
+   "gemini-3.5-flash-lite": 16
+  },
+  "models": [
+   "gemini-3.1-flash-lite-preview",
+   "gemini-flash-lite-latest",
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.8-flash"
+  ],
+  "paused": {},
+  "requests": 0,
+  "stories": 0,
+  "rejected": [],
+  "errors": []
+ },
+ "newest_story_minutes_old": 47
+}
+sites not readable this run: Kantipur, Ujyaalo, Lokantar, Nepal Press, myRepublica, Aarthik News, Abhiyan Daily, New Business Age, Kantipur (alt), Kantipur (business), Bizshala, Nepalnews English, Spotlight Nepal, Online Khabar English (business2), Techpana, Gadgetbyte Nepal, Auto Life Nepal, Autonepal, Ultimate Nepal, Tech Lekh, Autocar India, Autopunditz, Naya Patrika, Ekagaj, Pahilo Post, DC Nepal, Ukaalo, Hamra Kura, Hamro Kalam
+===== round 14 18:50:18
+OK  Onlinekhabar            38 stories  https://www.onlinekhabar.com/feed  पुछारदेखि शीर्षसम्म लुम्बिनीको यात्रा, अब उपाधि रक (2h old) / एनपीएल सिजन–३ : प्लेअफ पुग्ने चारै टोलीको टुङ्गो ल (3h old) / मञ्जुश्रीको पदचाप पछ्याउँदै हिमालको काखमा (3h old)
+NO  Kantipur                 0 stories  https://ekantipur.com/feed: HTTP 403  
+OK  Setopati                 5 stories  https://www.setopati.com/feed  इनमको मोबाइल २ दिनसम्म आफूसँग राख्ने अधिकार कुमार  (2h old) / दुई जुवाखालमा एकै साथ प्रहरी कारबाही, १७ जना पक्रा (2h old) / गाडीले मोटरसाइकललाई ठक्कर दिँदा बाबुछोराको मृत्यु, (2h old)
+OK  Ratopati                24 stories  https://www.ratopati.com/feed  महिला अन्तर्राष्ट्रिय गोल्डकपः अक्वा एफसीलाई हराउँ (0h old) / छठको तयारी: गुह्येश्वरीबाट गौरीघाटसम्मको वाग्मती स (0h old) / १२ बजे १२ समाचार : रसुवागढी नाका तीन महिनादेखि ठप् (1h old)
+OK  Nagarik                 20 stories  https://nagariknews.nagariknetwork.com/feed  ‘तिहारको हार्दिक शुभकामना’ भन्दै न्युयोर्कका मेयरल (154h old) / जापानको नेपाल हाउस प्रकरण: दर्ता नै छैन ४७ प्रतिशत (177h old) / ममता काफ्ले प्रकरण : दुई वर्षपछि फेरियो नरेशको बोल (210h old)
+OK  Himal Khabar             5 stories  https://www.himalkhabar.com/feed  विभेदकारी वैचारिकी र दलित शिल्पीको मुक्तिमार्ग (38h old) / पहिलो विश्वयुद्धको गोर्खाली कथा सुनाइरहेको छ, छत्र (60h old) / जेरुशा ! तिमी कहाँ छौ? (107h old)
+OK  Baahrakhari              4 stories  https://baahrakhari.com/feed  एमालेमा रहेर अरू दललाई मत दिनेलाई कारबाही गरिन्छ : (2h old) / एपेक बैठकको ‘साइडलाइन’मा ट्रम्प, सी र पुटिनबीच ‘त् (3h old) / लुम्बिनी शीर्ष स्थानमा रहँदै प्लेअफमा (4h old)
+NO  Ujyaalo                  0 stories  https://ujyaaloonline.com/feed: HTTP 403  
+NO  Lokantar                 0 stories  https://lokaantar.com/feed: HTTP 404  
+NO  Nepal Press              0 stories  https://www.nepalpress.com/feed: HTTP 403  
+OK  Annapurna Post          20 stories  https://annapurnapost.com/rss  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Gorkhapatra             10 stories  https://gorkhapatraonline.com/rss  सजाइयो घडीअर्वा पोखरी छठघाट परिसर (फोटोफिचर) (1h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (1h old) / कान्ति तालको बिजोग : १० करोडको लगानी बालुवामा पानी (1h old)
+OK  Kathmandu Post          40 stories  https://kathmandupost.com/rss  Who is the real prime minister? (0h old) / Congress leader Umesh Shrestha’s brother arrested  (0h old) / Lumbini beat Biratnagar to reach Qualifier, Kings  (0h old)
+NO  myRepublica              0 stories  https://myrepublica.nagariknetwork.com/feed: HTTP 404  
+OK  Himalayan Times         40 stories  https://thehimalayantimes.com/rssFeed/15  Sama-Chakewa festival begins across Mithila region (11h old) / Govt declares public holiday on Monday for Chhath (33h old) / Is Outlook down? Widespread outage hits Microsoft  (35h old)
+OK  Online Khabar English   20 stories  https://english.onlinekhabar.com/feed  Domestic workers need protection beyond the househ (7h old) / The hidden cost of Nepal’s rising public debt (10h old) / Nepal must build, but it must build smarter (13h old)
+OK  Onlinekhabar (business)  40 stories  https://www.onlinekhabar.com/content/business/feed  जनकपुरदेखि अयोध्यासम्म साप्ताहिक रेल सेवा सञ्चालन  (4h old) / भूकम्पले क्षतिग्रस्त जाजरकोट दरबार पुनर्निर्माणका  (10h old) / नेपालमा एआई र उद्योग ४.० (13h old)
+OK  Annapurna Post (business)  20 stories  https://annapurnapost.com/rss/economy  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Online Khabar English (business)  20 stories  https://english.onlinekhabar.com/category/economy/feed  The hidden cost of Nepal’s rising public debt (10h old) / Will PM Balen Shah’s India visit resolve cross-bor (19h old) / NEPSE falls 6.44 points in first trading session a (33h old)
+OK  Bizmandu                15 stories  https://bizmandu.com/feed  विराटनगरमाथिको थ्रिलर जितले लुम्बिनी क्वालिफायरमा, (4h old) / छठ पर्वको पूर्वसन्ध्यामा बेहुलीझैं सिँगारियो कमलपो (4h old) / इँटा उद्योगमा ९ अर्बको कार्बन फाइनान्सिङ, ३०० उद्य (4h old)
+OK  Arthasarokar            20 stories  https://arthasarokar.com/feed  तिहार बिदामा मुस्ताङ घुम्ने पर्यटक बढ्दै (153h old) / कुकुर तिहारः भैरव वाहन गुल्ममा विशेष ‘डग शो’ प्रदर (155h old) / एनपिएल अपडेट: लुम्बिनीको अपराजित यात्रामा ब्रेक, क (155h old)
+NO  Aarthik News             0 stories  https://aarthiknews.com/feed: HTTP 403  
+OK  Clickmandu              10 stories  https://clickmandu.com/feed  कोप–३१ मा हिमताल र हिमनदीको सङ्कटबारे विश्व समुदाय (3h old) / नेपाल र साउथ पोलबीच ठूलो परिमाणको ‘जुरिडिक्सनल रेड (3h old) / २६ लाख हेक्टर वनबाट कार्बन व्यापार गर्ने नेपालको त (8h old)
+OK  Karobar Daily           40 stories  https://www.karobardaily.com/feed  शरद् ऋतुमा पर्वतारोहण अनुमति लिएका १६१३ जनाबाट ३३  (2h old) / छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / विराटनगरविरुद्ध लुम्बिनीको जित, प्लेअफ समीकरण पूरा (3h old)
+NO  Abhiyan Daily            0 stories  https://www.abhiyandaily.com/feed: HTTP 403  
+NO  New Business Age         0 stories  https://newbusinessage.com/feed: HTTP 403  
+OK  Nepal Live Today        10 stories  https://www.nepallivetoday.com/feed  Media’s role vital to strengthen democracy: Speake (16549h old) / Two people arrested for offensive conduct after NP (16597h old) / PM Oli felicitates NPL Champions Janakpur Bolts (16621h old)
+OK  Rising Nepal            10 stories  https://risingnepaldaily.com/rss  Minister Chaudhary pledges to prioritize indigenou (4h old) / Call to submit claims to form new govt in Madhesh (4h old) / No dispute between RSP and Government: Chair Lamic (4h old)
+OK  Desh Sanchar            11 stories  https://deshsanchar.com/feed  गाउँमै उद्यम र रोजगारी सिर्जना गर्ने सम्भावना खोज् (2h old) / एआई प्रविधिमा लगानी बढाउने र सहकार्य सुदृढ गर्ने ई (3h old) / अमेरिकामा घण्टौँपछि हवाई सेवा पुनः सञ्चालन, पुरानो (3h old)
+OK  Khabarhub                8 stories  https://khabarhub.com/feed  एनपिएल प्लेअफ समीकरण पूरा : सनसनीपूर्ण जित निकाल्द (4h old) / भन्सार छलिका १६ लाखभन्दा बढीको अवैध सामान बरामद (5h old) / छठ पर्वका लागि कमलपोखरीमा सम्पूर्ण तयारी पूरा (5h old)
+NO  Kantipur (alt)           0 stories  https://kantipurdaily.com/feed: HTTP 404  
+OK  ShareSansar             13 stories  https://www.sharesansar.com/category/latest  
+OK  Mero Lagani              8 stories  https://merolagani.com/NewsList.aspx  
+NO  Kantipur (business)      0 stories  https://ekantipur.com/business: HTTP 403  
+OK  B360 Nepal               5 stories  https://www.b360nepal.com/feed  Nepal called for grant-based climate finance and m (2h old) / Light rain, snowfall likely in hills, mountains as (12h old) / Nepal must strengthen preparation, institutional c (12h old)
+NO  Bizshala                 0 stories  https://bizshala.com/feed: HTTP 404  
+OK  Nepalnews               12 stories  https://www.nepalnews.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old) / मधेस प्रदेशमा नयाँ सरकार गठनका लागि दाबी पेस गर्न  (3h old) / नेपालको २५ लाख हेक्टर वनमा कार्बन कार्यक्रम विकास  (3h old)
+NO  Nepalnews English        0 stories  https://english.nepalnews.com/feed: HTTP 403  
+OK  Ratopati English        30 stories  https://english.ratopati.com/feed  India and Pakistan to Compete in SAFF Championship (1h old) / Motorcyclist Dies in Car Collision in Jhapa (2h old) / Brazil's Decision on Raphinha Sparks Controversy w (2h old)
+NO  Spotlight Nepal          0 stories  https://www.spotlightnepal.com/feed: HTTP 403  
+OK  NEPSE Trading            7 stories  https://nepsetrading.com/news  
+OK  Bizshala (page)         30 stories  https://www.bizshala.com/  
+NO  Online Khabar English (business2)   0 stories  https://english.onlinekhabar.com/category/business/feed: no stories in feed  
+OK  Onlinekhabar (auto)     38 stories  https://www.onlinekhabar.com/content/auto/feed  प्रोटोन ई.मास ५ दुई अन्तर्राष्ट्रिय अवार्डबाट सम्म (34h old) / न रोकिए घातक दुर्घटना, न ब्युँझिए शासक-प्रशासक (51h old) / रोयल इन्फिल्डको ‘मिस्टिक मुस्ताङ राइड २’ मा ४० महि (225h old)
+OK  Online Khabar English (auto)  20 stories  https://english.onlinekhabar.com/category/auto/feed  Yamaha XSR 155 combines retro styling with modern  (223h old) / Sipradi Yatri announces price of locally made Yatr (1377h old) / Why Yatri and Sipradi joined hands to build a two- (1528h old)
+NO  Techpana                 0 stories  https://techpana.com/feed: HTTP 403  
+NO  Gadgetbyte Nepal         0 stories  https://gadgetbytenepal.com/feed: HTTP 404  
+NO  Auto Life Nepal          0 stories  https://autolifenepal.com/feed: ConnectionError: HTTPSConnectionPool(host='autolifenepal.com', port=443): Max retries exceeded with url: /feed (Caused by NameResolutionError("HTTPSConnection(host='autolifenepal.com', port=443): Failed to resolve 'autolifenepal.com' ([Errno -2] Name or service not kn  
+OK  Nepal Drives             5 stories  https://nepaldrives.com/feed  BAIC and Arcfox Inaugurate New Showroom in Pokhara (204h old) / Chery Q Premium Variant Launched in Nepal at Rs 33 (204h old) / 40 Women Riders Complete Four-Day Mystic Mustang R (229h old)
+NO  Autonepal                0 stories  https://autonepal.com/feed: no stories in feed  
+NO  Ultimate Nepal           0 stories  https://www.ultimatenepal.com/feed: no stories in feed  
+NO  Tech Lekh                0 stories  https://www.techlekh.com/feed: no stories in feed  
+OK  Rushlane                 8 stories  https://www.rushlane.com/feed  New Toyota Innova Hycross Facelift First Official  (5h old) / TVS Norton Atlas GT, Manx R Patented In India – La (6h old) / New Maruti SUV Spied Testing – Next Gen Brezza 202 (11h old)
+OK  GaadiWaadi               8 stories  https://gaadiwaadi.com/feed  Mahindra Plans Capacity For 10,000 Units A Month F (7h old) / New Gen Toyota Fortuner To Debut Soon – What We Kn (9h old) / Kia October 2026 Sales Analysis – Seltos, Sonet, C (10h old)
+NO  Autocar India            0 stories  https://www.autocarindia.com/rss: HTTP 410  
+OK  MotorBeam               12 stories  https://www.motorbeam.com/feed/  AEB To Become Mandatory In All Cars From October 2 (537h old) / Ducati Hypermotard V2 Launched At Rs 16.53 Lakh (540h old) / BMW Motorrad Vision CE Patented In India (541h old)
+NO  Autopunditz              0 stories  https://www.autopunditz.com/feed: HTTP 404  
+OK  Carscoops               12 stories  https://www.carscoops.com/feed/  The 5 Worst Rebadges In Automotive History (1h old) / BMW Pays Tribute To Alex Zanardi With A Very Speci (2h old) / What Do All The Flags Mean In Racing? (3h old)
+OK  Electrek                12 stories  https://electrek.co/feed/  Check your ego at the door: Stellantis’ new electr (1h old) / Huawei set to challenge Tesla Powerwall with new,  (2h old) / Tesla Cybercab’s autonomy agreement is insane: $29 (5h old)
+NO  Naya Patrika             0 stories  https://www.nayapatrikadaily.com/feed: HTTP 404  
+NO  Ekagaj                   0 stories  https://www.ekagaj.com/feed: HTTP 403  
+OK  Thaha Khabar             5 stories  https://thahakhabar.com/feed  ‘पाकिस्तानको बाढी पुनःस्थापनाको अनुभवबाट नेपालले स (2h old) / मधेशका मुख्यमन्त्री यादवद्वारा राजीनामा, सरकार बना (3h old) / चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (3h old)
+NO  Pahilo Post              0 stories  https://www.pahilopost.com/feed: HTTP 503  
+NO  DC Nepal                 0 stories  https://www.dcnepal.com/feed: HTTP 403  
+OK  Kathmandu Press          5 stories  https://kathmandupress.com/feed  भित्री र बाहिरी शक्तिको संयुक्त आक्रमणका कारण एमाल (7h old) / मधेशले मालिक होइन, सेवक खोजेको हो : रवि लामिछाने (7h old) / रास्वपा सभापति लामिछाने दम्पती जनकपुरमा (7h old)
+OK  Nepal Samaya             1 stories  https://nepalsamaya.com/feed  एनपीएल : लुम्बिनी पहिलो क्वालिफायरमा प्रवेश,विराटन (3h old)
+OK  News of Nepal           12 stories  https://newsofnepal.com/feed  क्रिस्टियानो रोनाल्डोद्वारा अन्तर्राष्ट्रिय फुटबलल (2h old) / अन्तिम साससम्म कांग्रेसको हितमा लड्छु : देउवा (8h old) / मधेशका मुख्यमन्त्री कृष्णप्रसाद यादवद्वारा राजीनाम (9h old)
+OK  Rajdhani Daily          10 stories  https://rajdhanidaily.com/feed  लुम्बिनीसँग हारेपछि विराटनगर प्लेअफबाट बाहिरियो (4h old) / लघुकथा पुरस्कार डा. टीकाराम पोखरेललाई (4h old) / मधेशमा मुख्यमन्त्रीका लागि दाबी आह्वान, मंसिर ४ गत (6h old)
+NO  Ukaalo                   0 stories  https://www.ukaalo.com/feed: HTTP 404  
+OK  Image Khabar            10 stories  https://imagekhabar.com/feed  विराटनगरलाई हराउँदै लुम्बिनी लिग चरणको शीर्ष स्थान (4h old) / विराटनगरले लुम्बिनीलाई दियो १६७ रनको लक्ष्य (6h old) / काठमाडौं उपत्यकामा छठको तयारी अन्तिम चरणमा (6h old)
+NO  Hamra Kura               0 stories  https://www.hamrakura.com/feed: HTTP 403  
+OK  Shilapatra               5 stories  https://shilapatra.com/feed  छठमा सुरक्षा व्यवस्था चुस्त बनाउन देशभरका प्रहरीला (3h old) / विराटनगरलाई हराउँदै साविक विजेता लुम्बिनी क्वालिफा (4h old) / छठका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (तस्वीर (4h old)
+OK  Nepal Khabar            20 stories  https://nepalkhabar.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (0h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (0h old) / गंगासागरमा छठ मनाउँदै निकिता पौडेल, शुरु गरिन् धार (0h old)
+OK  Nepali Times            30 stories  https://nepalitimes.com/feed  Mountaineering, as war waged by other means (16h old) / Nepal caught in contraband timber stalemate (32h old) / When is enough, enough? (41h old)
+OK  Kathmandu Tribune       10 stories  https://kathmandutribune.com/feed  Can AI Save Journalism? (1796h old) / सुकरातहरुको नौनाडी गलेको छ (2399h old) / यात्रा मात्र होइन, जीवनको खोज: ‘फुकुवा’ का लेखक बी (2534h old)
+OK  Nepal Monitor           10 stories  https://nepalmonitor.com/feed  Families in Devighat, Nepal, Face Uncertain Return (57h old) / Nepal Remittance 2026: Why Inflows Stay Strong as  (1045h old) / Nepal Economy 2026: Growth, Jobs and Investment (1424h old)
+NO  Hamro Kalam              0 stories  https://www.hamrokalam.com/feed: ConnectTimeout: HTTPSConnectionPool(host='www.hamrokalam.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hamrokalam.com', port=443) at 0x7fc2b63bc3e0>, 'Connection to www.hamrokalam.com timed out. (conne  
+new stories found: 0
+{
+ "run": "2026-11-14 18:50 UTC",
+ "stories_in_app": 1851,
+ "new_found": 0,
+ "written_now": 0,
+ "today": {
+  "requests": 323,
+  "stories": 680,
+  "world": 13,
+  "exhausted": {}
+ },
+ "waiting": 7,
+ "left_out_old_or_undated": [],
+ "ai": {
+  "used_today": {
+   "gemini-3.1-flash-lite-preview": 157,
+   "gemini-flash-lite-latest": 82,
+   "gemini-3.5-flash-lite": 16
+  },
+  "models": [
+   "gemini-3.1-flash-lite-preview",
+   "gemini-flash-lite-latest",
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.8-flash"
+  ],
+  "paused": {},
+  "requests": 0,
+  "stories": 0,
+  "rejected": [],
+  "errors": []
+ },
+ "newest_story_minutes_old": 50
+}
+sites not readable this run: Kantipur, Ujyaalo, Lokantar, Nepal Press, myRepublica, Aarthik News, Abhiyan Daily, New Business Age, Kantipur (alt), Kantipur (business), Bizshala, Nepalnews English, Spotlight Nepal, Online Khabar English (business2), Techpana, Gadgetbyte Nepal, Auto Life Nepal, Autonepal, Ultimate Nepal, Tech Lekh, Autocar India, Autopunditz, Naya Patrika, Ekagaj, Pahilo Post, DC Nepal, Ukaalo, Hamra Kura, Hamro Kalam
+===== round 15 18:53:18
+OK  Onlinekhabar            38 stories  https://www.onlinekhabar.com/feed  पुछारदेखि शीर्षसम्म लुम्बिनीको यात्रा, अब उपाधि रक (2h old) / एनपीएल सिजन–३ : प्लेअफ पुग्ने चारै टोलीको टुङ्गो ल (3h old) / मञ्जुश्रीको पदचाप पछ्याउँदै हिमालको काखमा (3h old)
+NO  Kantipur                 0 stories  https://ekantipur.com/feed: HTTP 403  
+OK  Setopati                 5 stories  https://www.setopati.com/feed  इनमको मोबाइल २ दिनसम्म आफूसँग राख्ने अधिकार कुमार  (2h old) / दुई जुवाखालमा एकै साथ प्रहरी कारबाही, १७ जना पक्रा (2h old) / गाडीले मोटरसाइकललाई ठक्कर दिँदा बाबुछोराको मृत्यु, (2h old)
+OK  Ratopati                24 stories  https://www.ratopati.com/feed  महिला अन्तर्राष्ट्रिय गोल्डकपः अक्वा एफसीलाई हराउँ (0h old) / छठको तयारी: गुह्येश्वरीबाट गौरीघाटसम्मको वाग्मती स (0h old) / १२ बजे १२ समाचार : रसुवागढी नाका तीन महिनादेखि ठप् (1h old)
+OK  Nagarik                 20 stories  https://nagariknews.nagariknetwork.com/feed  बूढीगण्डकी जलविद्युत् आयोजनामा लगानी गर्न युएईसमक् (2h old) / म्यानमामा विस्थापितको शिविरमा हवाई आक्रमण, १२ जनाक (3h old) / चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (3h old)
+OK  Himal Khabar             5 stories  https://www.himalkhabar.com/feed  विभेदकारी वैचारिकी र दलित शिल्पीको मुक्तिमार्ग (38h old) / पहिलो विश्वयुद्धको गोर्खाली कथा सुनाइरहेको छ, छत्र (60h old) / जेरुशा ! तिमी कहाँ छौ? (107h old)
+OK  Baahrakhari              4 stories  https://baahrakhari.com/feed  एमालेमा रहेर अरू दललाई मत दिनेलाई कारबाही गरिन्छ : (3h old) / एपेक बैठकको ‘साइडलाइन’मा ट्रम्प, सी र पुटिनबीच ‘त् (3h old) / लुम्बिनी शीर्ष स्थानमा रहँदै प्लेअफमा (4h old)
+NO  Ujyaalo                  0 stories  https://ujyaaloonline.com/feed: HTTP 403  
+NO  Lokantar                 0 stories  https://lokaantar.com/feed: HTTP 404  
+NO  Nepal Press              0 stories  https://www.nepalpress.com/feed: HTTP 403  
+OK  Annapurna Post          20 stories  https://annapurnapost.com/rss  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Gorkhapatra             10 stories  https://gorkhapatraonline.com/rss  सजाइयो घडीअर्वा पोखरी छठघाट परिसर (फोटोफिचर) (1h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (1h old) / कान्ति तालको बिजोग : १० करोडको लगानी बालुवामा पानी (1h old)
+OK  Kathmandu Post          40 stories  https://kathmandupost.com/rss  Who is the real prime minister? (0h old) / Congress leader Umesh Shrestha’s brother arrested  (0h old) / Lumbini beat Biratnagar to reach Qualifier, Kings  (0h old)
+NO  myRepublica              0 stories  https://myrepublica.nagariknetwork.com/feed: HTTP 404  
+OK  Himalayan Times         40 stories  https://thehimalayantimes.com/rssFeed/15  Sama-Chakewa festival begins across Mithila region (11h old) / Govt declares public holiday on Monday for Chhath (33h old) / Is Outlook down? Widespread outage hits Microsoft  (35h old)
+OK  Online Khabar English   20 stories  https://english.onlinekhabar.com/feed  Domestic workers need protection beyond the househ (7h old) / The hidden cost of Nepal’s rising public debt (10h old) / Nepal must build, but it must build smarter (13h old)
+OK  Onlinekhabar (business)  40 stories  https://www.onlinekhabar.com/content/business/feed  जनकपुरदेखि अयोध्यासम्म साप्ताहिक रेल सेवा सञ्चालन  (4h old) / भूकम्पले क्षतिग्रस्त जाजरकोट दरबार पुनर्निर्माणका  (10h old) / नेपालमा एआई र उद्योग ४.० (13h old)
+OK  Annapurna Post (business)  20 stories  https://annapurnapost.com/rss/economy  बूढीगण्डकी आयोजनामा लगानी गर्न युएईलाई नेपालको प्र (0h old) / कारको ठक्करबाट २१ वर्षीय मोटरसाइकल चालकको मृत्यु (0h old) / १८ मुस्लिम देशद्वारा इजरायली आक्रमणको कडा निन्दा (0h old)
+OK  Online Khabar English (business)  20 stories  https://english.onlinekhabar.com/category/economy/feed  The hidden cost of Nepal’s rising public debt (10h old) / Will PM Balen Shah’s India visit resolve cross-bor (19h old) / NEPSE falls 6.44 points in first trading session a (33h old)
+OK  Bizmandu                15 stories  https://bizmandu.com/feed  विराटनगरमाथिको थ्रिलर जितले लुम्बिनी क्वालिफायरमा, (4h old) / छठ पर्वको पूर्वसन्ध्यामा बेहुलीझैं सिँगारियो कमलपो (4h old) / इँटा उद्योगमा ९ अर्बको कार्बन फाइनान्सिङ, ३०० उद्य (4h old)
+OK  Arthasarokar            20 stories  https://arthasarokar.com/feed  तिहार बिदामा मुस्ताङ घुम्ने पर्यटक बढ्दै (153h old) / कुकुर तिहारः भैरव वाहन गुल्ममा विशेष ‘डग शो’ प्रदर (155h old) / एनपिएल अपडेट: लुम्बिनीको अपराजित यात्रामा ब्रेक, क (155h old)
+NO  Aarthik News             0 stories  https://aarthiknews.com/feed: HTTP 403  
+OK  Clickmandu              10 stories  https://clickmandu.com/feed  कोप–३१ मा हिमताल र हिमनदीको सङ्कटबारे विश्व समुदाय (3h old) / नेपाल र साउथ पोलबीच ठूलो परिमाणको ‘जुरिडिक्सनल रेड (3h old) / २६ लाख हेक्टर वनबाट कार्बन व्यापार गर्ने नेपालको त (8h old)
+OK  Karobar Daily           40 stories  https://www.karobardaily.com/feed  शरद् ऋतुमा पर्वतारोहण अनुमति लिएका १६१३ जनाबाट ३३  (2h old) / छठ पर्वका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (3h old) / विराटनगरविरुद्ध लुम्बिनीको जित, प्लेअफ समीकरण पूरा (3h old)
+NO  Abhiyan Daily            0 stories  https://www.abhiyandaily.com/feed: HTTP 403  
+NO  New Business Age         0 stories  https://newbusinessage.com/feed: HTTP 403  
+OK  Nepal Live Today        10 stories  https://www.nepallivetoday.com/feed  Media’s role vital to strengthen democracy: Speake (16549h old) / Two people arrested for offensive conduct after NP (16597h old) / PM Oli felicitates NPL Champions Janakpur Bolts (16621h old)
+OK  Rising Nepal            10 stories  https://risingnepaldaily.com/rss  Minister Chaudhary pledges to prioritize indigenou (4h old) / Call to submit claims to form new govt in Madhesh (4h old) / No dispute between RSP and Government: Chair Lamic (4h old)
+OK  Desh Sanchar            11 stories  https://deshsanchar.com/feed  गाउँमै उद्यम र रोजगारी सिर्जना गर्ने सम्भावना खोज् (2h old) / एआई प्रविधिमा लगानी बढाउने र सहकार्य सुदृढ गर्ने ई (3h old) / अमेरिकामा घण्टौँपछि हवाई सेवा पुनः सञ्चालन, पुरानो (3h old)
+OK  Khabarhub                8 stories  https://khabarhub.com/feed  एनपिएल प्लेअफ समीकरण पूरा : सनसनीपूर्ण जित निकाल्द (4h old) / भन्सार छलिका १६ लाखभन्दा बढीको अवैध सामान बरामद (5h old) / छठ पर्वका लागि कमलपोखरीमा सम्पूर्ण तयारी पूरा (5h old)
+NO  Kantipur (alt)           0 stories  https://kantipurdaily.com/feed: HTTP 404  
+OK  ShareSansar             13 stories  https://www.sharesansar.com/category/latest  
+OK  Mero Lagani              8 stories  https://merolagani.com/NewsList.aspx  
+NO  Kantipur (business)      0 stories  https://ekantipur.com/business: HTTP 403  
+OK  B360 Nepal               5 stories  https://www.b360nepal.com/feed  Nepal called for grant-based climate finance and m (2h old) / Light rain, snowfall likely in hills, mountains as (12h old) / Nepal must strengthen preparation, institutional c (12h old)
+NO  Bizshala                 0 stories  https://bizshala.com/feed: HTTP 404  
+OK  Nepalnews               12 stories  https://www.nepalnews.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (2h old) / मधेस प्रदेशमा नयाँ सरकार गठनका लागि दाबी पेस गर्न  (3h old) / नेपालको २५ लाख हेक्टर वनमा कार्बन कार्यक्रम विकास  (3h old)
+NO  Nepalnews English        0 stories  https://english.nepalnews.com/feed: HTTP 403  
+OK  Ratopati English        30 stories  https://english.ratopati.com/feed  India and Pakistan to Compete in SAFF Championship (1h old) / Motorcyclist Dies in Car Collision in Jhapa (2h old) / Brazil's Decision on Raphinha Sparks Controversy w (2h old)
+NO  Spotlight Nepal          0 stories  https://www.spotlightnepal.com/feed: HTTP 403  
+OK  NEPSE Trading            7 stories  https://nepsetrading.com/news  
+OK  Bizshala (page)         30 stories  https://www.bizshala.com/  
+NO  Online Khabar English (business2)   0 stories  https://english.onlinekhabar.com/category/business/feed: no stories in feed  
+OK  Onlinekhabar (auto)     38 stories  https://www.onlinekhabar.com/content/auto/feed  प्रोटोन ई.मास ५ दुई अन्तर्राष्ट्रिय अवार्डबाट सम्म (34h old) / न रोकिए घातक दुर्घटना, न ब्युँझिए शासक-प्रशासक (51h old) / रोयल इन्फिल्डको ‘मिस्टिक मुस्ताङ राइड २’ मा ४० महि (225h old)
+OK  Online Khabar English (auto)  20 stories  https://english.onlinekhabar.com/category/auto/feed  Yamaha XSR 155 combines retro styling with modern  (223h old) / Sipradi Yatri announces price of locally made Yatr (1378h old) / Why Yatri and Sipradi joined hands to build a two- (1528h old)
+NO  Techpana                 0 stories  https://techpana.com/feed: HTTP 403  
+NO  Gadgetbyte Nepal         0 stories  https://gadgetbytenepal.com/feed: HTTP 404  
+NO  Auto Life Nepal          0 stories  https://autolifenepal.com/feed: ConnectionError: HTTPSConnectionPool(host='autolifenepal.com', port=443): Max retries exceeded with url: /feed (Caused by NameResolutionError("HTTPSConnection(host='autolifenepal.com', port=443): Failed to resolve 'autolifenepal.com' ([Errno -2] Name or service not kn  
+OK  Nepal Drives             5 stories  https://nepaldrives.com/feed  BAIC and Arcfox Inaugurate New Showroom in Pokhara (204h old) / Chery Q Premium Variant Launched in Nepal at Rs 33 (204h old) / 40 Women Riders Complete Four-Day Mystic Mustang R (229h old)
+NO  Autonepal                0 stories  https://autonepal.com/feed: no stories in feed  
+NO  Ultimate Nepal           0 stories  https://www.ultimatenepal.com/feed: no stories in feed  
+NO  Tech Lekh                0 stories  https://www.techlekh.com/feed: no stories in feed  
+OK  Rushlane                 8 stories  https://www.rushlane.com/feed  New Toyota Innova Hycross Facelift First Official  (5h old) / TVS Norton Atlas GT, Manx R Patented In India – La (7h old) / New Maruti SUV Spied Testing – Next Gen Brezza 202 (11h old)
+OK  GaadiWaadi               8 stories  https://gaadiwaadi.com/feed  Mahindra Plans Capacity For 10,000 Units A Month F (7h old) / New Gen Toyota Fortuner To Debut Soon – What We Kn (9h old) / Kia October 2026 Sales Analysis – Seltos, Sonet, C (10h old)
+NO  Autocar India            0 stories  https://www.autocarindia.com/rss: HTTP 410  
+OK  MotorBeam               12 stories  https://www.motorbeam.com/feed/  AEB To Become Mandatory In All Cars From October 2 (537h old) / Ducati Hypermotard V2 Launched At Rs 16.53 Lakh (540h old) / BMW Motorrad Vision CE Patented In India (541h old)
+NO  Autopunditz              0 stories  https://www.autopunditz.com/feed: HTTP 404  
+OK  Carscoops               12 stories  https://www.carscoops.com/feed/  The 5 Worst Rebadges In Automotive History (1h old) / BMW Pays Tribute To Alex Zanardi With A Very Speci (2h old) / What Do All The Flags Mean In Racing? (3h old)
+OK  Electrek                12 stories  https://electrek.co/feed/  Check your ego at the door: Stellantis’ new electr (1h old) / Huawei set to challenge Tesla Powerwall with new,  (2h old) / Tesla Cybercab’s autonomy agreement is insane: $29 (5h old)
+NO  Naya Patrika             0 stories  https://www.nayapatrikadaily.com/feed: HTTP 404  
+NO  Ekagaj                   0 stories  https://www.ekagaj.com/feed: HTTP 403  
+OK  Thaha Khabar             5 stories  https://thahakhabar.com/feed  ‘पाकिस्तानको बाढी पुनःस्थापनाको अनुभवबाट नेपालले स (2h old) / मधेशका मुख्यमन्त्री यादवद्वारा राजीनामा, सरकार बना (3h old) / चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (3h old)
+NO  Pahilo Post              0 stories  https://www.pahilopost.com/feed: HTTP 503  
+NO  DC Nepal                 0 stories  https://www.dcnepal.com/feed: HTTP 403  
+OK  Kathmandu Press          5 stories  https://kathmandupress.com/feed  भित्री र बाहिरी शक्तिको संयुक्त आक्रमणका कारण एमाल (7h old) / मधेशले मालिक होइन, सेवक खोजेको हो : रवि लामिछाने (7h old) / रास्वपा सभापति लामिछाने दम्पती जनकपुरमा (7h old)
+OK  Nepal Samaya             1 stories  https://nepalsamaya.com/feed  एनपीएल : लुम्बिनी पहिलो क्वालिफायरमा प्रवेश,विराटन (3h old)
+OK  News of Nepal           12 stories  https://newsofnepal.com/feed  क्रिस्टियानो रोनाल्डोद्वारा अन्तर्राष्ट्रिय फुटबलल (2h old) / अन्तिम साससम्म कांग्रेसको हितमा लड्छु : देउवा (8h old) / मधेशका मुख्यमन्त्री कृष्णप्रसाद यादवद्वारा राजीनाम (9h old)
+OK  Rajdhani Daily          10 stories  https://rajdhanidaily.com/feed  लुम्बिनीसँग हारेपछि विराटनगर प्लेअफबाट बाहिरियो (4h old) / लघुकथा पुरस्कार डा. टीकाराम पोखरेललाई (4h old) / मधेशमा मुख्यमन्त्रीका लागि दाबी आह्वान, मंसिर ४ गत (6h old)
+NO  Ukaalo                   0 stories  https://www.ukaalo.com/feed: HTTP 404  
+OK  Image Khabar            10 stories  https://imagekhabar.com/feed  विराटनगरलाई हराउँदै लुम्बिनी लिग चरणको शीर्ष स्थान (4h old) / विराटनगरले लुम्बिनीलाई दियो १६७ रनको लक्ष्य (6h old) / काठमाडौं उपत्यकामा छठको तयारी अन्तिम चरणमा (6h old)
+NO  Hamra Kura               0 stories  https://www.hamrakura.com/feed: HTTP 403  
+OK  Shilapatra               5 stories  https://shilapatra.com/feed  छठमा सुरक्षा व्यवस्था चुस्त बनाउन देशभरका प्रहरीला (3h old) / विराटनगरलाई हराउँदै साविक विजेता लुम्बिनी क्वालिफा (4h old) / छठका लागि झिलिमिली बत्तीले सजाइयो कमलपोखरी (तस्वीर (4h old)
+OK  Nepal Khabar            20 stories  https://nepalkhabar.com/feed  चोरी भएका देवमूर्ति स्वदेश फर्काउन विभिन्न देशका र (0h old) / पर्वतीय एजेन्डालाई कोप–३१ को अन्तिम निर्णयमा समेट् (0h old) / गंगासागरमा छठ मनाउँदै निकिता पौडेल, शुरु गरिन् धार (0h old)
+OK  Nepali Times            30 stories  https://nepalitimes.com/feed  Mountaineering, as war waged by other means (16h old) / Nepal caught in contraband timber stalemate (32h old) / When is enough, enough? (41h old)
+OK  Kathmandu Tribune       10 stories  https://kathmandutribune.com/feed  Can AI Save Journalism? (1796h old) / सुकरातहरुको नौनाडी गलेको छ (2399h old) / यात्रा मात्र होइन, जीवनको खोज: ‘फुकुवा’ का लेखक बी (2534h old)
+OK  Nepal Monitor           10 stories  https://nepalmonitor.com/feed  Families in Devighat, Nepal, Face Uncertain Return (57h old) / Nepal Remittance 2026: Why Inflows Stay Strong as  (1045h old) / Nepal Economy 2026: Growth, Jobs and Investment (1424h old)
+NO  Hamro Kalam              0 stories  https://www.hamrokalam.com/feed: ConnectTimeout: HTTPSConnectionPool(host='www.hamrokalam.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hamrokalam.com', port=443) at 0x7fcf6c59f830>, 'Connection to www.hamrokalam.com timed out. (conne  
+new stories found: 0
+{
+ "run": "2026-11-14 18:53 UTC",
+ "stories_in_app": 1851,
+ "new_found": 0,
+ "written_now": 0,
+ "today": {
+  "requests": 323,
+  "stories": 680,
+  "world": 13,
+  "exhausted": {}
+ },
+ "waiting": 7,
+ "left_out_old_or_undated": [],
+ "ai": {
+  "used_today": {
+   "gemini-3.1-flash-lite-preview": 157,
+   "gemini-flash-lite-latest": 82,
+   "gemini-3.5-flash-lite": 16
+  },
+  "models": [
+   "gemini-3.1-flash-lite-preview",
+   "gemini-flash-lite-latest",
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.8-flash"
+  ],
+  "paused": {},
+  "requests": 0,
+  "stories": 0,
+  "rejected": [],
+  "errors": []
+ },
+ "newest_story_minutes_old": 53
+}
+sites not readable this run: Kantipur, Ujyaalo, Lokantar, Nepal Press, myRepublica, Aarthik News, Abhiyan Daily, New Business Age, Kantipur (alt), Kantipur (business), Bizshala, Nepalnews English, Spotlight Nepal, Online Khabar English (business2), Techpana, Gadgetbyte Nepal, Auto Life Nepal, Autonepal, Ultimate Nepal, Tech Lekh, Autocar India, Autopunditz, Naya Patrika, Ekagaj, Pahilo Post, DC Nepal, Ukaalo, Hamra Kura, Hamro Kalam
