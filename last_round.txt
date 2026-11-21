@@ -1,0 +1,121 @@
+OK  Onlinekhabar            40 stories  https://www.onlinekhabar.com/feed  दीपेन्द्रसिंह ऐरी : च्याम्पियन लिडर (1h old) / बलिङमा छाएका रिजन (2h old) / धो गाउँ : इतिहास, संस्कृति र व्यापारको साक्षी (3h old)
+NO  Kantipur                 0 stories  https://ekantipur.com/feed: HTTP 403  
+OK  Setopati                 4 stories  https://www.setopati.com/feed  एनपिएलका खेल होम एन्ड अवे प्रणालीमा गर्न आठ वटा रं (4h old) / रिजन ढकालले जिते दुई अवार्डसँगै कार, अरुले के-के अ (4h old) / सुदूरपश्चिमलाई च्याम्पियन बनाउँदै मन्सीले बनाए कीर (5h old)
+OK  Ratopati                28 stories  https://www.ratopati.com/feed  भोटेकोशी बाढीपीडितद्वारा पुनः स्थापनाको माग (0h old) / प्रथम धरान महिला गोल्डकपको उपाधि एपीएफ क्लबलाई (0h old) / राप्तीसोनारीको नेचर रनको उपाधि शाही र डाँगीलाई (0h old)
+OK  Nagarik                 20 stories  https://nagariknews.nagariknetwork.com/feed  भ्रष्टाचार सधैँका लागि अन्त्य गर्ने अभियानमा छु :  (3h old) / पशुपतिनाथको नित्य र नैमित्तिक पूजालाई विधिवत् राख् (3h old) / अमेरिकी सरकारी निकायमा ह्याकरको आतंक : एफबीआईदेखि  (3h old)
+OK  Himal Khabar             5 stories  https://www.himalkhabar.com/feed  हिमाल खोज: राजनीतिक हिन्दुत्वको संगठन र नेपाल प्रव (8h old) / कम्युनिष्टका छोराको औसत गुनासो (63h old) / विदैविदा, नागरिकको काम कहिले? (105h old)
+OK  Baahrakhari              5 stories  https://baahrakhari.com/feed  एनपीएलका आठै क्लबका निम्ति क्रिकेट रंगशाला निर्माण (3h old) / रिजन ढकाल एनपीएल ३ का सर्वोत्कृष्ट बलर (3h old) / राहुल यादव ‘इमर्जिङ प्लेयर’ घोषित (4h old)
+NO  Ujyaalo                  0 stories  https://ujyaaloonline.com/feed: HTTP 403  
+NO  Lokantar                 0 stories  https://lokaantar.com/feed: HTTP 404  
+NO  Nepal Press              0 stories  https://www.nepalpress.com/feed: HTTP 403  
+OK  Annapurna Post          20 stories  https://annapurnapost.com/rss  फिनल्यान्डको खाडीमा रुसतर्फ जाँदै गरेको मालवाहक जह (0h old) / नेहा बोरामाथि पूर्वन्यायाधीश काटजूको कडा टिप्पणी,  (0h old) / एनपीएल : रिजन उत्कृष्ट बलर र लोकेश उत्कृष्ट ब्याटर (0h old)
+OK  Gorkhapatra             10 stories  https://gorkhapatraonline.com/rss  देश समृद्ध बनाउँदै भ्रष्टाचार अन्त्य गर्ने अभियानम (2h old) / भन्सार छली ल्याइएका कपडा तथा तरकारी बरामद (2h old) / राष्ट्रपति पौडेल कनक चैत्य महावीहार, सेतो मच्छिन्द (2h old)
+OK  Kathmandu Post          40 stories  https://kathmandupost.com/rss  Government plans floodlit home grounds for all eig (0h old) / Sudurpaschim crowned NPL champions after dominant  (0h old) / Munsey’s century powers Sudurpaschim to maiden NPL (0h old)
+NO  myRepublica              0 stories  https://myrepublica.nagariknetwork.com/feed: HTTP 404  
+OK  Himalayan Times         40 stories  https://thehimalayantimes.com/rssFeed/15  APF, Nepal Police to battle for Dharan Women's Gol (7h old) / Ghoptebhir section of Nagdhunga-Muglin road to rem (8h old) / Aathpahariya Museum remains closed more than a yea (8h old)
+OK  Online Khabar English   20 stories  https://english.onlinekhabar.com/feed  What if Nepal turned its prisoners into farmers an (13h old) / Can Balen bring India and China together on climat (15h old) / Lumbini Lions chase back-to-back titles, Sudurpasc (17h old)
+OK  Onlinekhabar (business)  40 stories  https://www.onlinekhabar.com/content/business/feed  दानाको मूल्यवृद्धिले संकटमा किसान, किन बढिरहेछ मूल (3h old) / गण्डकी प्रदेशका आर्थिक अवसर (13h old) / एमसीएले सुरु गर्‍यो न्यू बुटवल-न्यू दमौली प्रसारण  (14h old)
+OK  Annapurna Post (business)  20 stories  https://annapurnapost.com/rss/economy  फिनल्यान्डको खाडीमा रुसतर्फ जाँदै गरेको मालवाहक जह (0h old) / नेहा बोरामाथि पूर्वन्यायाधीश काटजूको कडा टिप्पणी,  (0h old) / एनपीएल : रिजन उत्कृष्ट बलर र लोकेश उत्कृष्ट ब्याटर (0h old)
+OK  Online Khabar English (business)  20 stories  https://english.onlinekhabar.com/category/economy/feed  Gold prices plunge, but Nepal’s market faces a sho (31h old) / Stock market falls 7 points, banking sector gains (33h old) / Gold price drops Rs 12,200 per tola, silver down R (38h old)
+OK  Bizmandu                15 stories  https://bizmandu.com/feed  एनपीएलमा १७ विकेट लिएका चितवनका ढकालले जिते कार, ज (4h old) / प्रधानमन्त्री शाहको घोषणा, ‘एनपीएलका आठ वटै टिमलाई (4h old) / सुदूरपश्चिम रोयल्सलाई जिताउने क्रममा जर्ज मुन्सेले (5h old)
+OK  Arthasarokar            20 stories  https://arthasarokar.com/feed  इसेवाबाट ‘एआई बट’ प्रयोग गरेर १००० रुपैयाँमा किनेक (14h old) / Exclusive : इसेवाको सुरक्षा कमजोरी, १५ दिन अघि नै  (16h old) / इसेवा घोटालापछि क्यानभित्र छलफल -‘अहिले माहोल नबिग (28h old)
+NO  Aarthik News             0 stories  https://aarthiknews.com/feed: HTTP 403  
+OK  Clickmandu              10 stories  https://clickmandu.com/feed  दर्शकदीर्घाको उत्साहपूर्ण साथबीच सकियो एनपिएल, यस् (3h old) / एनपिएलका ८ वटै क्लबका लागि क्रिकेट रङ्गशाला निर्मा (3h old) / एनपिएल सिजन–३: रिजनले जिते ओमोडा कार र पल्सर बाइक (4h old)
+OK  Karobar Daily           40 stories  https://www.karobardaily.com/feed  अड्किएका जलविद्युत आयोजनालाई गति दिने आशा (3h old) / एयर स्पेस र कनेक्टिभिटीमा होला सहमति ? (4h old) / एनपिएलका आठवटै क्लबका लागि क्रिकेट रङ्गशाला निर्मा (4h old)
+NO  Abhiyan Daily            0 stories  https://www.abhiyandaily.com/feed: HTTP 403  
+NO  New Business Age         0 stories  https://newbusinessage.com/feed: HTTP 403  
+OK  Nepal Live Today        10 stories  https://www.nepallivetoday.com/feed  Media’s role vital to strengthen democracy: Speake (16717h old) / Two people arrested for offensive conduct after NP (16765h old) / PM Oli felicitates NPL Champions Janakpur Bolts (16789h old)
+OK  Rising Nepal            10 stories  https://risingnepaldaily.com/rss  Over 50% of the 47.1 MW Guras Hydro Project Comple (2h old) / Unity among leftist forces is inevitable: NCP Coor (4h old) / PM Shah congratulates NPL 3 Champions Sudurpaschim (4h old)
+OK  Desh Sanchar            11 stories  https://deshsanchar.com/feed  ट्रफीसँगै च्याम्पियन सुदूरपश्चिम, तस्बिरमा हेर्नुस (2h old) / हरेदी दलसँग गठबन्धन बन्ने लिबरम्यानको विश्वास (3h old) / खहरेमा पुल निर्माण सुरु (3h old)
+OK  Khabarhub               10 stories  https://khabarhub.com/feed  अबको जीवन जनता र लोकतन्त्रका लागि समर्पित गर्छु :  (3h old) / दर्शकदीर्घाको उत्साहपूर्ण साथबीच एनपीएल सम्पन्न (3h old) / एनपीएल सिजन–३ मा कसले कुन अवार्ड जिते ? (4h old)
+NO  Kantipur (alt)           0 stories  https://kantipurdaily.com/feed: HTTP 404  
+OK  ShareSansar             13 stories  https://www.sharesansar.com/category/latest  
+OK  Mero Lagani              8 stories  https://merolagani.com/NewsList.aspx  
+NO  Kantipur (business)      0 stories  https://ekantipur.com/business: HTTP 403  
+OK  B360 Nepal               5 stories  https://www.b360nepal.com/feed  NRB absorbs Rs 5,595.20bn in liquidity, injects Rs (26h old) / Private sector credit increases 3.1 pc to Rs 6,041 (26h old) / BFI deposits increase 2.8 pc to Rs 8,509.82bn in F (26h old)
+NO  Bizshala                 0 stories  https://bizshala.com/feed: HTTP 404  
+OK  Nepalnews               12 stories  https://www.nepalnews.com/feed  एनपीएल सिजन–३ मा कसले कुन अवार्ड जिते ? (3h old) / एनपीएलका आठै टोलीका लागि फ्लडलाइटसहितका छुट्टाछुट् (4h old) / एनपीएलका उत्कृष्ट खेलाडी र पुरस्कार: रिजनले जिते क (4h old)
+NO  Nepalnews English        0 stories  https://english.nepalnews.com/feed: HTTP 403  
+OK  Ratopati English        30 stories  https://english.ratopati.com/feed  Iran's Foreign Minister States China and Russia Di (2h old) / Bank Accounts of Foreign Employment Fraud Fugitive (3h old) / Lumbini Lions Receive Rs 20 Lakh Less Than Announc (3h old)
+NO  Spotlight Nepal          0 stories  https://www.spotlightnepal.com/feed: HTTP 403  
+OK  NEPSE Trading            6 stories  https://nepsetrading.com/news  
+OK  Bizshala (page)         30 stories  https://www.bizshala.com/  
+NO  Online Khabar English (business2)   0 stories  https://english.onlinekhabar.com/category/business/feed: no stories in feed  
+OK  Onlinekhabar (auto)     38 stories  https://www.onlinekhabar.com/content/auto/feed  सार्वजनिक सवारी चालक उत्पादनमा सरकारको लगानी शून्य (147h old) / प्रोटोन ई.मास ५ दुई अन्तर्राष्ट्रिय अवार्डबाट सम्म (202h old) / न रोकिए घातक दुर्घटना, न ब्युँझिए शासक-प्रशासक (220h old)
+OK  Online Khabar English (auto)  20 stories  https://english.onlinekhabar.com/category/auto/feed  Yamaha XSR 155 combines retro styling with modern  (392h old) / Sipradi Yatri announces price of locally made Yatr (1546h old) / Why Yatri and Sipradi joined hands to build a two- (1696h old)
+NO  Techpana                 0 stories  https://techpana.com/feed: HTTP 403  
+NO  Gadgetbyte Nepal         0 stories  https://gadgetbytenepal.com/feed: HTTP 404  
+NO  Auto Life Nepal          0 stories  https://autolifenepal.com/feed: ConnectionError: HTTPSConnectionPool(host='autolifenepal.com', port=443): Max retries exceeded with url: /feed (Caused by NameResolutionError("HTTPSConnection(host='autolifenepal.com', port=443): Failed to resolve 'autolifenepal.com' ([Errno -2] Name or service not kn  
+OK  Nepal Drives             5 stories  https://nepaldrives.com/feed  Hongqi E-HS9 Arrives in Nepal Ahead of Official La (34h old) / GWM Ora 5 Secures 5-Star Euro NCAP Safety Rating (36h old) / Denza B5 Tows 180-Tonne Boeing 747 Using Just Two  (53h old)
+NO  Autonepal                0 stories  https://autonepal.com/feed: no stories in feed  
+NO  Ultimate Nepal           0 stories  https://www.ultimatenepal.com/feed: no stories in feed  
+NO  Tech Lekh                0 stories  https://www.techlekh.com/feed: no stories in feed  
+OK  Rushlane                 8 stories  https://www.rushlane.com/feed  BYD Ti7 Faces EU Ban Over Defender Design – Tata O (5h old) / Bajaj Pulsar 125 Neon Spied At Dealer – New Afford (8h old) / 4.5m to 5m SUV Sales Oct 2026 – Scorpio, XUV7XO, X (12h old)
+OK  GaadiWaadi               8 stories  https://gaadiwaadi.com/feed  Mahindra To Launch XEV 9e Sporteq Series Next Mont (7h old) / Volkswagen Virtus Facelift Prices To Be Announced  (11h old) / Toyota Innova Hycross Facelift To Launch This Week (12h old)
+NO  Autocar India            0 stories  https://www.autocarindia.com/rss: HTTP 410  
+OK  MotorBeam               12 stories  https://www.motorbeam.com/feed/  AEB To Become Mandatory In All Cars From October 2 (706h old) / Ducati Hypermotard V2 Launched At Rs 16.53 Lakh (709h old) / BMW Motorrad Vision CE Patented In India (709h old)
+NO  Autopunditz              0 stories  https://www.autopunditz.com/feed: HTTP 404  
+OK  Carscoops               12 stories  https://www.carscoops.com/feed/  Does Hitting The Redline Hurt Your Engine? Here's  (0h old) / Which Ford EcoBoost Engines Have A Wet Timing Belt (1h old) / Toyota Sells A $7,500 Hatchback With A Predator Fa (2h old)
+OK  Electrek                12 stories  https://electrek.co/feed/  Tesla Cybertruck’s already impressive turning radi (0h old) / Toyota just built a tiny folding electric bike to  (1h old) / E-quipment highlight: Mantsinen 200 material handl (1h old)
+NO  Naya Patrika             0 stories  https://www.nayapatrikadaily.com/feed: HTTP 404  
+NO  Ekagaj                   0 stories  https://www.ekagaj.com/feed: HTTP 403  
+OK  Thaha Khabar             5 stories  https://thahakhabar.com/feed  देश समृद्ध बनाउँदै भ्रष्टाचार अन्त्य गर्ने अभियान  (3h old) / प्रधानमन्त्री वालेन्द्र शाहलाई राज्यमन्त्री जितिन  (3h old) / अबको जीवन जनता र लोकतन्त्रका लागि समर्पित गर्छु :  (3h old)
+NO  Pahilo Post              0 stories  https://www.pahilopost.com/feed: HTTP 503  
+NO  DC Nepal                 0 stories  https://www.dcnepal.com/feed: HTTP 403  
+OK  Kathmandu Press          5 stories  https://kathmandupress.com/feed  सुदूरपश्चिम बन्यो एनपिएलको नयाँ च्याम्पियन (5h old) / नेशनल भोलिन्टियर फोर्सलाई देशव्यापी विस्तार गर्न ओ (5h old) / उज्यालो नेपाल पार्टीको एक वर्षे यात्रामा आशा र निर (6h old)
+OK  Nepal Samaya             4 stories  https://nepalsamaya.com/feed  सुदूरले तेस्रो सिजनमा १० विकेटको जितसहित चुम्यो उप (5h old) / एनपीएल : लुम्बिनीद्वारा सुदूरपश्चिमलाई १५६ रनको लक (6h old) / विस्तृत शान्ति सम्झौताको २० वर्ष : संक्रमणकालीन न् (8h old)
+OK  News of Nepal           12 stories  https://newsofnepal.com/feed  कुमारी घरसँगै जीवित देवता गणेश–भैरवका लागि घर बन्द (5h old) / शान्ति प्रक्रिया टुङ्ग्याउने जिम्मेवारीबाट सरकार प (8h old) / नेपाल–भारत नीति संवाद,नेपाल र भारतका युवा पलायन रो (8h old)
+OK  Rajdhani Daily          10 stories  https://rajdhanidaily.com/feed  सोल्माले जित्यो ‘प्रथम एक्सट्रिम शिखर स्पोर्टस कप– (4h old) / वीरगन्जका दुई गोदाममा लागेको आगो ६ घण्टापछि नियन्त (4h old) / जेनजीले नै बचाएँ : शेरबहादुर देउवा (4h old)
+NO  Ukaalo                   0 stories  https://www.ukaalo.com/feed: HTTP 404  
+OK  Image Khabar            10 stories  https://imagekhabar.com/feed  लुम्बिनीलाई हराउँदै सुदूरपश्चिमले जित्यो एनपीएलको  (4h old) / नेपाल–जापान महोत्सव २०२६ को तयारी पूरा (5h old) / मधेश प्रदेशको मुख्यमन्त्रीमा सरोजकुमार यादव नियुक् (6h old)
+NO  Hamra Kura               0 stories  https://www.hamrakura.com/feed: HTTP 403  
+OK  Shilapatra               5 stories  https://shilapatra.com/feed  एनपीएलका आठवटै क्लबका लागि क्रिकेट रंगशाला निर्माण (4h old) / रिजनले जिते कार र बाइक दुवै, दीपेन्द्रको हातमा पाँ (4h old) / देश समृद्ध बनाउँदै भ्रष्टाचार अन्त्य गर्ने अभियान  (5h old)
+OK  Nepal Khabar            18 stories  https://nepalkhabar.com/feed  ‘प्लेयर अफ टुर्नामेन्ट’ बने दीपेन्द्र (0h old) / चितवनका रिजन बने सर्वोत्कृष्ट खेलाडी, पाए ओमोडाको  (0h old) / हेलिकप्टरबाट गोली हानेर एफबीआईको मोस्ट वान्टेड लाग (0h old)
+OK  Nepali Times            30 stories  https://nepalitimes.com/feed  Three mountaineering movies in a row (8h old) / Nepal-Japan Festival 2026 (9h old) / Renowned resilience of Nepalis tested by disasters (18h old)
+OK  Kathmandu Tribune       10 stories  https://kathmandutribune.com/feed  Can AI Save Journalism? (1965h old) / सुकरातहरुको नौनाडी गलेको छ (2568h old) / यात्रा मात्र होइन, जीवनको खोज: ‘फुकुवा’ का लेखक बी (2702h old)
+OK  Nepal Monitor           10 stories  https://nepalmonitor.com/feed  One Night in Bandipur: A Stop Between Kathmandu an (131h old) / Families in Devighat, Nepal, Face Uncertain Return (225h old) / Nepal Remittance 2026: Why Inflows Stay Strong as  (1214h old)
+NO  Hamro Kalam              0 stories  https://www.hamrokalam.com/feed: ConnectTimeout: HTTPSConnectionPool(host='www.hamrokalam.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hamrokalam.com', port=443) at 0x7f3bbed2cd40>, 'Connection to www.hamrokalam.com timed out. (conne  
+new stories found: 0
+{
+ "run": "2026-11-21 19:28 UTC",
+ "stories_in_app": 2400,
+ "new_found": 0,
+ "written_now": 0,
+ "today": {
+  "requests": 419,
+  "stories": 712,
+  "world": 8,
+  "exhausted": {
+   "gemini-3.8-flash": "15:47 NPT",
+   "gemini-flash-latest": "15:53 NPT"
+  }
+ },
+ "waiting": 15,
+ "left_out_old_or_undated": [],
+ "ai": {
+  "used_today": {
+   "gemini-3.1-flash-lite-preview": 138,
+   "gemini-flash-lite-latest": 88,
+   "gemini-3.8-flash": 1,
+   "gemini-flash-latest": 2,
+   "gemini-3.5-flash-lite": 32
+  },
+  "models": [
+   "gemini-3.1-flash-lite-preview",
+   "gemini-flash-lite-latest",
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.8-flash"
+  ],
+  "paused": {
+   "gemini-flash-latest": "07:00 UTC",
+   "gemini-3.8-flash": "07:00 UTC"
+  },
+  "requests": 0,
+  "stories": 0,
+  "rejected": [],
+  "errors": []
+ },
+ "newest_story_minutes_old": 80
+}
+sites not readable this run: Kantipur, Ujyaalo, Lokantar, Nepal Press, myRepublica, Aarthik News, Abhiyan Daily, New Business Age, Kantipur (alt), Kantipur (business), Bizshala, Nepalnews English, Spotlight Nepal, Online Khabar English (business2), Techpana, Gadgetbyte Nepal, Auto Life Nepal, Autonepal, Ultimate Nepal, Tech Lekh, Autocar India, Autopunditz, Naya Patrika, Ekagaj, Pahilo Post, DC Nepal, Ukaalo, Hamra Kura, Hamro Kalam
