@@ -14,4 +14,5 @@ pick = max(((u, t) for u, t in items if official.AUCTION.search(t)), key=lambda 
 print("NOTICE", pick)
 st, why = official.explain(w, src, pick[0], pick[1], int(time.time()))
 print("OFFICIAL", why, json.dumps(st, ensure_ascii=False)[:2500])
+print("REJECT", json.dumps(getattr(official.explain, "last_reject", None), ensure_ascii=False)[:5000])
 print("LOG", json.dumps(w.log, ensure_ascii=False)[:800])

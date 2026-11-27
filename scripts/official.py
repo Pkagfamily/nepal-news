@@ -103,7 +103,7 @@ def list_items(src):
     for page in src.get("lists", []):
         t = _get(page).text
         base = "{0.scheme}://{0.netloc}".format(urllib.parse.urlsplit(page))
-        for href, title in re.findall(r'<a[^>]+href="\s*([^"]+?)\s*"[^>]*>((?:(?!</a>).){8,400})</a>', t, re.S):
+        for href, title in re.findall(r'<a[^>]+href="\s*([^"]+?)\s*"[^>]*>((?:(?!</a>).){8,2000})</a>', t, re.S):
             if not re.search(src["link"], href):
                 continue
             title = _clean(title)
@@ -179,6 +179,7 @@ def explain(writer, src, url, title, found):
     res["nepal_related"] = True
     why = ai.check({"text": original, "title": title, "id": oid(url), "source": src["office"]}, res)
     if why and not why.startswith("shortened") and not why.startswith("too short"):
+        explain.last_reject = {"why": why, "original": original[:3000], "out": res}
         return None, why
     tag = res.get("tag") or "none"
     if AUCTION.search(title) or tag == "auction":
