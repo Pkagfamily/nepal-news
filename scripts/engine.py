@@ -581,7 +581,7 @@ def main():
     need = 1 if len(batches) <= 3 else 2 if len(batches) <= 8 else 3
     with ThreadPoolExecutor(need) as ex:
         list(ex.map(work, writers[:need]))
-    # official notices straight from government offices (checked every 20 minutes)
+    # official notices straight from government offices (checked every 5 minutes)
     night = time.gmtime(NOW + 20700).tm_hour < 6
     try:
         have = {x["id"] for x in stories}
@@ -593,7 +593,7 @@ def main():
     except Exception as ex:
         traceback.print_exc()
         off_report = {"error": f"{type(ex).__name__}: {ex}"[:300]}
-    # monthly import & export figures from the Customs Department (checked every 6 hours)
+    # monthly import & export figures from the Customs Department (checked every hour)
     try:
         tr = trade.update(state, NOW)
         if tr:

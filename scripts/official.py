@@ -201,10 +201,10 @@ def explain(writer, src, url, title, found):
 
 
 def run(writer, state, now, night=False, limit=4):
-    """Checks the offices (every 20 minutes) and explains new notices. Returns new stories and a report."""
+    """Checks the offices (every 5 minutes) and explains new notices. Returns new stories and a report."""
     o = state.setdefault("official", {"seen": {}, "queue": []})
     report = {}
-    if o.get("checked", 0) <= now - 20 * 60:
+    if o.get("checked", 0) <= now - 5 * 60:
         o["checked"] = now
         first = not o["seen"]
         for src in SOURCES:

@@ -272,10 +272,10 @@ def build(cum):
 
 
 def update(state, now, force=False):
-    """Checks the customs site (every 6 hours) and rebuilds the figures when a new month appears.
+    """Checks the customs site (every hour) and rebuilds the figures when a new month appears.
     Returns the new data, or None when nothing changed."""
     t = state.setdefault("trade", {})
-    if not force and t.get("checked", 0) > now - 6 * 3600:
+    if not force and t.get("checked", 0) > now - 3600:
         return None
     t["checked"] = now
     try:
