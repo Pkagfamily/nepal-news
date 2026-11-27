@@ -1,0 +1,23 @@
+name: AI format test
+on:
+  push:
+    branches: [main]
+    paths: ["tools/aitest.py", ".github/workflows/aitest.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -q setuptools wheel && pip install -q -r scripts/requirements.txt
+      - run: |
+          mkdir -p /tmp/t && python3 tools/aitest.py > /tmp/t/out.txt 2>&1 || true
+          cd /tmp/t && git init -q -b aitest && git add -A && git -c user.name=r -c user.email=r@l commit -qm t
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" aitest
+        env:
+          NEWS_SECRET: ${{ secrets.NEWS_SECRET }}
