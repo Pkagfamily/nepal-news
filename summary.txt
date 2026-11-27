@@ -1,0 +1,6 @@
+nrb_feed_en 200 9989 https://www.nrb.org.np/category/current-macroeconomic-situation/current-macroeconomic-situation-engl/feed/
+nrb_feed_circ 200 16437 https://www.nrb.org.np/category/circulars/feed/
+nrb_feed_notice 200 12875 https://www.nrb.org.np/category/notices/feed/
+nrb_cpi_feed 200 6779 https://www.nrb.org.np/category/monthly-statistics/feed/
+item1 https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-six-months-data-of-2025-26/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=current-macroeconomic-and-financial-situation-english-based-on-six-months-data-of-2025-26
+item2 https://www.nrb.org.np/red/current-macroeconomic-and-financial-situation-english-based-on-one-month-data-of-2025-26/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=current-macroeconomic-and-financial-situation-english-based-on-one-month-data-of-2025-26
