@@ -17,7 +17,9 @@ BATCH = 5                      # stories per AI request (saves the daily request
 GEMINI = "https://generativelanguage.googleapis.com/v1beta"
 GH_MODELS = "https://models.github.ai/inference/chat/completions"
 GH_LIST = []                   # GitHub Models was shut down on 30 July 2026 – no free backup left
-CATS = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Tax & Customs", "Banking & Finance", "Business", "Automobile", "Auto · India & World", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
+CATS = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Tax & Customs", "Banking & Finance", "Business", "Trade & Transport", "Textile & Fabric", "Automobile", "Auto · India & World", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
+
+TAGS = ["none", "goods delayed", "road closed", "strike", "india side", "power cut", "water cut", "traffic", "auction", "tender"]
 
 SYSTEM = """You are a senior editor at an English-language newspaper in Kathmandu.
 You receive news articles from Nepali news sites, usually written in Nepali.
@@ -51,6 +53,11 @@ Strict rules:
   "Tax & Customs" = customs duty, tariffs, VAT, excise, income tax, import/export rules, quotas, customs valuation;
   "Banking & Finance" = banks, Nepal Rastra Bank, interest rates, loans, cooperatives, insurance;
   "Economy" = budget, inflation, trade deficit, remittance totals, GDP, revenue, foreign exchange;
+  "Trade & Transport" = movement of goods: customs points and dry ports (Birgunj, Bhairahawa, Biratnagar…), border
+  crossings, trucks and freight, highway closures that hold up goods, transport or carrier strikes, bandhs
+  that stop goods, India-side border/export rules that affect goods coming to Nepal (NOT India's GST);
+  "Textile & Fabric" = fabric, sarees, garments, yarn, cotton, weaving, textile industry and the textile
+  trade in Nepal, and supplier markets in India (Surat, Ahmedabad, Bhilwara, Ludhiana, Erode…);
   "Business" = companies, industry, markets and prices not covered above;
   "Kathmandu" = Kathmandu Valley local news; "Provinces" = local news outside the valley;
   "Crime" = arrests, police cases, court cases about crimes, corruption arrests;
@@ -70,6 +77,21 @@ Strict rules:
   to know immediately: a disaster or accident with several deaths, a new prime minister or government
   falling, a nationwide shutdown or curfew, a big earthquake. Routine arrests, statements, protests,
   meetings and price changes are false. On a normal day at most 2-3 stories are major.
+- "tag": one label when it clearly fits, else "none": "goods delayed" (goods held at customs/ports/borders),
+  "road closed" (a road or highway blocked or closed), "strike" (a strike or bandh called or happening),
+  "india side" (a rule or event on the Indian side that affects goods coming to Nepal), "power cut" (planned
+  or ongoing electricity cut), "water cut" (drinking-water supply stopped), "traffic" (traffic diversion or
+  route change), "auction" (a government, bank, police or customs auction of goods, vehicles or property),
+  "tender" (a government tender to buy fabric, cloth, uniforms or textile goods). Otherwise "none".
+- "auction_type": only when tag is "auction": "vehicles", "fabric & clothes", "goods", "property" or "other"; else "none".
+- "trader_note": only for stories in Tax & Customs, Trade & Transport, Textile & Fabric, Business, Banking & Finance,
+  Economy or Fuel & Oil: ONE short sentence starting with what it means for traders/importers in Nepal, based
+  strictly on what the article says (no new facts, numbers or guesses). If the article does not make the
+  effect clear, use "". Never give advice to buy or sell.
+- "effective_bs": only when the article states the exact date a new rule, rate or price starts: that date as
+  BS "YYYY-MM-DD" with Western digits, copied from the article; otherwise "".
+- "keys": 3 to 6 short English names that identify what the story is about (organisations, people, places,
+  goods, laws), e.g. ["Department of Customs", "fabric", "Birgunj"]. Use the same spelling every time.
 Return JSON only.""".replace("{cats}", ", ".join(CATS))
 
 SCHEMA = {
@@ -86,8 +108,14 @@ SCHEMA = {
             "body": {"type": "ARRAY", "items": {"type": "STRING"}},
             "major": {"type": "BOOLEAN"},
             "rule_change": {"type": "BOOLEAN"},
+            "tag": {"type": "STRING", "enum": TAGS},
+            "auction_type": {"type": "STRING", "enum": ["none", "vehicles", "fabric & clothes", "goods", "property", "other"]},
+            "trader_note": {"type": "STRING"},
+            "effective_bs": {"type": "STRING"},
+            "keys": {"type": "ARRAY", "items": {"type": "STRING"}},
         },
-        "required": ["id", "nepal_related", "category", "headline", "points", "summary", "body", "major", "rule_change"],
+        "required": ["id", "nepal_related", "category", "headline", "points", "summary", "body", "major", "rule_change",
+                     "tag", "auction_type", "trader_note", "effective_bs", "keys"],
     }}},
     "required": ["stories"],
 }
@@ -223,7 +251,8 @@ def check(src, res):
     have = numbers(src["text"] + " " + src["title"], source=True)
     nv = nepali_values(src["text"] + " " + src["title"])
     have |= {_fmt(v) for v in nv} | {_fmt(v / 1e6) for v in nv} | {_fmt(v / 1e9) for v in nv}
-    eng = body + " " + res["headline"] + " " + res.get("summary", "") + " " + " ".join(res.get("points", []))
+    eng = body + " " + res["headline"] + " " + res.get("summary", "") + " " + " ".join(res.get("points", [])) + \
+        " " + res.get("trader_note", "")
     # money amounts ("Rs 28 million", "8.89 arba") are checked by value further down, not digit by digit
     out = numbers(AMT.sub(" ", re.sub(r"(?<=\d),(?=\d)", "", eng.translate(DEV))))
     invented = sorted(n for n in out - have if n not in {"00"})
@@ -231,7 +260,7 @@ def check(src, res):
         return "numbers not in the article: " + ", ".join(invented[:5])
     src_vals = amounts(src["text"] + " " + src["title"]) + list(nv)
     for v, txt in amounts_with_text(body + " " + res["headline"] + " " + res.get("summary", "") + " " +
-                                    " ".join(res.get("points", []))):
+                                    " ".join(res.get("points", [])) + " " + res.get("trader_note", "")):
         if not any(abs(v - x) <= 0.006 * x for x in src_vals):
             return f"amount not in the article: {txt}"
     return None
@@ -305,7 +334,7 @@ class Writer:
         self.log["errors"].append(f"{model}: {why}"[:200])
 
     # ---- one request
-    def _call(self, kind, model, text):
+    def _call(self, kind, model, text, system=None, schema=None, parts=None):
         gap = 7 if kind == "gemini" else 4              # stay under the free per-minute limits
         wait = getattr(self, "_last", 0) + gap - time.time()
         if wait > 0:
@@ -313,14 +342,14 @@ class Writer:
         self._last = time.time()
         if kind == "gemini":
             gc = {"temperature": 0.3, "maxOutputTokens": 24000,
-                  "responseMimeType": "application/json", "responseSchema": SCHEMA}
+                  "responseMimeType": "application/json", "responseSchema": schema or SCHEMA}
             think = self.state.setdefault("think", {}).get(model, "level")
             if think == "level":
                 gc["thinkingConfig"] = {"thinkingLevel": "low"}      # Gemini 3: think briefly, answer faster
             elif think == "budget":
                 gc["thinkingConfig"] = {"thinkingBudget": 512}       # Gemini 2.5 style
-            body = {"systemInstruction": {"parts": [{"text": SYSTEM}]},
-                    "contents": [{"role": "user", "parts": [{"text": text}]}], "generationConfig": gc}
+            body = {"systemInstruction": {"parts": [{"text": system or SYSTEM}]},
+                    "contents": [{"role": "user", "parts": parts or [{"text": text}]}], "generationConfig": gc}
             try:
                 r = requests.post(f"{GEMINI}/models/{model}:generateContent", json=body,
                                   headers={"x-goog-api-key": self.key}, timeout=150)
@@ -328,7 +357,7 @@ class Writer:
                 return 599, f"no answer in time ({type(ex).__name__})", None
             if r.status_code == 400 and "thinking" in r.text.lower() and think != "none":
                 self.state["think"][model] = {"level": "budget", "budget": "none"}[think]
-                return self._call(kind, model, text)
+                return self._call(kind, model, text, system, schema, parts)
             if r.status_code != 200:
                 return r.status_code, r.text[:3000], None
             try:
@@ -363,6 +392,55 @@ class Writer:
         except Exception:
             return 502, f"unexpected reply ({r.headers.get('content-type')}): " + r.text[:200], None
 
+    def _failed(self, model, code, info):
+        """Handles an unsuccessful answer (pauses the model as needed). True when the answer cannot be used."""
+        info = str(info)
+        if code == 429:
+            daily = re.search(r"PerDay|per day|daily|UserByModelByDay|quota exceeded for metric.*day", info, re.I)
+            if daily:
+                # Google's free allowance resets at midnight Pacific time (13:45 in Nepal)
+                reset = (int(time.time() - 7 * 3600) // 86400 + 1) * 86400 + 7 * 3600
+                self._block(model, max(600, reset - time.time()), "daily allowance used up")
+                return True
+            q = re.search(r'"quotaId":\s*"([^"]+)"', info)
+            self.log["errors"].append(f"{model}: 429 {q.group(1) if q else info[:160]}")
+            self._block(model, 90, "busy (per-minute limit)")   # free again within a minute or two
+            return True
+        if code in (400, 403, 404):
+            self._block(model, 24 * 3600, f"not usable: HTTP {code} {info[:150]}")
+            return True
+        if code == 599:
+            self.log["errors"].append(f"{model}: {info}")
+            self.slow[model] = self.slow.get(model, 0) + 1
+            if self.slow[model] >= 2:
+                self._block(model, 30 * 60, "too slow right now")
+            return True
+        if code != 200:
+            self._block(model, 120 if code in (500, 502, 503, 504) else 10 * 60, f"HTTP {code} {info[:150]}")
+            return True
+        return False
+
+    def ask(self, system, schema, parts):
+        """One request with a different instruction (used for official notices). Returns the JSON answer or None."""
+        for kind, model in self.chain:
+            if kind != "gemini" or not self.key or time.time() > self.deadline:
+                continue
+            if self.state["blocked"].get(model, 0) > time.time():
+                continue
+            code, info, out = self._call(kind, model, None, system=system, schema=schema, parts=parts)
+            self.log["requests"] += 1
+            if self._failed(model, code, info):
+                continue
+            try:
+                data = json.loads(out)
+            except Exception:
+                self.log["errors"].append(f"{model}: reply was not JSON ({info})")
+                continue
+            self.state["used"][model] = self.state["used"].get(model, 0) + 1
+            data["_model"] = model
+            return data
+        return None
+
     def write(self, batch):
         """Returns {id: result} for the stories that were written and passed the checks."""
         text = prompt(batch)
@@ -395,28 +473,7 @@ class Writer:
             else:
                 code, info, out = self._call(kind, model, text)
                 self.log["requests"] += 1
-            if code == 429:
-                daily = re.search(r"PerDay|per day|daily|UserByModelByDay|quota exceeded for metric.*day", info, re.I)
-                if daily:
-                    # Google's free allowance resets at midnight Pacific time (13:45 in Nepal)
-                    reset = (int(time.time() - 7 * 3600) // 86400 + 1) * 86400 + 7 * 3600
-                    self._block(model, max(600, reset - time.time()), "daily allowance used up")
-                    continue
-                q = re.search(r'"quotaId":\s*"([^"]+)"', info)
-                self.log["errors"].append(f"{model}: 429 {q.group(1) if q else info[:160]}")
-                self._block(model, 90, "busy (per-minute limit)")   # free again within a minute or two
-                continue
-            if code in (400, 403, 404):
-                self._block(model, 24 * 3600, f"not usable: HTTP {code} {info[:150]}")
-                continue
-            if code == 599:
-                self.log["errors"].append(f"{model}: {info}")
-                self.slow[model] = self.slow.get(model, 0) + 1
-                if self.slow[model] >= 2:
-                    self._block(model, 30 * 60, "too slow right now")
-                continue
-            if code != 200:
-                self._block(model, 120 if code in (500, 502, 503, 504) else 10 * 60, f"HTTP {code} {info[:150]}")
+            if self._failed(model, code, info):
                 continue
             try:
                 data = json.loads(out)

@@ -35,6 +35,8 @@ if os.environ.get("NEWS_SECRET"):
         os.environ.setdefault(_k, _v)
 
 import ai  # noqa: E402  (reads GEMINI_KEY when used)
+import official  # noqa: E402
+import trade  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.environ.get("OUT_DIR", "out")            # the published branch is checked out here
@@ -52,7 +54,7 @@ MONEY_WORDS = re.compile(r"भन्सार|महसुल|भ्याट|�
                          r"आईपीओ|आइपीओ|लाभांश|बोनस|धितोपत्र|सेबोन|सहकारी|बीमा|विप्रेषण|मुद्रास्फीति|बजेट|"
                          r"gold|silver|petrol|diesel|\bLPG\b|fuel|\bNOC\b|bank|interest rate|loan|NEPSE|share|IPO|"
                          r"dividend|SEBON|cooperative|insurance|remittance|inflation|budget", re.I)
-CATEGORIES = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Tax & Customs", "Banking & Finance", "Business", "Automobile", "Auto · India & World", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
+CATEGORIES = ["Politics", "Share Market", "Gold & Silver", "Fuel & Oil", "Tax & Customs", "Banking & Finance", "Business", "Trade & Transport", "Textile & Fabric", "Automobile", "Auto · India & World", "Economy", "Kathmandu", "Provinces", "Crime", "Weather & Disasters", "Society", "Health", "Education", "Sports", "Entertainment", "Technology", "Tourism", "Agriculture", "Energy", "Infrastructure", "Diaspora", "World & Nepal"]
 SKIP_TITLE = re.compile(r"राशिफल|horoscope|आजको राशि|भिडियो|video|फोटो फिचर|photo feature|"
                         r"तस्बिरहरू|in pictures|quiz|crossword|आजको मौसम", re.I)
 SKIP_TAGS = re.compile(r"^(विश्व|अन्तर्राष्ट्रिय|international|world|global|विदेश|horoscope|राशिफल|video|भिडियो)$", re.I)
@@ -125,6 +127,66 @@ def similar(a, b, need=0.5):
     if not a or not b:
         return False
     return len(a & b) / max(1, len(a | b)) >= need
+
+
+# ---- trust check: do the sites reporting the same story give the same headline numbers?
+_PCT = re.compile(r"(\d+(?:\.\d+)?)\s*(?:प्रतिशत|%|percent)", re.I)
+_EN_UNIT = {"हजार": "thousand", "लाख": "lakh", "करोड": "crore", "अर्ब": "arba", "खर्ब": "kharba"}
+
+
+def _money_text(v):
+    for unit, size in (("kharba", 1e11), ("arba", 1e9), ("crore", 1e7), ("lakh", 1e5)):
+        if v >= size:
+            x = v / size
+            return f"Rs {x:,.2f}".rstrip("0").rstrip(".") + f" {unit}"
+    return f"Rs {v:,.0f}"
+
+
+def _title_numbers(title):
+    t = (title or "").translate(ai.DEV)
+    money = set(ai.nepali_values(t)) | {v for v, _ in ai.amounts_with_text(t)}
+    main = max(money) if money else None
+    pct = [float(x) for x in _PCT.findall(t)]
+    return main, (pct[0] if len(pct) == 1 else None)
+
+
+def trust(st):
+    """Sets st["differ"] (sites giving different headline numbers) and st["agree"] (numbers match)."""
+    titles = [(st["source"], st.get("orig_title", ""))] + [tuple(x) for x in st.get("also_t", [])]
+    money, pct = [], []
+    for src, ttl in titles:
+        m, p = _title_numbers(ttl)
+        if m:
+            money.append((src, m))
+        if p is not None:
+            pct.append((src, p))
+    differ = []
+    for rows, fmt in ((money, _money_text), (pct, lambda v: f"{v:g}%")):
+        if len(rows) < 2:
+            continue
+        base = rows[0][1]
+        odd = [(s_, v) for s_, v in rows if abs(v - base) > 0.01 * base and 0.5 <= v / base <= 2]
+        if odd:
+            seen = []
+            for s_, v in rows:
+                if s_ not in [x[0] for x in seen]:
+                    seen.append((s_, fmt(v)))
+            differ = [list(x) for x in seen[:4]]
+            break
+    st["differ"] = differ
+    st["agree"] = bool((len(money) >= 2 or len(pct) >= 2) and not differ)
+
+
+def valid_bs(date, source_text):
+    """Keeps an effective date only if its numbers really appear in the article."""
+    m = re.fullmatch(r"(20\d\d)-(\d\d?)-(\d\d?)", (date or "").strip())
+    if not m:
+        return ""
+    t = (source_text or "").translate(ai.DEV)
+    y, mo, d = m.groups()
+    if y in t and re.search(r"(?<!\d)0?%s(?!\d)" % int(mo), t) and re.search(r"(?<!\d)0?%s(?!\d)" % int(d), t):
+        return f"{y}-{int(mo):02d}-{int(d):02d}"
+    return ""
 
 
 def sid(url):
@@ -211,7 +273,7 @@ def read_page(src):
     return _label(src), [], report
 
 
-SEARCH_WORDS = ["गाडी", "कार", "बाइक", "स्कुटर", "इभी", "विद्युतीय गाडी", "अटो", "electric vehicle", "car launch",
+SEARCH_WORDS = ["लिलाम", "गाडी", "कार", "बाइक", "स्कुटर", "इभी", "विद्युतीय गाडी", "अटो", "electric vehicle", "car launch",
                 "भन्सार", "भन्सार महसुल", "भ्याट", "अन्तःशुल्क", "आयात", "कपडा", "customs duty", "सुनको मूल्य", "चाँदी", "नेप्से", "शेयर बजार", "पेट्रोल", "डिजेल", "ग्यास", "आयल निगम",
                 "राष्ट्र बैंक", "ब्याजदर", "बैंक", "आईपीओ", "gold price", "NEPSE", "petrol", "Nepal Rastra Bank"]
 
@@ -412,6 +474,9 @@ def main():
             also = twin.setdefault("also", [])
             if it["source"] not in also and it["source"] != twin["source"]:
                 also.append(it["source"])
+                twin.setdefault("also_t", []).append([it["source"], it["title"]])
+                if "headline" in twin:               # already written: check its numbers again
+                    trust(twin)
             continue
         it["found"] = NOW
         queue.append(it)
@@ -474,9 +539,15 @@ def main():
                    (res["category"] if res["category"] in CATEGORIES else "Society"),
             "headline": res["headline"], "points": res["points"], "summary": res["summary"],
             "body": res["body"], "major": bool(res.get("major")), "rule": bool(res.get("rule_change")),
-            "orig_title": b["title"],
+            "orig_title": b["title"], "also_t": b.get("also_t", []),
+            "tag": "" if res.get("tag") in (None, "none") else res["tag"],
+            "auction_type": "" if res.get("auction_type") in (None, "none") or res.get("tag") != "auction" else res["auction_type"],
+            "trader_note": (res.get("trader_note") or "").strip(),
+            "effective_bs": valid_bs(res.get("effective_bs"), b["text"] + " " + b["title"]),
+            "keys": [k.strip() for k in res.get("keys", []) if isinstance(k, str) and k.strip()][:6],
             "by": res["_model"], "at": NOW,
         })
+        trust(stories[-1])
 
     def work(w):
         while time.time() < deadline and not w.exhausted():
@@ -510,6 +581,26 @@ def main():
     need = 1 if len(batches) <= 3 else 2 if len(batches) <= 8 else 3
     with ThreadPoolExecutor(need) as ex:
         list(ex.map(work, writers[:need]))
+    # official notices straight from government offices (checked every 20 minutes)
+    night = time.gmtime(NOW + 20700).tm_hour < 6
+    try:
+        have = {x["id"] for x in stories}
+        new_off, off_report = official.run(writers[0], state, NOW, night=night)
+        for st in new_off:
+            if st["id"] not in have:
+                st["at"] = NOW
+                stories.append(st)
+    except Exception as ex:
+        traceback.print_exc()
+        off_report = {"error": f"{type(ex).__name__}: {ex}"[:300]}
+    # monthly import & export figures from the Customs Department (checked every 6 hours)
+    try:
+        tr = trade.update(state, NOW)
+        if tr:
+            save("trade", tr)
+    except Exception as ex:
+        traceback.print_exc()
+        state.setdefault("trade", {})["error"] = f"{type(ex).__name__}: {ex}"[:300]
     for w in writers:                              # daily usage record (kept 7 days, for checking)
         stats["requests"] += w.log["requests"]
         stats["stories"] += w.log["stories"]
@@ -532,7 +623,7 @@ def main():
     # 4. publish
     stories.sort(key=lambda s: s["ts"], reverse=True)
     stories = stories[:MAX_STORIES]
-    public = [{k: v for k, v in s.items() if k not in ("orig_title",)} for s in stories]
+    public = [{k: v for k, v in s.items() if k not in ("orig_title", "also_t")} for s in stories]
     save("feed", {"v": 1, "ts": NOW, "stories": public})
     # small file with only what changed in the last 6 hours + the list of current stories, so the app
     # does not download all 3 days every time
@@ -544,8 +635,21 @@ def main():
              for s in stories if s.get("major") and s["ts"] >= NOW - 24 * 3600][:10]
     business = [{"id": s["id"], "headline": s["headline"], "cat": s["cat"], "ts": s["ts"]}
                 for s in stories if s.get("rule") and s.get("at", 0) >= NOW - 24 * 3600][:20]
-    save("pulse", {"v": 1, "ts": NOW, "major": major, "business": business, "count": len(stories)})
-    save("state", {"daily": state.get("daily", {}), "gh_probe": state.get("gh_probe"), "sweep_at": state.get("sweep_at", 0), "seen": seen, "queue": queue[:900], "ai": writer.state, "last_search": state.get("last_search", 0), "cleanup_v1": True,
+    # recent headlines for the phone's hourly check (followed stories and watch words are matched on the phone)
+    heads = [{k: s.get(k) for k in ("id", "ts", "cat", "headline", "summary", "keys", "tag", "official", "rule", "major")}
+             for s in stories if s.get("at", 0) >= NOW - 6 * 3600]
+    save("pulse", {"v": 1, "ts": NOW, "major": major, "business": business, "count": len(stories), "heads": heads})
+    # the business week: rule changes, official notices, trade disruptions and textile news of the last 8 days
+    week = {w["id"]: w for w in state.get("week", []) if w["ts"] >= NOW - 8 * 86400}
+    for s in stories:
+        if s["ts"] >= NOW - 8 * 86400 and (s.get("rule") or s.get("official") or s.get("tag") in ("goods delayed", "road closed", "strike", "india side", "auction", "tender")
+                                         or s["cat"] in ("Tax & Customs", "Trade & Transport", "Textile & Fabric")):
+            week[s["id"]] = {k: s.get(k) for k in ("id", "ts", "cat", "headline", "summary", "rule", "tag", "official",
+                                                   "effective_bs", "trader_note", "keys", "url", "source")}
+    state["week"] = sorted(week.values(), key=lambda w: w["ts"])
+    save("week", {"v": 1, "ts": NOW, "items": state["week"]})
+    save("state", {"official": state.get("official"), "trade": state.get("trade"), "week": state.get("week", []),
+                   "daily": state.get("daily", {}), "gh_probe": state.get("gh_probe"), "sweep_at": state.get("sweep_at", 0), "seen": seen, "queue": queue[:900], "ai": writer.state, "last_search": state.get("last_search", 0), "cleanup_v1": True,
                    "archived": state.get("archived", [])[-800:], "audit": audit[-60:],
                    "rejects": (state.get("rejects", []) + writer.rejects)[-20:]})
 
@@ -553,7 +657,8 @@ def main():
         "run": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime(NOW)),
         "stories_in_app": len(stories), "new_found": added, "written_now": len(done_ids),
         "today": state.get("daily", {}).get(time.strftime("%Y-%m-%d", time.gmtime(NOW - 8 * 3600))),
-        "waiting": len(queue), "left_out_old_or_undated": skipped[-20:], "ai": writer.report(), "sources": status_sources,
+        "waiting": len(queue), "left_out_old_or_undated": skipped[-20:], "official": off_report,
+        "trade": {k: v for k, v in state.get("trade", {}).items() if k != "files"}, "ai": writer.report(), "sources": status_sources,
         "newest_story_minutes_old": round((NOW - stories[0]["ts"]) / 60) if stories else None,
     }
     json.dump(status, open(os.path.join(OUT, "status.json"), "w"), indent=1, ensure_ascii=False)
