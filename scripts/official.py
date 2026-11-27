@@ -136,9 +136,13 @@ def fetch(url):
     text = _clean(main.group(2) if main else body)[:6000]
     files = []
     base = "{0.scheme}://{0.netloc}".format(urllib.parse.urlsplit(url))
-    links = re.findall(r'(?:href|src)="([^"]+\.(?:pdf|jpe?g|png|webp))"', t, re.I)
+    # the file is linked, embedded, or set in the page's script (var pdf = '…' for the flip-book viewer)
+    links = re.findall(r'(?:href|src)="([^"]+\.(?:pdf|jpe?g|png|webp))"', t, re.I) + \
+        re.findall(r'["\'](https?://[^"\'\s]+?\.(?:pdf|jpe?g|png|webp))["\']', t, re.I)
+    links = [x for x in links if "pdf_upload" in x or x.lower().endswith(".pdf") or "/media/" in x or "uploads" in x] or links
+    links = sorted(set(links), key=lambda x: (not x.lower().endswith(".pdf"), links.index(x)))
     for f in links:
-        if re.search(r"emblem|logo|flag|icon|banner|favicon|qr|footer|header|google|play", f, re.I):
+        if re.search(r"emblem|logo|flag|icon|banner|favicon|qr|footer|header|google|play|albums|topbg|/static/", f, re.I):
             continue
         u = urllib.parse.urljoin(base + "/", f)
         try:
