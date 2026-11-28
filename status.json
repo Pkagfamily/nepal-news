@@ -1,0 +1,702 @@
+{
+ "run": "2026-11-28 12:40 UTC",
+ "stories_in_app": 2400,
+ "new_found": 5,
+ "written_now": 9,
+ "today": {
+  "requests": 172,
+  "stories": 406,
+  "world": 0,
+  "exhausted": {}
+ },
+ "waiting": 0,
+ "left_out_old_or_undated": [],
+ "official": {
+  "Customs": "53 listed, 0 new",
+  "IRD": "50 listed, 0 new",
+  "NRB": "10 listed, 0 new",
+  "Commerce": "51 listed, 0 new",
+  "Traffic Police": "7 listed, 0 new",
+  "KUKL": "48 listed, 0 new"
+ },
+ "trade": {
+  "checked": 1795866151,
+  "problems": [],
+  "latest": "Kartik 2083"
+ },
+ "ai": {
+  "used_today": {
+   "gemini-flash-lite-latest": 57,
+   "gemini-3.5-flash-lite": 16,
+   "gemini-3.1-flash-lite-preview": 71,
+   "gemini-3.8-flash": 1
+  },
+  "models": [
+   "gemini-3.1-flash-lite-preview",
+   "gemini-flash-lite-latest",
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.8-flash"
+  ],
+  "paused": {},
+  "requests": 2,
+  "stories": 9,
+  "rejected": [],
+  "errors": []
+ },
+ "sources": {
+  "Onlinekhabar": {
+   "ok": true,
+   "items": 40,
+   "feed": "https://www.onlinekhabar.com/feed",
+   "error": null,
+   "sample": [
+    "एमसीसी कम्प्याक्टको म्याद एक वर्ष थप गर्ने अधिकार  (0h old)",
+    "भक्तपुरका मेयर भन्छन्- बहुमत आएर मात्रै सबैकुरा ठि (0h old)",
+    "बैंकिङ क्षेत्रले नाफासँगै सामाजिक र वातावरणीय प्रभ (0h old)"
+   ]
+  },
+  "Kantipur": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://ekantipur.com/feed: HTTP 403"
+  },
+  "Setopati": {
+   "ok": true,
+   "items": 5,
+   "feed": "https://www.setopati.com/feed",
+   "error": null,
+   "sample": [
+    "प्रधानमन्त्रीका प्रमुख सल्लाहकारसँग जोडिएको मोबाइल (0h old)",
+    "संवैधानिक सीमा र संसदीय मर्यादाबारे प्रधानमन्त्री  (0h old)",
+    "निजी जग्गा किनेर भए पनि बाढीपीडितको पुनर्स्थापना ग (0h old)"
+   ]
+  },
+  "Ratopati": {
+   "ok": true,
+   "items": 26,
+   "feed": "https://www.ratopati.com/feed",
+   "error": null,
+   "sample": [
+    "जबरजस्ती करणी अभियोगमा बैतडीबाट ६८ वर्षीय वृद्ध पक (0h old)",
+    "प्रधानमन्त्री कार्यालय र मन्त्रालयकै पत्र बेवास्ता (0h old)",
+    "अन्तरात्माको कठघरामा: पाप, पुण्य, नैतिकता र न्यायि (0h old)"
+   ]
+  },
+  "Nagarik": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://nagariknews.nagariknetwork.com/rss: HTTP 404"
+  },
+  "Himal Khabar": {
+   "ok": true,
+   "items": 5,
+   "feed": "https://www.himalkhabar.com/feed",
+   "error": null,
+   "sample": [
+    "आकाशमा तुवाँलो, सरकारी वाचा अधूरो (34h old)",
+    "भूमि अधिकार: वञ्चितिबाट सामूहिक शक्तिसम्म (82h old)",
+    "हिमाल खोज: हिन्दुत्ववादी शिक्षालयमा नेपालविरोधी पा (120h old)"
+   ]
+  },
+  "Baahrakhari": {
+   "ok": true,
+   "items": 5,
+   "feed": "https://baahrakhari.com/feed",
+   "error": null,
+   "sample": [
+    "सरकारप्रति कांग्रेसको दृष्टिकोण : शासनशैलीमा अराजक (0h old)",
+    "देउवा समूहको कोसी प्रदेश अधिवेशन तय (1h old)",
+    "कम्युनिष्ट एकताको प्रयास जारी छ : प्रचण्ड (2h old)"
+   ]
+  },
+  "Ujyaalo": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://ujyaaloonline.com/feed: HTTP 403"
+  },
+  "Lokantar": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://lokaantar.com/feed: HTTP 404"
+  },
+  "Nepal Press": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.nepalpress.com/feed: HTTP 403"
+  },
+  "Annapurna Post": {
+   "ok": true,
+   "items": 20,
+   "feed": "https://annapurnapost.com/rss",
+   "error": null,
+   "sample": [
+    "शिखर इन्स्योरेन्सलाई लगातार दोस्रो वर्ष ‘साफा सर्ट (0h old)",
+    "१०औँ राष्ट्रिय खेलकुद प्रतियोगिता प्रधानमन्त्रीले  (0h old)",
+    "हो, म बिग्रेकी आइमाई, मेरो होइन तिम्रो नजरमा (0h old)"
+   ]
+  },
+  "Gorkhapatra": {
+   "ok": true,
+   "items": 10,
+   "feed": "https://gorkhapatraonline.com/rss",
+   "error": null,
+   "sample": [
+    "चौथो तामाङ मौलिक सेलो सङ्गीत महोत्सव हुँदै (0h old)",
+    "सशक्त प्रतिपक्षी भूमिका निर्वाह गर्ने कांग्रेसको न (1h old)",
+    "लागुऔषधसहित ३१ जना पक्राउ (1h old)"
+   ]
+  },
+  "Kathmandu Post": {
+   "ok": true,
+   "items": 39,
+   "feed": "https://kathmandupost.com/rss",
+   "error": null,
+   "sample": [
+    "Congress demands withdrawal of ordinances, calls f (0h old)",
+    "Election Commission begins review of polling stati (0h old)",
+    "Four young entrepreneurs bet Rs42 million on Thori (0h old)"
+   ]
+  },
+  "myRepublica": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://myrepublica.nagariknetwork.com/feed: HTTP 404"
+  },
+  "Himalayan Times": {
+   "ok": true,
+   "items": 40,
+   "feed": "https://thehimalayantimes.com/rssFeed/15",
+   "error": null,
+   "sample": [
+    "Narayangadh-Muglin road to remain closed five hour (4h old)",
+    "Dhankuta set to receive treated drinking water as  (4h old)",
+    "Japan-funded water project increases Biratnagar's  (26h old)"
+   ]
+  },
+  "Online Khabar English": {
+   "ok": true,
+   "items": 20,
+   "feed": "https://english.onlinekhabar.com/feed",
+   "error": null,
+   "sample": [
+    "SpaceX’s million-satellite plan faces questions ov (3h old)",
+    "Four percent of Nepal’s listed shares remain beyon (6h old)",
+    "Government prepares special task force to curb for (9h old)"
+   ]
+  },
+  "Onlinekhabar (business)": {
+   "ok": true,
+   "items": 40,
+   "feed": "https://www.onlinekhabar.com/content/business/feed",
+   "error": null,
+   "sample": [
+    "एमसीसी कम्प्याक्टको म्याद एक वर्ष थप गर्ने अधिकार  (0h old)",
+    "बैंकिङ क्षेत्रले नाफासँगै सामाजिक र वातावरणीय प्रभ (0h old)",
+    "वैदेशिक रोजगारी ठगी रोक्न किन चाहियो विशेष कार्यदल (21h old)"
+   ]
+  },
+  "Annapurna Post (business)": {
+   "ok": true,
+   "items": 20,
+   "feed": "https://annapurnapost.com/rss/economy",
+   "error": null,
+   "sample": [
+    "शिखर इन्स्योरेन्सलाई लगातार दोस्रो वर्ष ‘साफा सर्ट (0h old)",
+    "१०औँ राष्ट्रिय खेलकुद प्रतियोगिता प्रधानमन्त्रीले  (0h old)",
+    "हो, म बिग्रेकी आइमाई, मेरो होइन तिम्रो नजरमा (0h old)"
+   ]
+  },
+  "Online Khabar English (business)": {
+   "ok": true,
+   "items": 20,
+   "feed": "https://english.onlinekhabar.com/category/economy/feed",
+   "error": null,
+   "sample": [
+    "Four percent of Nepal’s listed shares remain beyon (6h old)",
+    "NEPSE: Banking and non-life insurance gain despite (27h old)",
+    "NEA invites bids from Indian companies to purchase (29h old)"
+   ]
+  },
+  "Bizmandu": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.bizmandu.com/feed: HTTP 403"
+  },
+  "Arthasarokar": {
+   "ok": true,
+   "items": 20,
+   "feed": "https://arthasarokar.com/feed",
+   "error": null,
+   "sample": [
+    "पूर्वमुख्यसचिव अर्यालमाथि अनुसन्धान गर्न प्रहरीलाई (26h old)",
+    "जनकपुरधाम-अयोध्या रेलले जोड्दै आस्था र संस्कृति, ध (26h old)",
+    "चितवनका ८३ परिवारलाई जग्गाधनी प्रमाणपत्र वितरण (26h old)"
+   ]
+  },
+  "Aarthik News": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://aarthiknews.com/feed: HTTP 403"
+  },
+  "Clickmandu": {
+   "ok": true,
+   "items": 10,
+   "feed": "https://clickmandu.com/feed",
+   "error": null,
+   "sample": [
+    "६५ भार बोकेर सरयु कमला रेल अयोध्या प्रस्थान, विवाह (1h old)",
+    "लागुऔषधसहित देशका विभिन्न स्थानबाट ३१ जना पक्राउ (1h old)",
+    "पार्टी प्यालेस छाडेर गोरखामा विवाह गर्दै गृहमन्त्र (2h old)"
+   ]
+  },
+  "Karobar Daily": {
+   "ok": true,
+   "items": 38,
+   "feed": "https://www.karobardaily.com/feed",
+   "error": null,
+   "sample": [
+    "जलविद्युत् आयोजनामा स्थानीयको हक सुनिश्चित गरिने (4h old)",
+    "ऊर्जामन्त्री श्रेष्ठद्वारा विभिन्न आयोजनाको अनुगमन (9h old)",
+    "निर्माणाधीन कमला पुल पुस पहिलो सातादेखि सञ्चालनमा  (25h old)"
+   ]
+  },
+  "Abhiyan Daily": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.abhiyandaily.com/feed: HTTP 403"
+  },
+  "New Business Age": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://newbusinessage.com/feed: HTTP 403"
+  },
+  "Nepal Live Today": {
+   "ok": true,
+   "items": 10,
+   "feed": "https://www.nepallivetoday.com/feed",
+   "error": null,
+   "sample": [
+    "Media’s role vital to strengthen democracy: Speake (16878h old)",
+    "Two people arrested for offensive conduct after NP (16926h old)",
+    "PM Oli felicitates NPL Champions Janakpur Bolts (16950h old)"
+   ]
+  },
+  "Rising Nepal": {
+   "ok": true,
+   "items": 10,
+   "feed": "https://risingnepaldaily.com/rss",
+   "error": null,
+   "sample": [
+    "Energy Minister pledges protection of local people (2h old)",
+    "Banker Paudyal receives Lifetime Achievement Award (3h old)",
+    "Home Minister Gurung inspects BPKIHS service (4h old)"
+   ]
+  },
+  "Desh Sanchar": {
+   "ok": true,
+   "items": 12,
+   "feed": "https://deshsanchar.com/feed",
+   "error": null,
+   "sample": [
+    "राष्ट्रिय खेलकुदको उद्घाटन प्रधानमन्त्रीले गर्ने (1h old)",
+    "पार्टीको नाम र चुनाव चिह्न दुरुपयोग गर्नेलाई कारबा (1h old)",
+    "सरकार जनताका अधिकार खोस्न उद्यत छः दाहाल (1h old)"
+   ]
+  },
+  "Khabarhub": {
+   "ok": true,
+   "items": 6,
+   "feed": "https://khabarhub.com/feed",
+   "error": null,
+   "sample": [
+    "किमको चीन भ्रमणबारे दक्षिण कोरियाको निगरानी (0h old)",
+    "दशौँ राष्ट्रिय खेलकुद सङ्घीयताको मर्मअनुसार सञ्चाल (0h old)",
+    "बर्दियामा स्थानीय तहमा भूमि प्रशासन सेवा विस्तारको (0h old)"
+   ]
+  },
+  "Kantipur (alt)": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://kantipurdaily.com/feed: HTTP 404"
+  },
+  "ShareSansar": {
+   "ok": true,
+   "items": 13,
+   "feed": "https://www.sharesansar.com/category/latest",
+   "error": null
+  },
+  "Mero Lagani": {
+   "ok": true,
+   "items": 8,
+   "feed": "https://merolagani.com/NewsList.aspx",
+   "error": null
+  },
+  "Kantipur (business)": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://ekantipur.com/business: HTTP 403"
+  },
+  "B360 Nepal": {
+   "ok": true,
+   "items": 5,
+   "feed": "https://www.b360nepal.com/feed",
+   "error": null,
+   "sample": [
+    "FIU-Nepal publishes report analysing Hundi trends, (19h old)",
+    "Agreement on two-way Bhairahawa air route raises h (22h old)",
+    "MoFA begins implementing agreements reached during (22h old)"
+   ]
+  },
+  "Bizshala": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://bizshala.com/feed: HTTP 404"
+  },
+  "Nepalnews": {
+   "ok": true,
+   "items": 12,
+   "feed": "https://www.nepalnews.com/feed",
+   "error": null,
+   "sample": [
+    "मानिसभन्दा अगाडि मेसिन (1h old)",
+    "यी हुन् कांग्रेस केन्द्रीय समिति बैठकका निर्णय (पू (1h old)",
+    "तामझाम होइन, गुरुङ संस्कृतिअनुसार गोरखामा विवाह गर (2h old)"
+   ]
+  },
+  "Nepalnews English": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://english.nepalnews.com/feed: HTTP 403"
+  },
+  "Ratopati English": {
+   "ok": true,
+   "items": 30,
+   "feed": "https://english.ratopati.com/feed",
+   "error": null,
+   "sample": [
+    "Rastriya Prajatantra Party Chairman Calls for Mona (0h old)",
+    "Former Minister Gyawali Accuses Government of Subo (0h old)",
+    "Bagmati Defeats Koshi by 84 Runs in National Games (0h old)"
+   ]
+  },
+  "Spotlight Nepal": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.spotlightnepal.com/feed: HTTP 403"
+  },
+  "NEPSE Trading": {
+   "ok": true,
+   "items": 11,
+   "feed": "https://nepsetrading.com/news",
+   "error": null
+  },
+  "Bizshala (page)": {
+   "ok": true,
+   "items": 30,
+   "feed": "https://www.bizshala.com/",
+   "error": null
+  },
+  "Online Khabar English (business2)": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://english.onlinekhabar.com/category/business/feed: no stories in feed"
+  },
+  "Onlinekhabar (auto)": {
+   "ok": true,
+   "items": 39,
+   "feed": "https://www.onlinekhabar.com/content/auto/feed",
+   "error": null,
+   "sample": [
+    "भोटेकोशी बाढीमा क्षतिग्रस्त सवारी फेला नपर्दा बीमा (27h old)",
+    "भोटेकोशी बाढीमा सार्वजनिक यातायात क्षति : ७८२ मानव (45h old)",
+    "यामाहा चङ्गाचेट अफर : बुटवलकी सरस्वतीले जितिन् १०  (71h old)"
+   ]
+  },
+  "Online Khabar English (auto)": {
+   "ok": true,
+   "items": 20,
+   "feed": "https://english.onlinekhabar.com/category/auto/feed",
+   "error": null,
+   "sample": [
+    "Yamaha unveils new grey-green XSR 155 variant at N (125h old)",
+    "Yamaha XSR 155 combines retro styling with modern  (553h old)",
+    "Sipradi Yatri announces price of locally made Yatr (1707h old)"
+   ]
+  },
+  "Techpana": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://techpana.com/feed: HTTP 403"
+  },
+  "Gadgetbyte Nepal": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://gadgetbytenepal.com/feed: HTTP 404"
+  },
+  "Auto Life Nepal": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://autolifenepal.com/feed: ConnectionError: HTTPSConnectionPool(host='autolifenepal.com', port=443): Max retries exceeded with url: /feed (Caused by NameResolutionError(\"HTTPSConnection(host='autolifenepal.com', port=443): Failed to resolve 'autolifenepal.com' ([Errno -2] Name or service not kn"
+  },
+  "Nepal Drives": {
+   "ok": true,
+   "items": 5,
+   "feed": "https://nepaldrives.com/feed",
+   "error": null,
+   "sample": [
+    "Updated Yamaha Fascino 125 Fi Hybrid Launched in N (5h old)",
+    "Changan Nevo Q05 to Launch in Butwal and Itahari N (31h old)",
+    "Buy a BYD and Get a Chance to Win One Year of Free (31h old)"
+   ]
+  },
+  "Autonepal": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://autonepal.com/feed: no stories in feed"
+  },
+  "Ultimate Nepal": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.ultimatenepal.com/feed: no stories in feed"
+  },
+  "Tech Lekh": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.techlekh.com/feed: no stories in feed"
+  },
+  "Rushlane": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.rushlane.com/feed: HTTP 415"
+  },
+  "GaadiWaadi": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.gaadiwaadi.com/feed: HTTP 415"
+  },
+  "Autocar India": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.autocarindia.com/rss: HTTP 410"
+  },
+  "MotorBeam": {
+   "ok": true,
+   "items": 12,
+   "feed": "https://www.motorbeam.com/feed/",
+   "error": null,
+   "sample": [
+    "MINI Cooper Electric Launched In India At Rs. 53.9 (25h old)",
+    "New Nissan Terrano Leaked: Design, Engines & India (25h old)",
+    "Ultraviolette Invests Rs. 779 Crore In Hosur Facto (49h old)"
+   ]
+  },
+  "Autopunditz": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.autopunditz.com/feed: HTTP 404"
+  },
+  "Carscoops": {
+   "ok": true,
+   "items": 12,
+   "feed": "https://www.carscoops.com/feed/",
+   "error": null,
+   "sample": [
+    "This Dual-Winged Mid-Engine C5 Corvette Is Real An (14h old)",
+    "Watch In Horror As A Ferrari 499P Slams Into A Leg (16h old)",
+    "Can-Am's X3 And Maverick R Made Me Rethink Buying  (18h old)"
+   ]
+  },
+  "Electrek": {
+   "ok": true,
+   "items": 12,
+   "feed": "https://electrek.co/feed/",
+   "error": null,
+   "sample": [
+    "IONNA’s got a 50% discount off EV charging over Th (12h old)",
+    "Podcast: Tesla FSD v15, Volvo XC60/90 PHEVs, Porsc (16h old)",
+    "Volvo A40 Electric articulated haul trucks get to  (16h old)"
+   ]
+  },
+  "Naya Patrika": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.nayapatrikadaily.com/feed: HTTP 404"
+  },
+  "Ekagaj": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.ekagaj.com/feed: HTTP 403"
+  },
+  "Thaha Khabar": {
+   "ok": true,
+   "items": 5,
+   "feed": "https://thahakhabar.com/feed",
+   "error": null,
+   "sample": [
+    "नासलचोक डबलीमा श्वेतकाली अजिमाको १२ वर्षे देवीनाच  (0h old)",
+    "ऊर्जा र बाढी प्रभावित क्षेत्रको निरीक्षण गर्दै पर् (0h old)",
+    "साउदीमा थलिएर फर्किएका कपिलको सुन्तला खेतीबाट मनग् (1h old)"
+   ]
+  },
+  "Pahilo Post": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.pahilopost.com/feed: HTTP 503"
+  },
+  "DC Nepal": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.dcnepal.com/feed: HTTP 403"
+  },
+  "Kathmandu Press": {
+   "ok": true,
+   "items": 5,
+   "feed": "https://kathmandupress.com/feed",
+   "error": null,
+   "sample": [
+    "राष्ट्रिय स्वाधीनताको रक्षा र कम्युनिस्ट एकताका ला (1h old)",
+    "कांग्रेसको नाम, झण्डा र रूख चुनाव चिह्न प्रयोग गर् (4h old)",
+    "रास्वपाले झोला त्यागेर फाइल र डायरी प्रयोग गर्छ :  (5h old)"
+   ]
+  },
+  "Nepal Samaya": {
+   "ok": true,
+   "items": 5,
+   "feed": "https://nepalsamaya.com/feed",
+   "error": null,
+   "sample": [
+    "वार्षिक लक्ष्यको २३.५८ प्रतिशत राजस्व संकलन (1h old)",
+    "पूर्व प्रहरीको अनुभव र ऊर्जालाई देश निर्माणमा लगाउ (1h old)",
+    "प्रधानमन्त्री शाहले दशौँ राष्ट्रिय खेलकुद उद्घाटन  (1h old)"
+   ]
+  },
+  "News of Nepal": {
+   "ok": true,
+   "items": 12,
+   "feed": "https://newsofnepal.com/feed",
+   "error": null,
+   "sample": [
+    "मादक पदार्थ सेवन गरी श्रीमतीको हत्या, श्रीमान् पक् (1h old)",
+    "नेपालको भूमिलाई छिमेकीविरुद्ध सैन्य अखडा बन्न दिनु (1h old)",
+    "खसीको मासु भन्दै बाख्रीको मासु बेच्ने ८ जना पक्राउ (1h old)"
+   ]
+  },
+  "Rajdhani Daily": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.rajdhanidaily.com/feed: HTTP 415"
+  },
+  "Ukaalo": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.ukaalo.com/feed: HTTP 403"
+  },
+  "Image Khabar": {
+   "ok": true,
+   "items": 10,
+   "feed": "https://imagekhabar.com/feed",
+   "error": null,
+   "sample": [
+    "संविधानले नचिनेका व्यक्तिबाट शासन भइरहेको छः रामहर (0h old)",
+    "एनपीएलको चौथो संस्करण चितवनमा आयोजना गर्न सकिने सम (0h old)",
+    "सबै कम्युनिष्ट शक्तिलाई एकताको झण्डामुनि ल्याउने प (0h old)"
+   ]
+  },
+  "Hamra Kura": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.hamrakura.com/feed: HTTP 403"
+  },
+  "Shilapatra": {
+   "ok": true,
+   "items": 4,
+   "feed": "https://shilapatra.com/feed",
+   "error": null,
+   "sample": [
+    "आईसीसी विश्वकप छनोट प्लेअफका लागि नेपालको १५ सदस्य (0h old)",
+    "प्रधानमन्त्री बालेनले गर्नेछन् १० औँ राष्ट्रिय खेल (1h old)",
+    "राष्ट्रपतिद्वारा देवीनाच अवलोकन (2h old)"
+   ]
+  },
+  "Nepal Khabar": {
+   "ok": true,
+   "items": 20,
+   "feed": "https://nepalkhabar.com/feed",
+   "error": null,
+   "sample": [
+    "विश्वकप छनोट प्लेअफका लागि नेपाली क्रिकेट टोलीको घ (0h old)",
+    "विवाहबारे पत्रकारको जिज्ञासामा गृहमन्त्रीको ठट्टा- (0h old)",
+    "लागुऔषधसहित देशका विभिन्न स्थानबाट ३१ जना पक्राउ (0h old)"
+   ]
+  },
+  "Nepali Times": {
+   "ok": true,
+   "items": 30,
+   "feed": "https://nepalitimes.com/feed",
+   "error": null,
+   "sample": [
+    "On location in Nepal (0h old)",
+    "Major reforms needed in minor detention centres (10h old)",
+    "It’s that time of the year again (26h old)"
+   ]
+  },
+  "Kathmandu Tribune": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.kathmandutribune.com/feed: HTTP 415"
+  },
+  "Nepal Monitor": {
+   "ok": true,
+   "items": 10,
+   "feed": "https://nepalmonitor.com/feed",
+   "error": null,
+   "sample": [
+    "Nepal Launches $49.94 Million Project to Reduce Hi (54h old)",
+    "Nepal Tourism Board Explores New Strategies to Str (76h old)",
+    "One Night in Bandipur: A Stop Between Kathmandu an (292h old)"
+   ]
+  },
+  "Hamro Kalam": {
+   "ok": false,
+   "items": 0,
+   "feed": null,
+   "error": "https://www.hamrokalam.com/feed: ConnectTimeout: HTTPSConnectionPool(host='www.hamrokalam.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hamrokalam.com', port=443) at 0x7f3deb0b8290>, 'Connection to www.hamrokalam.com timed out. (conne"
+  }
+ },
+ "newest_story_minutes_old": 0
+}
